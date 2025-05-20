@@ -1,0 +1,479 @@
+---
+import Container from './Container.astro';
+
+// Definir la prop con valor predeterminado de 5 segundos
+interface Props {
+    duration?: number;
+}
+
+const { duration = 5 } = Astro.props;
+---
+
+<div
+    id="loading-screen"
+    class="fixed inset-0 z-50 flex items-center justify-center bg-white overflow-hidden"
+    data-duration={duration}
+>
+    <div
+        class="absolute inset-0 grid grid-cols-12 grid-rows-12 z-0 overflow-hidden"
+    >
+        <div class="noise-overlay absolute inset-0 opacity-5"></div>
+        {Array.from({ length: 144 }).map(() => <div class="cell" />)}
+    </div>
+
+    <div class="absolute w-full h-full overflow-hidden">
+        <div class="loader-circle"></div>
+    </div>
+
+    <Container>
+        <div
+            class="relative z-10 flex flex-col items-center justify-center h-screen overflow-hidden"
+        >
+            <div class="loader-wordmark overflow-hidden mb-12">
+                <div class="split-text">
+                    <div class="split-line overflow-hidden">
+                        <div
+                            class="split-word text-black text-7xl font-extrabold tracking-tight char-parent"
+                        >
+                            <span class="char inline-block">l</span>
+                            <span class="char inline-block">e</span>
+                            <span class="char inline-block">s</span>
+                            <span class="char inline-block">t</span>
+                            <span class="char inline-block">r</span>
+                            <span class="char inline-block">a</span>
+                            <span class="char inline-block">d</span>
+                            <span class="char inline-block">a</span>
+                            <span class="char inline-block">v</span>
+                            <span class="char inline-block">a</span>
+                            <span class="char inline-block">z</span>
+                            <span class="char dot inline-block text-lime-500"
+                                >.</span
+                            >
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="loader-progress relative w-64 h-0.5 mb-7">
+                <div
+                    class="progress-track absolute inset-0 w-full h-full bg-black/10"
+                >
+                </div>
+                <div
+                    class="progress-fill absolute inset-0 h-full w-0 bg-lime-500"
+                >
+                </div>
+                <div
+                    class="progress-label text-xs text-black/60 absolute -bottom-6 right-0"
+                >
+                    <span class="percent-counter">0</span><span>%</span>
+                </div>
+            </div>
+
+            <div class="loader-tagline text-center">
+                <div class="overflow-hidden">
+                    <p
+                        class="text-xs uppercase tracking-wide text-black/70 flex space-x-2 chars-parent"
+                    >
+                        <span class="tag-char inline-block overflow-hidden"
+                            >Frontend</span
+                        >
+                        <span class="tag-char inline-block overflow-hidden"
+                            >Developer</span
+                        >
+                        <span
+                            class="tag-char inline-block text-lime-500 overflow-hidden"
+                            >&</span
+                        >
+                        <span class="tag-char inline-block overflow-hidden"
+                            >UI</span
+                        >
+                        <span class="tag-char inline-block overflow-hidden"
+                            >Designer</span
+                        >
+                    </p>
+                </div>
+            </div>
+
+            <div class="shape-container absolute">
+                <div class="shape shape-1"></div>
+                <div class="shape shape-2"></div>
+                <div class="shape shape-3"></div>
+            </div>
+        </div>
+    </Container>
+</div>
+
+<script>
+    import gsap from 'gsap';
+
+    document.addEventListener('DOMContentLoaded', () => {
+        const loadingScreen = document.getElementById('loading-screen');
+        const cells = document.querySelectorAll('.cell');
+        const progressFill = document.querySelector('.progress-fill');
+        const percentCounter = document.querySelector('.percent-counter');
+        const loaderCircle = document.querySelector('.loader-circle');
+        const chars = document.querySelectorAll('.char');
+        const tagChars = document.querySelectorAll('.tag-char');
+        const shapes = document.querySelectorAll('.shape');
+
+        // Obtener la duración de la pantalla de carga del atributo data
+        const loadingDuration = loadingScreen
+            ? parseFloat(loadingScreen.getAttribute('data-duration') || '5')
+            : 5;
+
+        // Create timeline
+        const mainTl = gsap.timeline();
+
+        // Setup initial states
+        gsap.set(cells, { opacity: 0 });
+        gsap.set(chars, { y: '100%', opacity: 0 });
+        gsap.set(tagChars, { y: '100%', opacity: 0 });
+        gsap.set(shapes, {
+            scale: 0,
+            rotation: gsap.utils.wrap([-45, 45]),
+            opacity: 0
+        });
+
+        // Ocultar el header mientras la pantalla de carga está activa
+        const header = document.querySelector('header');
+        if (header) {
+            gsap.set(header, { autoAlpha: 0 });
+        }
+
+        // Animate cells with a delay wave pattern
+        cells.forEach((cell, index) => {
+            const delay = (index % 12) * 0.015 + Math.floor(index / 12) * 0.015;
+            gsap.to(cell, {
+                backgroundColor: () => {
+                    const hue = gsap.utils.random(160, 170);
+                    return `hsla(${hue}, 70%, 50%, ${gsap.utils.random(0.02, 0.08)})`;
+                },
+                delay: delay,
+                duration: 0.65,
+                ease: 'power2.out'
+            });
+        });
+
+        // Animate shapes
+        shapes.forEach((shape, i) => {
+            gsap.to(shape, {
+                scale: 1,
+                opacity: 0.6,
+                rotation: i % 2 === 0 ? '+=60' : '-=60',
+                delay: 0.15 + i * 0.08,
+                duration: 1.1,
+                ease: 'elastic.out(1, 0.5)'
+            });
+        });
+
+        // Animate characters in with a cascade effect
+        mainTl
+            .to(chars, {
+                y: '0%',
+                opacity: 1,
+                duration: 0.5,
+                stagger: 0.03,
+                ease: 'back.out(1.7)',
+                onComplete: () => {
+                    // Add subtle hover animation to chars after they appear
+                    chars.forEach((char, i) => {
+                        gsap.to(char, {
+                            y: gsap.utils.random(-3, 3),
+                            rotation: 0,
+                            duration: 1.8,
+                            repeat: -1,
+                            yoyo: true,
+                            ease: 'sine.inOut',
+                            delay: i * 0.04
+                        });
+                    });
+                }
+            })
+            .to(
+                tagChars,
+                {
+                    y: '0%',
+                    opacity: 1,
+                    duration: 0.35,
+                    stagger: 0.07,
+                    ease: 'power3.out',
+                    onComplete: () => {
+                        // Add subtle scale animation to tag chars
+                        gsap.to(tagChars, {
+                            scale: 1.05,
+                            duration: 1.2,
+                            stagger: {
+                                each: 0.15,
+                                repeat: -1,
+                                yoyo: true
+                            },
+                            ease: 'sine.inOut'
+                        });
+                    }
+                },
+                '-=0.3'
+            )
+            .to(
+                loaderCircle,
+                {
+                    scale: 60,
+                    opacity: 0.1,
+                    duration: 1.6,
+                    ease: 'power2.inOut'
+                },
+                0
+            );
+
+        // Random cell animation during loading
+        const animateCells = () => {
+            cells.forEach((cell, index) => {
+                if (Math.random() > 0.97) {
+                    gsap.to(cell, {
+                        backgroundColor: () => {
+                            const hue = gsap.utils.random(140, 180);
+                            return `hsla(${hue}, 80%, 50%, ${gsap.utils.random(0.05, 0.15)})`;
+                        },
+                        duration: 0.65,
+                        ease: 'power2.inOut'
+                    });
+                }
+            });
+        };
+
+        // Floating shapes animation
+        const animateShapes = () => {
+            shapes.forEach((shape, i) => {
+                gsap.to(shape, {
+                    x: gsap.utils.random(-30, 30),
+                    y: gsap.utils.random(-30, 30),
+                    rotation: i % 2 === 0 ? '+=40' : '-=40',
+                    duration: gsap.utils.random(2.5, 5),
+                    ease: 'sine.inOut',
+                    repeat: -1,
+                    yoyo: true,
+                    delay: i * 0.15
+                });
+            });
+        };
+
+        animateShapes();
+
+        // Progress animation
+        if (progressFill) {
+            gsap.to(progressFill, {
+                width: '100%',
+                duration: loadingDuration, // Usar la duración personalizada
+                ease: 'power2.inOut',
+                onUpdate: function () {
+                    const progress = Math.round(this.progress() * 100);
+                    if (percentCounter)
+                        percentCounter.textContent = progress.toString();
+
+                    // Adjust animation intensity based on progress
+                    if (progress % 5 === 0) animateCells();
+
+                    // Add special text effects at certain points
+                    if (progress === 50) {
+                        // No aplicamos el efecto de zoom al texto principal
+                    }
+
+                    if (progress === 75) {
+                        // Color shift effect
+                        gsap.to(chars, {
+                            color: '#84cc16',
+                            duration: 0.3,
+                            stagger: 0.02,
+                            yoyo: true,
+                            repeat: 1
+                        });
+                    }
+                },
+                onComplete: () => {
+                    // Complete animation sequence
+                    const exitTl = gsap.timeline();
+
+                    // Animate out the characters with a cascade
+                    exitTl
+                        .to(chars, {
+                            y: '-100%',
+                            opacity: 0,
+                            duration: 0.35,
+                            stagger: 0.025,
+                            ease: 'back.in(1.7)'
+                        })
+                        .to(
+                            tagChars,
+                            {
+                                y: '50%',
+                                opacity: 0,
+                                duration: 0.25,
+                                stagger: 0.04,
+                                ease: 'power2.in'
+                            },
+                            '-=0.2'
+                        )
+                        .to(
+                            '.loader-progress, .shape',
+                            {
+                                opacity: 0,
+                                duration: 0.5,
+                                ease: 'power2.in'
+                            },
+                            '-=0.4'
+                        );
+
+                    if (loadingScreen) {
+                        exitTl.to(loadingScreen, {
+                            opacity: 0,
+                            duration: 0.8,
+                            ease: 'power3.inOut',
+                            onComplete: () => {
+                                if (loadingScreen) {
+                                    loadingScreen.style.display = 'none';
+
+                                    // Mostrar el header cuando la pantalla de carga se ha completado
+                                    if (header) {
+                                        gsap.set(header, { autoAlpha: 1 });
+                                    }
+
+                                    // Emitir un evento para notificar que la carga se ha completado
+                                    document.dispatchEvent(
+                                        new CustomEvent('loadingComplete')
+                                    );
+                                }
+                            }
+                        });
+                    }
+                }
+            });
+        }
+    });
+</script>
+
+<style>
+    html,
+    body {
+        overflow-x: hidden;
+        position: relative;
+        width: 100%;
+    }
+
+    #loading-screen {
+        perspective: 1000px;
+        will-change: transform, opacity;
+        overflow-x: hidden;
+        z-index: 9999;
+    }
+
+    .loader-circle {
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        width: 1px;
+        height: 1px;
+        background: linear-gradient(
+            135deg,
+            rgba(132, 204, 22, 0.7),
+            rgba(132, 204, 22, 0.1)
+        );
+        border-radius: 50%;
+        z-index: 0;
+    }
+
+    .noise-overlay {
+        background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 200 200' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noiseFilter'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.65' numOctaves='3' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noiseFilter)'/%3E%3C/svg%3E");
+        pointer-events: none;
+    }
+
+    .grid-cols-12 {
+        grid-template-columns: repeat(12, 1fr);
+    }
+
+    .grid-rows-12 {
+        grid-template-rows: repeat(12, 1fr);
+    }
+
+    .cell {
+        opacity: 0;
+        transition: opacity 0.3s ease;
+    }
+
+    .progress-fill {
+        will-change: width;
+    }
+
+    .split-text,
+    .split-line {
+        display: block;
+        overflow: hidden;
+    }
+
+    .char,
+    .tag-char {
+        will-change: transform;
+        display: inline-block;
+    }
+
+    .char {
+        margin-right: -0.225em;
+    }
+
+    .char.dot {
+        margin-left: 0.05em;
+        margin-right: 0;
+        position: relative;
+        font-size: 1.2em;
+        font-weight: 900;
+        z-index: 2;
+    }
+
+    .shape-container {
+        position: absolute;
+        width: 100%;
+        height: 100%;
+        overflow: hidden;
+        z-index: -1;
+        pointer-events: none;
+    }
+
+    .shape {
+        position: absolute;
+        border-radius: 50%;
+        opacity: 0;
+        will-change: transform, opacity;
+    }
+
+    .shape-1 {
+        width: 80px;
+        height: 80px;
+        background: linear-gradient(
+            45deg,
+            rgba(132, 204, 22, 0.1),
+            rgba(132, 204, 22, 0.3)
+        );
+        top: 25%;
+        left: 20%;
+    }
+
+    .shape-2 {
+        width: 120px;
+        height: 120px;
+        background: linear-gradient(
+            45deg,
+            rgba(132, 204, 22, 0.05),
+            rgba(132, 204, 22, 0.15)
+        );
+        bottom: 30%;
+        right: 20%;
+    }
+
+    .shape-3 {
+        width: 50px;
+        height: 50px;
+        background: rgba(132, 204, 22, 0.2);
+        top: 60%;
+        left: 30%;
+    }
+</style>

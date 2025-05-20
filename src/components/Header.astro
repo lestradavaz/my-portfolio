@@ -1,0 +1,530 @@
+---
+import Container from './Container.astro';
+---
+
+<header>
+    <Container class="grid grid-cols-[1fr_auto_1fr] items-center py-6 relative">
+        <!-- Menú de navegación para escritorio -->
+        <nav class="hidden md:block">
+            <ul class="flex items-center space-x-6">
+                <li>
+                    <a
+                        href="/"
+                        class="text-gray-800 hover:text-lime-500 transition-colors"
+                    >
+                        Inicio
+                    </a>
+                </li>
+                <li>
+                    <a
+                        href="/about"
+                        class="text-gray-800 hover:text-lime-500 transition-colors"
+                    >
+                        Sobre mi
+                    </a>
+                </li>
+                <li>
+                    <a
+                        href="/projects"
+                        class="text-gray-800 hover:text-lime-500 transition-colors"
+                    >
+                        Proyectos
+                    </a>
+                </li>
+                <li>
+                    <a
+                        href="/contact"
+                        class="text-gray-800 hover:text-lime-500 transition-colors"
+                    >
+                        Contacto
+                    </a>
+                </li>
+            </ul>
+        </nav>
+
+        <!-- Botón de hamburguesa para móvil -->
+        <div class="md:hidden flex items-center justify-start">
+            <button
+                id="menu-toggle"
+                class="text-gray-800 hover:text-lime-500 transition-colors focus:outline-none relative z-[100]"
+                aria-label="Toggle menu"
+            >
+                <svg
+                    xmlns="http://www.w3.org/2000/svg"
+                    class="h-6 w-6 hamburger-icon block"
+                    fill="none"
+                    viewBox="0 0 24 24"
+                    stroke="currentColor"
+                >
+                    <path
+                        stroke-linecap="round"
+                        stroke-linejoin="round"
+                        stroke-width="2"
+                        d="M4 6h16M4 12h16M4 18h16"></path>
+                </svg>
+                <svg
+                    xmlns="http://www.w3.org/2000/svg"
+                    class="h-6 w-6 close-icon hidden"
+                    fill="none"
+                    viewBox="0 0 24 24"
+                    stroke="currentColor"
+                >
+                    <path
+                        stroke-linecap="round"
+                        stroke-linejoin="round"
+                        stroke-width="2"
+                        d="M6 18L18 6M6 6l12 12"></path>
+                </svg>
+            </button>
+        </div>
+
+        <a href="/" class="logo-link justify-self-center">
+            <h1 class="text-xl font-[700] text-black logo-text">
+                <span class="letter-container">
+                    <span class="letter">l</span>
+                    <span class="letter">e</span>
+                    <span class="letter">s</span>
+                    <span class="letter">t</span>
+                    <span class="letter">r</span>
+                    <span class="letter">a</span>
+                    <span class="letter">d</span>
+                    <span class="letter">a</span>
+                    <span class="letter">v</span>
+                    <span class="letter">a</span>
+                    <span class="letter">z</span>
+                    <span class="letter text-[1.25em] font-[700] text-lime-500"
+                        >.</span
+                    >
+                </span>
+            </h1>
+        </a>
+
+        <div class="flex items-center space-x-4 justify-end">
+            <button
+                class="bg-lime-500 text-white rounded-full download-btn overflow-hidden"
+            >
+                <a href="/" class="flex items-center px-4 py-2">
+                    <svg
+                        xmlns="http://www.w3.org/2000/svg"
+                        width="24"
+                        height="24"
+                        viewBox="0 0 24 24"
+                        fill="none"
+                        stroke="currentColor"
+                        stroke-width="2"
+                        stroke-linecap="round"
+                        stroke-linejoin="round"
+                        class="w-4 h-4"
+                    >
+                        <path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"
+                        ></path>
+                        <polyline points="7 10 12 15 17 10"></polyline>
+                        <line x1="12" y1="15" x2="12" y2="3"></line>
+                    </svg>
+                </a>
+            </button>
+        </div>
+    </Container>
+
+    <!-- Menú móvil desplegable -->
+    <div
+        id="mobile-menu"
+        class="fixed inset-0 bg-white z-50 transform -translate-y-full transition-transform duration-300 ease-in-out flex items-center justify-center"
+    >
+        <Container class="h-full flex flex-col justify-center items-center">
+            <nav class="text-center">
+                <ul class="space-y-6">
+                    <li class="mobile-menu-item overflow-hidden">
+                        <a
+                            href="/"
+                            class="text-2xl font-medium text-gray-800 hover:text-lime-500 transition-colors inline-block"
+                        >
+                            Inicio
+                        </a>
+                    </li>
+                    <li class="mobile-menu-item overflow-hidden">
+                        <a
+                            href="/about"
+                            class="text-2xl font-medium text-gray-800 hover:text-lime-500 transition-colors inline-block"
+                        >
+                            Sobre mi
+                        </a>
+                    </li>
+                    <li class="mobile-menu-item overflow-hidden">
+                        <a
+                            href="/projects"
+                            class="text-2xl font-medium text-gray-800 hover:text-lime-500 transition-colors inline-block"
+                        >
+                            Proyectos
+                        </a>
+                    </li>
+                    <li class="mobile-menu-item overflow-hidden">
+                        <a
+                            href="/contact"
+                            class="text-2xl font-medium text-gray-800 hover:text-lime-500 transition-colors inline-block"
+                        >
+                            Contacto
+                        </a>
+                    </li>
+                </ul>
+            </nav>
+        </Container>
+    </div>
+</header>
+
+<script>
+    import gsap from 'gsap';
+
+    document.addEventListener('DOMContentLoaded', () => {
+        const logoLink = document.querySelector('.logo-link');
+        const letters = document.querySelectorAll('.letter');
+        const navLinks = document.querySelectorAll(
+            'nav li:not(.mobile-menu-item)'
+        );
+        const downloadBtn = document.querySelector('.download-btn');
+        const menuToggle = document.getElementById('menu-toggle');
+        const mobileMenu = document.getElementById('mobile-menu');
+        const mobileMenuItems = document.querySelectorAll(
+            '.mobile-menu-item a'
+        );
+        const hamburgerIcon = document.querySelector('.hamburger-icon');
+        const closeIcon = document.querySelector('.close-icon');
+
+        let menuOpen = false;
+
+        // Establecer estado inicial para garantizar que la animación funcione
+        gsap.set(navLinks, {
+            autoAlpha: 0,
+            x: -50 // Posición inicial fuera de la vista
+        });
+
+        // Preparar animaciones para el menú móvil
+        gsap.set(mobileMenuItems, {
+            y: 50,
+            opacity: 0
+        });
+
+        // Ocultar inicialmente el botón de hamburguesa para evitar solapamiento con la pantalla de carga
+        if (menuToggle) {
+            gsap.set(menuToggle, {
+                autoAlpha: 0,
+                x: -20 // Posición inicial fuera de la vista para animación de entrada
+            });
+        }
+
+        // Creamos un timeline para las animaciones de entrada
+        const headerEntryTl = gsap.timeline({ paused: true });
+
+        // Configuramos las animaciones con duraciones más cortas
+        headerEntryTl
+            .to(navLinks, {
+                autoAlpha: 1,
+                x: 0, // Mover a su posición original
+                stagger: 0.05,
+                duration: 0.4,
+                ease: 'power2.out',
+                clearProps: 'all' // Limpiar propiedades después de la animación
+            })
+            .to(
+                menuToggle,
+                {
+                    autoAlpha: 1,
+                    x: 0,
+                    duration: 0.3,
+                    ease: 'power2.out'
+                },
+                '<'
+            ) // Animar simultáneamente con los navLinks
+            .from(
+                letters,
+                {
+                    opacity: 0,
+                    scale: 0,
+                    stagger: 0.02,
+                    duration: 0.3,
+                    ease: 'back.out(1.7)'
+                },
+                '-=0.15'
+            )
+            .from(
+                downloadBtn,
+                {
+                    opacity: 0,
+                    x: 30,
+                    duration: 0.3,
+                    ease: 'power2.out'
+                },
+                '-=0.2'
+            );
+
+        // Método más eficiente para detectar cuando termina la pantalla de carga
+        // Usar un observador de mutaciones para detectar cambios en el DOM
+        const loadingScreen = document.getElementById('loading-screen');
+
+        if (loadingScreen) {
+            // Asegurarnos de que el menú está oculto mientras la pantalla de carga es visible
+            if (menuToggle) {
+                menuToggle.style.visibility = 'hidden';
+                menuToggle.style.opacity = '0';
+            }
+
+            // Iniciar inmediatamente si la pantalla de carga ya no está visible
+            if (
+                loadingScreen.style.display === 'none' ||
+                loadingScreen.style.opacity === '0'
+            ) {
+                headerEntryTl.play();
+            } else {
+                // Escuchar el evento personalizado que puede emitir la pantalla de carga
+                document.addEventListener('loadingComplete', () => {
+                    headerEntryTl.play();
+                });
+
+                // Como respaldo, también usar MutationObserver
+                const observer = new MutationObserver((mutations) => {
+                    mutations.forEach((mutation) => {
+                        if (
+                            (mutation.type === 'attributes' &&
+                                (mutation.attributeName === 'style' ||
+                                    mutation.attributeName === 'class')) ||
+                            mutation.type === 'childList'
+                        ) {
+                            if (
+                                loadingScreen.style.display === 'none' ||
+                                loadingScreen.style.opacity === '0' ||
+                                parseFloat(
+                                    getComputedStyle(loadingScreen).opacity
+                                ) === 0
+                            ) {
+                                headerEntryTl.play();
+                                observer.disconnect();
+                            }
+                        }
+                    });
+                });
+
+                observer.observe(loadingScreen, {
+                    attributes: true,
+                    attributeFilter: ['style', 'class'],
+                    childList: true
+                });
+
+                // Y como última opción, verificar periódicamente pero con menor intervalo
+                const checkLoadingScreen = () => {
+                    if (
+                        loadingScreen.style.display === 'none' ||
+                        loadingScreen.style.opacity === '0' ||
+                        parseFloat(getComputedStyle(loadingScreen).opacity) ===
+                            0
+                    ) {
+                        headerEntryTl.play();
+                        return;
+                    }
+                    setTimeout(checkLoadingScreen, 50); // Intervalo reducido a 50ms
+                };
+
+                checkLoadingScreen();
+            }
+        } else {
+            // Si no hay pantalla de carga, ejecutar las animaciones inmediatamente
+            headerEntryTl.play();
+        }
+
+        // Animación de hover para el logo
+        if (logoLink && letters.length) {
+            let logoHoverAnimation: gsap.core.Timeline | null = null;
+
+            logoLink.addEventListener('mouseenter', () => {
+                // Detener cualquier animación en curso
+                gsap.killTweensOf(letters);
+
+                // Crear un nuevo timeline para la animación de hover
+                logoHoverAnimation = gsap.timeline({
+                    repeat: -1, // Repetir infinitamente mientras está en hover
+                    yoyo: false // No hacer yoyo, dejar que la animación complete su ciclo
+                });
+
+                // Animación más lenta y continua para cada letra
+                letters.forEach((letter, index) => {
+                    if (logoHoverAnimation) {
+                        logoHoverAnimation
+                            .to(
+                                letter,
+                                {
+                                    y: -12,
+                                    rotation: gsap.utils.random(-15, 15),
+                                    color: index % 2 === 0 ? '#84cc16' : '#000',
+                                    scale: 1.2,
+                                    duration: 0.4, // Más lenta
+                                    ease: 'power2.out',
+                                    delay: 0
+                                },
+                                index * 0.06
+                            ) // Tiempo escalonado entre letras
+                            .to(
+                                letter,
+                                {
+                                    y: 0,
+                                    rotation: 0,
+                                    color:
+                                        index === letters.length - 1
+                                            ? '#84cc16'
+                                            : '#000',
+                                    scale: 1,
+                                    duration: 0.5, // Más lenta para el regreso
+                                    ease: 'elastic.out(1.2, 0.5)'
+                                },
+                                `>-0.2`
+                            ); // Superposición para un efecto más fluido
+                    }
+                });
+            });
+
+            // Detener la animación al quitar el cursor
+            logoLink.addEventListener('mouseleave', () => {
+                if (logoHoverAnimation) {
+                    logoHoverAnimation.kill(); // Detener completamente la animación
+                    logoHoverAnimation = null;
+
+                    // Animar todas las letras de vuelta a su estado original de forma suave
+                    gsap.to(letters, {
+                        y: 0,
+                        rotation: 0,
+                        scale: 1,
+                        color: function (i) {
+                            return i === letters.length - 1
+                                ? '#84cc16'
+                                : '#000';
+                        },
+                        duration: 0.4,
+                        ease: 'power2.out',
+                        stagger: 0.02
+                    });
+                }
+            });
+        }
+
+        // Manejo del menú móvil
+        if (menuToggle && mobileMenu && hamburgerIcon && closeIcon) {
+            menuToggle.addEventListener('click', () => {
+                menuOpen = !menuOpen;
+
+                if (menuOpen) {
+                    // Mostrar ícono de cierre, ocultar hamburguesa
+                    hamburgerIcon.classList.add('hidden');
+                    hamburgerIcon.classList.remove('block');
+                    closeIcon.classList.remove('hidden');
+                    closeIcon.classList.add('block');
+
+                    // Cambiar el color del ícono cuando el menú está abierto
+                    menuToggle.classList.add('text-lime-500');
+
+                    // Animar apertura del menú - más rápida
+                    gsap.to(mobileMenu, {
+                        y: '0%',
+                        duration: 0.35,
+                        ease: 'power2.out',
+                        onComplete: () => {
+                            // Animar cada elemento del menú - más rápida
+                            gsap.to(mobileMenuItems, {
+                                y: 0,
+                                opacity: 1,
+                                stagger: 0.06,
+                                duration: 0.25,
+                                ease: 'power2.out'
+                            });
+                        }
+                    });
+                } else {
+                    // Mostrar ícono de hamburguesa, ocultar cierre
+                    hamburgerIcon.classList.remove('hidden');
+                    hamburgerIcon.classList.add('block');
+                    closeIcon.classList.add('hidden');
+                    closeIcon.classList.remove('block');
+
+                    // Revertir el color del ícono
+                    menuToggle.classList.remove('text-lime-500');
+
+                    // Animar salida de los elementos del menú - más rápida
+                    gsap.to(mobileMenuItems, {
+                        y: 30,
+                        opacity: 0,
+                        stagger: 0.03,
+                        duration: 0.2,
+                        ease: 'power2.in',
+                        onComplete: () => {
+                            // Cerrar el menú - más rápido
+                            gsap.to(mobileMenu, {
+                                y: '-100%',
+                                duration: 0.3,
+                                ease: 'power2.in'
+                            });
+                        }
+                    });
+                }
+            });
+
+            // Cerrar menú al hacer clic en un enlace
+            mobileMenuItems.forEach((item) => {
+                item.addEventListener('click', () => {
+                    // Simular clic en el botón de menú para cerrarlo
+                    menuToggle.click();
+                });
+            });
+        }
+    });
+</script>
+
+<style>
+    .letter-container {
+        display: inline-block;
+    }
+    .letter {
+        display: inline-block;
+        position: relative;
+        margin-right: -0.25em;
+    }
+
+    /* Estilos adicionales para el menú móvil */
+    #mobile-menu {
+        will-change: transform;
+        overflow: hidden;
+        z-index: 45; /* Un z-index menor que la pantalla de carga pero mayor que el resto del header */
+    }
+
+    #menu-toggle {
+        cursor: pointer;
+        transition: color 0.3s ease;
+        z-index: 46; /* Mayor que el menú móvil pero menor que la pantalla de carga */
+    }
+
+    .hamburger-icon,
+    .close-icon {
+        transition: opacity 0.3s ease;
+    }
+
+    .mobile-menu-item a {
+        position: relative;
+    }
+
+    .mobile-menu-item a::after {
+        content: '';
+        position: absolute;
+        bottom: -5px;
+        left: 0;
+        width: 0;
+        height: 2px;
+        background-color: #84cc16;
+        transition: width 0.3s ease;
+    }
+
+    .mobile-menu-item a:hover::after {
+        width: 100%;
+    }
+
+    /* Aseguramos que el header y sus elementos estén detrás de la pantalla de carga */
+    header {
+        position: relative;
+        z-index: 10; /* Un z-index menor que la pantalla de carga */
+    }
+</style>

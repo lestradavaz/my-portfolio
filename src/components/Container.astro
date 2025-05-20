@@ -1,0 +1,14 @@
+---
+import type { ClassValue } from 'clsx';
+import { cn } from '../utils';
+
+type Props = {
+    class?: ClassValue;
+};
+
+const { class: className }: Props = Astro.props;
+---
+
+<div class={cn('max-w-[min(95%,1400px)] mx-auto w-full', className)}>
+    <slot />
+</div>
