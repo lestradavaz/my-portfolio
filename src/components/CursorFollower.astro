@@ -1,0 +1,153 @@
+<div id="cursor-follower" class="cursor-follower dark:cursor-follower-dark">
+</div>
+
+<script>
+    import gsap from 'gsap';
+
+    document.addEventListener('DOMContentLoaded', () => {
+        const cursor = document.getElementById('cursor-follower');
+
+        if (!cursor) return;
+
+        let mouseX = 0;
+        let mouseY = 0;
+        let cursorX = 0;
+        let cursorY = 0;
+
+        // Configurar estado inicial
+        gsap.set(cursor, {
+            scale: 0,
+            opacity: 0
+        });
+
+        // Seguimiento del mouse con corrección para smooth scroll
+        document.addEventListener('mousemove', (e) => {
+            // Obtener las coordenadas sin compensación de scroll
+            mouseX = e.clientX;
+            mouseY = e.clientY;
+
+            // Si Lenis está activo, no necesitamos corrección adicional
+            // porque clientX/clientY ya son relativos al viewport
+        });
+
+        // Animación suave del cursor con corrección de posición
+        gsap.ticker.add(() => {
+            const targetX = mouseX;
+            const targetY = mouseY;
+
+            cursorX += (targetX - cursorX) * 0.15; // Aumenté la velocidad de seguimiento
+            cursorY += (targetY - cursorY) * 0.15;
+
+            gsap.set(cursor, {
+                x: cursorX - 20, // Centrar el cursor (40px / 2 = 20px)
+                y: cursorY - 20,
+                force3D: true // Mejor rendimiento
+            });
+        });
+
+        // Mostrar cursor cuando entra en la ventana
+        document.addEventListener('mouseenter', () => {
+            gsap.to(cursor, {
+                scale: 1,
+                opacity: 0.6,
+                duration: 0.3,
+                ease: 'power2.out'
+            });
+        });
+
+        // Ocultar cursor cuando sale de la ventana
+        document.addEventListener('mouseleave', () => {
+            gsap.to(cursor, {
+                scale: 0,
+                opacity: 0,
+                duration: 0.3,
+                ease: 'power2.out'
+            });
+        });
+
+        // Efectos en elementos interactivos
+        const interactiveElements = document.querySelectorAll(
+            'a, button, .project-card, .service-card, .pricing-card'
+        );
+
+        interactiveElements.forEach((element) => {
+            element.addEventListener('mouseenter', () => {
+                gsap.to(cursor, {
+                    scale: 1.5,
+                    opacity: 0.8,
+                    duration: 0.3,
+                    ease: 'power2.out'
+                });
+            });
+
+            element.addEventListener('mouseleave', () => {
+                gsap.to(cursor, {
+                    scale: 1,
+                    opacity: 0.6,
+                    duration: 0.3,
+                    ease: 'power2.out'
+                });
+            });
+        });
+
+        // Efecto de click
+        document.addEventListener('mousedown', () => {
+            gsap.to(cursor, {
+                scale: 0.8,
+                duration: 0.1,
+                ease: 'power2.out'
+            });
+        });
+
+        document.addEventListener('mouseup', () => {
+            gsap.to(cursor, {
+                scale: 1,
+                duration: 0.1,
+                ease: 'power2.out'
+            });
+        });
+    });
+</script>
+
+<style>
+    .cursor-follower {
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 40px;
+        height: 40px;
+        border: 2px solid #84cc16;
+        border-radius: 50%;
+        pointer-events: none;
+        z-index: 9999;
+        /* mix-blend-mode: difference; */
+        backdrop-filter: blur(2px);
+        background: rgba(132, 204, 22, 0.1);
+        will-change: transform;
+        transform-origin: center center;
+    }
+
+    /* Dark mode cursor styles */
+    .dark .cursor-follower {
+        border-color: #a3e635;
+        background: rgba(163, 230, 53, 0.15);
+    }
+
+    /* Ocultar en dispositivos móviles */
+    @media (max-width: 768px) {
+        .cursor-follower {
+            display: none;
+        }
+    }
+
+    /* Ocultar cursor por defecto en elementos interactivos */
+    @media (min-width: 769px) {
+        a,
+        button,
+        .project-card,
+        .service-card,
+        .pricing-card {
+            cursor: none;
+        }
+    }
+</style>

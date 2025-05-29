@@ -16,8 +16,37 @@ import 'lenis/dist/lenis.css';
             href="https://api.fontshare.com/v2/css?f[]=satoshi@300,301,400,401,500,501,700,701,900,901&display=swap"
             rel="stylesheet"
         />
+
+        <!-- Script para aplicar tema del sistema automáticamente -->
+        <script is:inline>
+            // Aplicar tema basado en preferencia del sistema
+            (function () {
+                const systemPrefersDark = window.matchMedia(
+                    '(prefers-color-scheme: dark)'
+                ).matches;
+
+                if (systemPrefersDark) {
+                    document.documentElement.classList.add('dark');
+                } else {
+                    document.documentElement.classList.remove('dark');
+                }
+
+                // Escuchar cambios en la preferencia del sistema
+                window
+                    .matchMedia('(prefers-color-scheme: dark)')
+                    .addEventListener('change', (e) => {
+                        if (e.matches) {
+                            document.documentElement.classList.add('dark');
+                        } else {
+                            document.documentElement.classList.remove('dark');
+                        }
+                    });
+            })();
+        </script>
     </head>
-    <body class="">
+    <body
+        class="bg-white dark:bg-gray-900 text-gray-900 dark:text-white transition-colors duration-300"
+    >
         <slot />
 
         <script>

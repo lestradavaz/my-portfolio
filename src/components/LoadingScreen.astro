@@ -11,7 +11,7 @@ const { duration = 5 } = Astro.props;
 
 <div
     id="loading-screen"
-    class="fixed inset-0 z-50 flex items-center justify-center bg-white overflow-hidden"
+    class="fixed inset-0 z-50 flex items-center justify-center bg-white dark:bg-gray-900 overflow-hidden"
     data-duration={duration}
 >
     <div
@@ -33,7 +33,7 @@ const { duration = 5 } = Astro.props;
                 <div class="split-text">
                     <div class="split-line overflow-hidden">
                         <div
-                            class="split-word text-black text-7xl font-extrabold tracking-tight char-parent"
+                            class="split-word text-black dark:text-white text-5xl sm:text-7xl font-extrabold tracking-tight char-parent"
                         >
                             <span class="char inline-block">l</span>
                             <span class="char inline-block">e</span>
@@ -46,7 +46,8 @@ const { duration = 5 } = Astro.props;
                             <span class="char inline-block">v</span>
                             <span class="char inline-block">a</span>
                             <span class="char inline-block">z</span>
-                            <span class="char dot inline-block text-lime-500"
+                            <span
+                                class="char dot inline-block text-lime-500 dark:text-lime-400"
                                 >.</span
                             >
                         </div>
@@ -56,15 +57,15 @@ const { duration = 5 } = Astro.props;
 
             <div class="loader-progress relative w-64 h-0.5 mb-7">
                 <div
-                    class="progress-track absolute inset-0 w-full h-full bg-black/10"
+                    class="progress-track absolute inset-0 w-full h-full bg-black/10 dark:bg-white/10"
                 >
                 </div>
                 <div
-                    class="progress-fill absolute inset-0 h-full w-0 bg-lime-500"
+                    class="progress-fill absolute inset-0 h-full w-0 bg-lime-500 dark:bg-lime-400"
                 >
                 </div>
                 <div
-                    class="progress-label text-xs text-black/60 absolute -bottom-6 right-0"
+                    class="progress-label text-xs text-black/60 dark:text-white/60 absolute -bottom-6 right-0"
                 >
                     <span class="percent-counter">0</span><span>%</span>
                 </div>
@@ -73,7 +74,7 @@ const { duration = 5 } = Astro.props;
             <div class="loader-tagline text-center">
                 <div class="overflow-hidden">
                     <p
-                        class="text-xs uppercase tracking-wide text-black/70 flex space-x-2 chars-parent"
+                        class="text-xs uppercase tracking-wide text-black/70 dark:text-white/70 flex space-x-2 chars-parent"
                     >
                         <span class="tag-char inline-block overflow-hidden"
                             >Frontend</span
@@ -82,7 +83,7 @@ const { duration = 5 } = Astro.props;
                             >Developer</span
                         >
                         <span
-                            class="tag-char inline-block text-lime-500 overflow-hidden"
+                            class="tag-char inline-block text-lime-500 dark:text-lime-400 overflow-hidden"
                             >&</span
                         >
                         <span class="tag-char inline-block overflow-hidden"
@@ -116,6 +117,7 @@ const { duration = 5 } = Astro.props;
         const chars = document.querySelectorAll('.char');
         const tagChars = document.querySelectorAll('.tag-char');
         const shapes = document.querySelectorAll('.shape');
+        const mainContent = document.querySelector('main');
 
         // Obtener la duración de la pantalla de carga del atributo data
         const loadingDuration = loadingScreen
@@ -331,6 +333,13 @@ const { duration = 5 } = Astro.props;
                             onComplete: () => {
                                 if (loadingScreen) {
                                     loadingScreen.style.display = 'none';
+
+                                    // NO hacemos fadeIn del contenido principal aquí
+                                    // Solo emitimos el evento para que las animaciones originales se ejecuten
+                                    if (mainContent) {
+                                        // Removemos el estilo de opacity que oculta el contenido
+                                        mainContent.style.opacity = '';
+                                    }
 
                                     // Mostrar el header cuando la pantalla de carga se ha completado
                                     if (header) {

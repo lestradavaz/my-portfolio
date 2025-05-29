@@ -1,0 +1,310 @@
+---
+import Container from './Container.astro';
+---
+
+<footer
+    class="footer bg-gray-100 dark:bg-gray-800 text-gray-900 dark:text-white py-16 relative overflow-hidden"
+>
+    <!-- Elementos decorativos -->
+    <div
+        class="absolute top-0 left-0 w-full h-full bg-gradient-to-br from-lime-500/5 dark:from-lime-600/5 to-transparent pointer-events-none"
+    >
+    </div>
+
+    <Container>
+        <div class="footer-content grid lg:grid-cols-4 md:grid-cols-2 gap-12">
+            <!-- Branding -->
+            <div class="footer-brand lg:col-span-2">
+                <div class="brand-content mb-8">
+                    <h2
+                        class="text-3xl font-bold text-gray-900 dark:text-white mb-4"
+                    >
+                        lestradavaz<span
+                            class="text-lime-500 dark:text-lime-400">.</span
+                        >
+                    </h2>
+                    <p
+                        class="text-gray-600 dark:text-gray-300 leading-relaxed max-w-md"
+                    >
+                        Creando experiencias digitales extraordinarias que
+                        convierten visitantes en clientes y posicionan marcas
+                        como líderes en su industria.
+                    </p>
+                </div>
+
+                <div class="footer-social">
+                    <h3
+                        class="text-sm font-semibold text-gray-500 dark:text-gray-400 uppercase tracking-wider mb-4"
+                    >
+                        Sígueme
+                    </h3>
+                    <div class="social-links flex space-x-4">
+                        <a
+                            href="https://linkedin.com/in/lestradavaz"
+                            target="_blank"
+                            class="social-link w-10 h-10 bg-gray-200 dark:bg-gray-700 hover:bg-lime-500 dark:hover:bg-lime-600 rounded-full flex items-center justify-center transition-all duration-300 group"
+                        >
+                            <svg
+                                class="w-5 h-5 text-gray-600 dark:text-gray-300 group-hover:text-white transition-colors duration-300"
+                                fill="currentColor"
+                                viewBox="0 0 24 24"
+                            >
+                                <path
+                                    d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433c-1.144 0-2.063-.926-2.063-2.065 0-1.138.92-2.063 2.063-2.063 1.14 0 2.064.925 2.064 2.063 0 1.139-.925 2.065-2.064 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z"
+                                ></path>
+                            </svg>
+                        </a>
+                        <a
+                            href="https://instagram.com/lestradavaz"
+                            target="_blank"
+                            class="social-link w-10 h-10 bg-gray-200 dark:bg-gray-700 hover:bg-lime-500 dark:hover:bg-lime-600 rounded-full flex items-center justify-center transition-all duration-300 group"
+                        >
+                            <svg
+                                class="w-5 h-5 text-gray-600 dark:text-gray-300 group-hover:text-white transition-colors duration-300"
+                                fill="currentColor"
+                                viewBox="0 0 24 24"
+                            >
+                                <path
+                                    d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zm0-2.163c-3.259 0-3.667.014-4.947.072-4.358.2-6.78 2.618-6.98 6.98-.059 1.281-.073 1.689-.073 4.948 0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98 1.281.058 1.689.072 4.948.072 3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98-1.281-.059-1.69-.073-4.949-.073zm0 5.838c-3.403 0-6.162 2.759-6.162 6.162s2.759 6.163 6.162 6.163 6.162-2.759 6.162-6.163c0-3.403-2.759-6.162-6.162-6.162zm0 10.162c-2.209 0-4-1.79-4-4 0-2.209 1.791-4 4-4s4 1.791 4 4c0 2.21-1.791 4-4 4zm6.406-11.845c-.796 0-1.441.645-1.441 1.44s.645 1.44 1.441 1.44c.795 0 1.439-.645 1.439-1.44s-.644-1.44-1.439-1.44z"
+                                ></path>
+                            </svg>
+                        </a>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Enlaces -->
+            <div class="footer-links">
+                <h3
+                    class="text-sm font-semibold text-gray-500 dark:text-gray-400 uppercase tracking-wider mb-6"
+                >
+                    Navegación
+                </h3>
+                <ul class="space-y-3">
+                    <li>
+                        <a
+                            href="#about"
+                            class="text-gray-600 dark:text-gray-300 hover:text-lime-500 dark:hover:text-lime-400 transition-colors duration-300"
+                        >
+                            Sobre Mí
+                        </a>
+                    </li>
+                    <li>
+                        <a
+                            href="#services"
+                            class="text-gray-600 dark:text-gray-300 hover:text-lime-500 dark:hover:text-lime-400 transition-colors duration-300"
+                        >
+                            Servicios
+                        </a>
+                    </li>
+                    <li>
+                        <a
+                            href="#portfolio"
+                            class="text-gray-600 dark:text-gray-300 hover:text-lime-500 dark:hover:text-lime-400 transition-colors duration-300"
+                        >
+                            Portfolio
+                        </a>
+                    </li>
+                    <li>
+                        <a
+                            href="#pricing"
+                            class="text-gray-600 dark:text-gray-300 hover:text-lime-500 dark:hover:text-lime-400 transition-colors duration-300"
+                        >
+                            Precios
+                        </a>
+                    </li>
+                    <li>
+                        <a
+                            href="#contact"
+                            class="text-gray-600 dark:text-gray-300 hover:text-lime-500 dark:hover:text-lime-400 transition-colors duration-300"
+                        >
+                            Contacto
+                        </a>
+                    </li>
+                </ul>
+            </div>
+
+            <!-- Contacto rápido -->
+            <div class="footer-contact">
+                <h3
+                    class="text-sm font-semibold text-gray-500 dark:text-gray-400 uppercase tracking-wider mb-6"
+                >
+                    Contacto
+                </h3>
+                <div class="contact-info space-y-3">
+                    <a
+                        href="mailto:contacto@lestradavaz.com"
+                        class="contact-item flex items-center text-gray-600 dark:text-gray-300 hover:text-lime-500 dark:hover:text-lime-400 transition-colors duration-300"
+                    >
+                        <svg
+                            class="w-4 h-4 mr-3 flex-shrink-0"
+                            fill="none"
+                            stroke="currentColor"
+                            viewBox="0 0 24 24"
+                        >
+                            <path
+                                stroke-linecap="round"
+                                stroke-linejoin="round"
+                                stroke-width="2"
+                                d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z"
+                            ></path>
+                        </svg>
+                        contacto@lestradavaz.com
+                    </a>
+                    <div
+                        class="contact-item flex items-center text-gray-600 dark:text-gray-300"
+                    >
+                        <svg
+                            class="w-4 h-4 mr-3 flex-shrink-0"
+                            fill="none"
+                            stroke="currentColor"
+                            viewBox="0 0 24 24"
+                        >
+                            <path
+                                stroke-linecap="round"
+                                stroke-linejoin="round"
+                                stroke-width="2"
+                                d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z"
+                            ></path>
+                            <path
+                                stroke-linecap="round"
+                                stroke-linejoin="round"
+                                stroke-width="2"
+                                d="M15 11a3 3 0 11-6 0 3 3 0 016 0z"></path>
+                        </svg>
+                        México
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Divider -->
+        <div
+            class="footer-divider border-t border-gray-300 dark:border-gray-600 my-12"
+        >
+        </div>
+
+        <!-- Copyright -->
+        <div class="footer-bottom text-center">
+            <p class="text-gray-500 dark:text-gray-400 text-sm">
+                © {new Date().getFullYear()} lestradavaz. Todos los derechos reservados.
+                Hecho con ❤️ en México.
+            </p>
+        </div>
+    </Container>
+</footer>
+
+<script>
+    import gsap from 'gsap';
+    import { ScrollTrigger } from 'gsap/ScrollTrigger';
+
+    gsap.registerPlugin(ScrollTrigger);
+
+    document.addEventListener('DOMContentLoaded', () => {
+        // Elements
+        const footerSections = document.querySelectorAll('.footer-section');
+        const socialLinks = document.querySelectorAll('footer .social-link');
+        const footerLinks = document.querySelectorAll('.footer-link');
+        const copyright = document.querySelector('.copyright');
+
+        // Set initial states
+        gsap.set(footerSections, { y: 50, opacity: 0 });
+        gsap.set(socialLinks, { scale: 0, rotation: 180 });
+        gsap.set(copyright, { y: 20, opacity: 0 });
+
+        // Animación de entrada del footer
+        gsap.to(footerSections, {
+            opacity: 1,
+            y: 0,
+            duration: 0.8,
+            stagger: 0.1,
+            ease: 'power2.out',
+            scrollTrigger: {
+                trigger: 'footer',
+                start: 'top 90%',
+                toggleActions: 'play none none none'
+            }
+        });
+
+        // Animación de los social links
+        gsap.to(socialLinks, {
+            scale: 1,
+            rotation: 0,
+            duration: 0.6,
+            stagger: 0.1,
+            ease: 'back.out(1.7)',
+            scrollTrigger: {
+                trigger: 'footer',
+                start: 'top 85%',
+                toggleActions: 'play none none none'
+            }
+        });
+
+        // Animación del copyright
+        gsap.to(copyright, {
+            y: 0,
+            opacity: 1,
+            duration: 0.5,
+            ease: 'power2.out',
+            scrollTrigger: {
+                trigger: 'footer',
+                start: 'top 80%',
+                toggleActions: 'play none none none'
+            }
+        });
+
+        // Hover animations for footer links
+        footerLinks.forEach((link) => {
+            link.addEventListener('mouseenter', () => {
+                gsap.to(link, {
+                    x: 5,
+                    duration: 0.3,
+                    ease: 'power2.out'
+                });
+            });
+
+            link.addEventListener('mouseleave', () => {
+                gsap.to(link, {
+                    x: 0,
+                    duration: 0.3,
+                    ease: 'power2.out'
+                });
+            });
+        });
+
+        // Scroll to top on logo click
+        const footerLogo = document.querySelector('.footer-logo');
+        if (footerLogo) {
+            footerLogo.addEventListener('click', () => {
+                gsap.to(window, {
+                    scrollTo: { y: 0 },
+                    duration: 1,
+                    ease: 'power2.inOut'
+                });
+            });
+        }
+    });
+</script>
+
+<style>
+    .footer-section {
+        will-change: transform;
+    }
+
+    .footer-link {
+        will-change: transform;
+    }
+
+    .social-link {
+        will-change: transform;
+    }
+
+    .footer-logo {
+        cursor: pointer;
+    }
+
+    .footer-logo:hover {
+        transform: translateY(-2px);
+        transition: transform 0.3s ease;
+    }
+</style>

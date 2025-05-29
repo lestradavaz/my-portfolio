@@ -1,0 +1,431 @@
+---
+import Container from './Container.astro';
+import Button from './Button.astro';
+---
+
+<section
+    id="services"
+    class="services py-32 bg-gray-50 dark:bg-gray-800/50 relative"
+>
+    <div
+        class="absolute inset-0 bg-gradient-to-br from-lime-50/50 dark:from-lime-900/20 via-transparent to-transparent pointer-events-none"
+    >
+    </div>
+
+    <Container>
+        <div class="text-center mb-20">
+            <div class="section-label mb-8 overflow-hidden">
+                <span class="inline-block text-label"> Servicios </span>
+            </div>
+
+            <div class="services-heading mb-8">
+                <h2 class="heading-display">
+                    <span class="block heading-line overflow-hidden">
+                        <span class="inline-block">Servicios</span>
+                    </span>
+                    <span class="block heading-line overflow-hidden">
+                        <span
+                            class="inline-block text-lime-500 dark:text-lime-400"
+                            >Profesionales</span
+                        >
+                    </span>
+                </h2>
+            </div>
+
+            <div class="services-description overflow-hidden">
+                <p class="text-subtitle max-w-3xl mx-auto">
+                    Ofrezco soluciones integrales de desarrollo web y diseño
+                    digital que impulsan el crecimiento de tu negocio.
+                </p>
+            </div>
+        </div>
+
+        <div class="services-grid grid md:grid-cols-2 lg:grid-cols-3 gap-8">
+            <div
+                class="service-card group relative p-8 bg-white dark:bg-gray-900 rounded-3xl border border-gray-100 dark:border-gray-700 transition-all duration-500"
+            >
+                <div class="service-icon mb-6">
+                    <div
+                        class="w-16 h-16 bg-gradient-to-br from-lime-400 dark:from-lime-500 to-lime-600 dark:to-lime-700 rounded-2xl flex items-center justify-center"
+                    >
+                        <svg
+                            class="w-8 h-8 text-white"
+                            fill="none"
+                            stroke="currentColor"
+                            viewBox="0 0 24 24"
+                        >
+                            <path
+                                stroke-linecap="round"
+                                stroke-linejoin="round"
+                                stroke-width="2"
+                                d="M9.75 17L9 20l-1 1h8l-1-1-.75-3M3 13h18M5 17h14a2 2 0 002-2V5a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z"
+                            ></path>
+                        </svg>
+                    </div>
+                </div>
+
+                <h3
+                    class="text-2xl font-semibold text-gray-900 dark:text-white mb-4"
+                >
+                    Desarrollo Web
+                </h3>
+                <p
+                    class="text-gray-600 dark:text-gray-400 mb-6 leading-relaxed"
+                >
+                    Sitios web modernos, rápidos y optimizados que generan
+                    resultados reales para tu negocio.
+                </p>
+
+                <ul class="space-y-3 mb-6">
+                    <li
+                        class="flex items-center text-sm text-gray-600 dark:text-gray-400"
+                    >
+                        <svg
+                            class="w-4 h-4 text-lime-500 dark:text-lime-400 mr-3 flex-shrink-0"
+                            fill="currentColor"
+                            viewBox="0 0 20 20"
+                        >
+                            <path
+                                fill-rule="evenodd"
+                                d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z"
+                                clip-rule="evenodd"></path>
+                        </svg>
+                        Diseño responsivo
+                    </li>
+                    <li
+                        class="flex items-center text-sm text-gray-600 dark:text-gray-400"
+                    >
+                        <svg
+                            class="w-4 h-4 text-lime-500 dark:text-lime-400 mr-3 flex-shrink-0"
+                            fill="currentColor"
+                            viewBox="0 0 20 20"
+                        >
+                            <path
+                                fill-rule="evenodd"
+                                d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z"
+                                clip-rule="evenodd"></path>
+                        </svg>
+                        Optimización SEO
+                    </li>
+                    <li
+                        class="flex items-center text-sm text-gray-600 dark:text-gray-400"
+                    >
+                        <svg
+                            class="w-4 h-4 text-lime-500 dark:text-lime-400 mr-3 flex-shrink-0"
+                            fill="currentColor"
+                            viewBox="0 0 20 20"
+                        >
+                            <path
+                                fill-rule="evenodd"
+                                d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z"
+                                clip-rule="evenodd"></path>
+                        </svg>
+                        Integración de APIs
+                    </li>
+                </ul>
+
+                <Button href="#contact" variant="ghost" size="sm" class="group">
+                    <span>Más información</span>
+                    <svg
+                        class="ml-2 w-4 h-4 group-hover:translate-x-1 transition-transform"
+                        fill="none"
+                        stroke="currentColor"
+                        viewBox="0 0 24 24"
+                    >
+                        <path
+                            stroke-linecap="round"
+                            stroke-linejoin="round"
+                            stroke-width="2"
+                            d="M17 8l4 4m0 0l-4 4m4-4H3"></path>
+                    </svg>
+                </Button>
+            </div>
+
+            <div
+                class="service-card group relative p-8 bg-white dark:bg-gray-900 rounded-3xl border border-gray-100 dark:border-gray-700 transition-all duration-500"
+            >
+                <div class="service-icon mb-6">
+                    <div
+                        class="w-16 h-16 bg-gradient-to-br from-blue-400 dark:from-blue-500 to-blue-600 dark:to-blue-700 rounded-2xl flex items-center justify-center"
+                    >
+                        <svg
+                            class="w-8 h-8 text-white"
+                            fill="none"
+                            stroke="currentColor"
+                            viewBox="0 0 24 24"
+                        >
+                            <path
+                                stroke-linecap="round"
+                                stroke-linejoin="round"
+                                stroke-width="2"
+                                d="M7 21a4 4 0 01-4-4V5a2 2 0 012-2h4a2 2 0 012 2v12a4 4 0 01-4 4zM21 5a2 2 0 00-2-2h-4a2 2 0 00-2 2v12a4 4 0 004 4h4a2 2 0 002-2V5z"
+                            ></path>
+                        </svg>
+                    </div>
+                </div>
+
+                <h3
+                    class="text-2xl font-semibold text-gray-900 dark:text-white mb-4"
+                >
+                    Diseño UI/UX
+                </h3>
+                <p
+                    class="text-gray-600 dark:text-gray-400 mb-6 leading-relaxed"
+                >
+                    Interfaces intuitivas y atractivas que mejoran la
+                    experiencia del usuario y aumentan las conversiones.
+                </p>
+
+                <ul class="space-y-3 mb-6">
+                    <li
+                        class="flex items-center text-sm text-gray-600 dark:text-gray-400"
+                    >
+                        <svg
+                            class="w-4 h-4 text-lime-500 dark:text-lime-400 mr-3 flex-shrink-0"
+                            fill="currentColor"
+                            viewBox="0 0 20 20"
+                        >
+                            <path
+                                fill-rule="evenodd"
+                                d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z"
+                                clip-rule="evenodd"></path>
+                        </svg>
+                        Prototipado interactivo
+                    </li>
+                    <li
+                        class="flex items-center text-sm text-gray-600 dark:text-gray-400"
+                    >
+                        <svg
+                            class="w-4 h-4 text-lime-500 dark:text-lime-400 mr-3 flex-shrink-0"
+                            fill="currentColor"
+                            viewBox="0 0 20 20"
+                        >
+                            <path
+                                fill-rule="evenodd"
+                                d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z"
+                                clip-rule="evenodd"></path>
+                        </svg>
+                        Sistemas de diseño
+                    </li>
+                    <li
+                        class="flex items-center text-sm text-gray-600 dark:text-gray-400"
+                    >
+                        <svg
+                            class="w-4 h-4 text-lime-500 dark:text-lime-400 mr-3 flex-shrink-0"
+                            fill="currentColor"
+                            viewBox="0 0 20 20"
+                        >
+                            <path
+                                fill-rule="evenodd"
+                                d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z"
+                                clip-rule="evenodd"></path>
+                        </svg>
+                        Test de usabilidad
+                    </li>
+                </ul>
+
+                <Button href="#contact" variant="ghost" size="sm" class="group">
+                    <span>Más información</span>
+                    <svg
+                        class="ml-2 w-4 h-4 group-hover:translate-x-1 transition-transform"
+                        fill="none"
+                        stroke="currentColor"
+                        viewBox="0 0 24 24"
+                    >
+                        <path
+                            stroke-linecap="round"
+                            stroke-linejoin="round"
+                            stroke-width="2"
+                            d="M17 8l4 4m0 0l-4 4m4-4H3"></path>
+                    </svg>
+                </Button>
+            </div>
+
+            <div
+                class="service-card group relative p-8 bg-white dark:bg-gray-900 rounded-3xl border border-gray-100 dark:border-gray-700 transition-all duration-500 md:col-span-2 lg:col-span-1"
+            >
+                <div class="service-icon mb-6">
+                    <div
+                        class="w-16 h-16 bg-gradient-to-br from-purple-400 dark:from-purple-500 to-purple-600 dark:to-purple-700 rounded-2xl flex items-center justify-center"
+                    >
+                        <svg
+                            class="w-8 h-8 text-white"
+                            fill="none"
+                            stroke="currentColor"
+                            viewBox="0 0 24 24"
+                        >
+                            <path
+                                stroke-linecap="round"
+                                stroke-linejoin="round"
+                                stroke-width="2"
+                                d="M13 10V3L4 14h7v7l9-11h-7z"></path>
+                        </svg>
+                    </div>
+                </div>
+
+                <h3
+                    class="text-2xl font-semibold text-gray-900 dark:text-white mb-4"
+                >
+                    Optimización & Performance
+                </h3>
+                <p
+                    class="text-gray-600 dark:text-gray-400 mb-6 leading-relaxed"
+                >
+                    Mejora la velocidad y rendimiento de tu sitio web para mejor
+                    SEO y experiencia de usuario.
+                </p>
+
+                <ul class="space-y-3 mb-6">
+                    <li
+                        class="flex items-center text-sm text-gray-600 dark:text-gray-400"
+                    >
+                        <svg
+                            class="w-4 h-4 text-lime-500 dark:text-lime-400 mr-3 flex-shrink-0"
+                            fill="currentColor"
+                            viewBox="0 0 20 20"
+                        >
+                            <path
+                                fill-rule="evenodd"
+                                d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z"
+                                clip-rule="evenodd"></path>
+                        </svg>
+                        Auditoría de velocidad
+                    </li>
+                    <li
+                        class="flex items-center text-sm text-gray-600 dark:text-gray-400"
+                    >
+                        <svg
+                            class="w-4 h-4 text-lime-500 dark:text-lime-400 mr-3 flex-shrink-0"
+                            fill="currentColor"
+                            viewBox="0 0 20 20"
+                        >
+                            <path
+                                fill-rule="evenodd"
+                                d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z"
+                                clip-rule="evenodd"></path>
+                        </svg>
+                        Optimización Core Web Vitals
+                    </li>
+                    <li
+                        class="flex items-center text-sm text-gray-600 dark:text-gray-400"
+                    >
+                        <svg
+                            class="w-4 h-4 text-lime-500 dark:text-lime-400 mr-3 flex-shrink-0"
+                            fill="currentColor"
+                            viewBox="0 0 20 20"
+                        >
+                            <path
+                                fill-rule="evenodd"
+                                d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z"
+                                clip-rule="evenodd"></path>
+                        </svg>
+                        Mejora de conversiones
+                    </li>
+                </ul>
+
+                <Button href="#contact" variant="ghost" size="sm" class="group">
+                    <span>Más información</span>
+                    <svg
+                        class="ml-2 w-4 h-4 group-hover:translate-x-1 transition-transform"
+                        fill="none"
+                        stroke="currentColor"
+                        viewBox="0 0 24 24"
+                    >
+                        <path
+                            stroke-linecap="round"
+                            stroke-linejoin="round"
+                            stroke-width="2"
+                            d="M17 8l4 4m0 0l-4 4m4-4H3"></path>
+                    </svg>
+                </Button>
+            </div>
+        </div>
+    </Container>
+</section>
+
+<script>
+    import gsap from 'gsap';
+    import { ScrollTrigger } from 'gsap/ScrollTrigger';
+
+    gsap.registerPlugin(ScrollTrigger);
+
+    document.addEventListener('DOMContentLoaded', () => {
+        // Elementos de la sección Services con selectores correctos
+        const sectionLabel = document.querySelector(
+            '.services .section-label span'
+        );
+        const headingLines = document.querySelectorAll(
+            '.services .heading-line span'
+        );
+        const subtitle = document.querySelector('.services-subtitle p');
+        const serviceCards = document.querySelectorAll('.service-card');
+
+        // Configurar estado inicial
+        gsap.set([sectionLabel, subtitle], {
+            opacity: 0,
+            y: 50
+        });
+        gsap.set(headingLines, { y: '100%' });
+        gsap.set(serviceCards, {
+            opacity: 0,
+            y: 30
+        });
+
+        // Timeline de entrada
+        const servicesTl = gsap.timeline({
+            scrollTrigger: {
+                trigger: '.services-heading',
+                start: 'top 70%',
+                toggleActions: 'play none none none'
+            }
+        });
+
+        servicesTl
+            .to(sectionLabel, {
+                opacity: 1,
+                y: 0,
+                duration: 0.6,
+                ease: 'power2.out'
+            })
+            .to(
+                headingLines,
+                {
+                    y: '0%',
+                    duration: 1,
+                    stagger: 0.1,
+                    ease: 'power3.out'
+                },
+                '-=0.3'
+            )
+            .to(
+                subtitle,
+                { opacity: 1, y: 0, duration: 0.6, ease: 'power2.out' },
+                '-=0.4'
+            );
+
+        // Animación de las tarjetas de servicios
+        gsap.to(serviceCards, {
+            opacity: 1,
+            y: 0,
+            duration: 0.6,
+            stagger: 0.15,
+            ease: 'power2.out',
+            scrollTrigger: {
+                trigger: '.services-grid',
+                start: 'top 80%',
+                toggleActions: 'play none none none'
+            }
+        });
+    });
+</script>
+
+<style>
+    .heading-line {
+        overflow: hidden;
+        display: block;
+    }
+
+    .service-card {
+        backdrop-filter: blur(10px);
+    }
+</style>

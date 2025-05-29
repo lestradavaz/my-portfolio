@@ -1,0 +1,317 @@
+---
+import Container from './Container.astro';
+---
+
+<section class="testimonials py-20 bg-gray-50 relative overflow-hidden">
+    <div
+        class="absolute top-0 right-0 w-1/2 h-full bg-gradient-to-l from-lime-50 to-transparent opacity-30"
+    >
+    </div>
+
+    <Container>
+        <div class="text-center mb-16">
+            <div class="section-label mb-6">
+                <span
+                    class="inline-block text-sm font-semibold text-lime-500 uppercase tracking-wider"
+                >
+                    Testimonios
+                </span>
+            </div>
+            <div class="testimonials-heading mb-8">
+                <h2
+                    class="text-4xl md:text-6xl font-bold text-gray-900 leading-tight"
+                >
+                    <span class="block">Lo Que Dicen</span>
+                    <span class="block text-lime-500">Mis Clientes</span>
+                </h2>
+            </div>
+            <div class="testimonials-subtitle">
+                <p class="text-xl text-gray-600 max-w-2xl mx-auto">
+                    La satisfacción de mis clientes es la mejor medida del
+                    éxito. Aquí algunas experiencias de quienes han confiado en
+                    mi trabajo.
+                </p>
+            </div>
+        </div>
+
+        <div
+            class="testimonials-grid grid md:grid-cols-2 lg:grid-cols-3 gap-8 mb-16"
+        >
+            <div
+                class="testimonial-card bg-white rounded-2xl p-8 shadow-lg border border-gray-100 relative"
+            >
+                <div
+                    class="quote-icon absolute top-6 left-6 w-8 h-8 text-lime-500 opacity-20"
+                >
+                    <svg fill="currentColor" viewBox="0 0 24 24">
+                        <path
+                            d="M14.017 21v-7.391c0-5.704 3.731-9.57 8.983-10.609l.995 2.151c-2.432.917-3.995 3.638-3.995 5.849h4v10h-9.983zm-14.017 0v-7.391c0-5.704 3.748-9.57 9-10.609l.996 2.151c-2.433.917-3.996 3.638-3.996 5.849h4v10h-10z"
+                        ></path>
+                    </svg>
+                </div>
+
+                <div class="testimonial-content mt-4">
+                    <div class="stars flex mb-4">
+                        <span class="text-yellow-400">★★★★★</span>
+                    </div>
+
+                    <p class="text-gray-600 mb-6 leading-relaxed">
+                        "Trabajar con él fue una experiencia excepcional.
+                        Entendió perfectamente nuestra visión y la transformó en
+                        un sitio web que superó todas nuestras expectativas. El
+                        resultado final no solo es visualmente impresionante,
+                        sino también funcional y optimizado."
+                    </p>
+
+                    <div class="testimonial-author flex items-center">
+                        <div
+                            class="author-avatar w-12 h-12 bg-gradient-to-br from-blue-400 to-blue-600 rounded-full flex items-center justify-center text-white font-semibold mr-4"
+                        >
+                            MC
+                        </div>
+                        <div>
+                            <h4 class="font-semibold text-gray-900">
+                                María Carrillo
+                            </h4>
+                            <p class="text-sm text-gray-500">
+                                CEO, TechStart Solutions
+                            </p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div
+                class="testimonial-card bg-white rounded-2xl p-8 shadow-lg border border-gray-100 relative"
+            >
+                <div
+                    class="quote-icon absolute top-6 left-6 w-8 h-8 text-lime-500 opacity-20"
+                >
+                    <svg fill="currentColor" viewBox="0 0 24 24">
+                        <path
+                            d="M14.017 21v-7.391c0-5.704 3.731-9.57 8.983-10.609l.995 2.151c-2.432.917-3.995 3.638-3.995 5.849h4v10h-9.983zm-14.017 0v-7.391c0-5.704 3.748-9.57 9-10.609l.996 2.151c-2.433.917-3.996 3.638-3.996 5.849h4v10h-10z"
+                        ></path>
+                    </svg>
+                </div>
+
+                <div class="testimonial-content mt-4">
+                    <div class="stars flex mb-4">
+                        <span class="text-yellow-400">★★★★★</span>
+                    </div>
+
+                    <p class="text-gray-600 mb-6 leading-relaxed">
+                        "La tienda online que desarrolló para nosotros ha
+                        revolucionado nuestro negocio. Las ventas se
+                        incrementaron un 300% desde el lanzamiento. Su atención
+                        al detalle y enfoque en la experiencia del usuario
+                        realmente marcaron la diferencia."
+                    </p>
+
+                    <div class="testimonial-author flex items-center">
+                        <div
+                            class="author-avatar w-12 h-12 bg-gradient-to-br from-purple-400 to-purple-600 rounded-full flex items-center justify-center text-white font-semibold mr-4"
+                        >
+                            AR
+                        </div>
+                        <div>
+                            <h4 class="font-semibold text-gray-900">
+                                Alejandro Ruiz
+                            </h4>
+                            <p class="text-sm text-gray-500">
+                                Fundador, StyleCorp
+                            </p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div
+                class="testimonial-card bg-white rounded-2xl p-8 shadow-lg border border-gray-100 relative"
+            >
+                <div
+                    class="quote-icon absolute top-6 left-6 w-8 h-8 text-lime-500 opacity-20"
+                >
+                    <svg fill="currentColor" viewBox="0 0 24 24">
+                        <path
+                            d="M14.017 21v-7.391c0-5.704 3.731-9.57 8.983-10.609l.995 2.151c-2.432.917-3.995 3.638-3.995 5.849h4v10h-9.983zm-14.017 0v-7.391c0-5.704 3.748-9.57 9-10.609l.996 2.151c-2.433.917-3.996 3.638-3.996 5.849h4v10h-10z"
+                        ></path>
+                    </svg>
+                </div>
+
+                <div class="testimonial-content mt-4">
+                    <div class="stars flex mb-4">
+                        <span class="text-yellow-400">★★★★★</span>
+                    </div>
+
+                    <p class="text-gray-600 mb-6 leading-relaxed">
+                        "Profesional, creativo y extremadamente confiable. Nos
+                        entregó el proyecto antes de tiempo y con una calidad
+                        que excedió nuestras expectativas. Sin duda volveremos a
+                        trabajar con él en futuros proyectos."
+                    </p>
+
+                    <div class="testimonial-author flex items-center">
+                        <div
+                            class="author-avatar w-12 h-12 bg-gradient-to-br from-green-400 to-green-600 rounded-full flex items-center justify-center text-white font-semibold mr-4"
+                        >
+                            LM
+                        </div>
+                        <div>
+                            <h4 class="font-semibold text-gray-900">
+                                Luis Mendoza
+                            </h4>
+                            <p class="text-sm text-gray-500">
+                                Director, InnovaLab
+                            </p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="clients-section text-center">
+            <h3 class="text-xl font-semibold text-gray-900 mb-8">
+                Empresas que han confiado en mi trabajo
+            </h3>
+            <div
+                class="clients-logos grid grid-cols-2 md:grid-cols-4 gap-8 items-center opacity-60"
+            >
+                <div
+                    class="client-logo bg-gray-100 rounded-lg p-6 flex items-center justify-center h-20"
+                >
+                    <span class="text-gray-600 font-semibold">TechStart</span>
+                </div>
+                <div
+                    class="client-logo bg-gray-100 rounded-lg p-6 flex items-center justify-center h-20"
+                >
+                    <span class="text-gray-600 font-semibold">StyleCorp</span>
+                </div>
+                <div
+                    class="client-logo bg-gray-100 rounded-lg p-6 flex items-center justify-center h-20"
+                >
+                    <span class="text-gray-600 font-semibold">InnovaLab</span>
+                </div>
+                <div
+                    class="client-logo bg-gray-100 rounded-lg p-6 flex items-center justify-center h-20"
+                >
+                    <span class="text-gray-600 font-semibold">DigitalFlow</span>
+                </div>
+            </div>
+        </div>
+    </Container>
+</section>
+
+<script>
+    import gsap from 'gsap';
+    import { ScrollTrigger } from 'gsap/ScrollTrigger';
+
+    gsap.registerPlugin(ScrollTrigger);
+
+    document.addEventListener('DOMContentLoaded', () => {
+        const sectionLabel = document.querySelector(
+            '.testimonials .section-label span'
+        );
+        const headingSpans = document.querySelectorAll(
+            '.testimonials-heading span'
+        );
+        const subtitle = document.querySelector('.testimonials-subtitle p');
+        const testimonialCards = document.querySelectorAll('.testimonial-card');
+        const clientsSection = document.querySelector('.clients-section');
+
+        gsap.set([sectionLabel, subtitle, clientsSection], {
+            opacity: 0,
+            y: 30
+        });
+        gsap.set(headingSpans, { opacity: 0, y: 50 });
+        gsap.set(testimonialCards, { opacity: 0, y: 50 });
+
+        const testimonialsTl = gsap.timeline({
+            scrollTrigger: {
+                trigger: '.testimonials-heading',
+                start: 'top 70%',
+                toggleActions: 'play none none reverse'
+            }
+        });
+
+        testimonialsTl
+            .to(sectionLabel, {
+                opacity: 1,
+                y: 0,
+                duration: 0.6,
+                ease: 'power2.out'
+            })
+            .to(
+                headingSpans,
+                {
+                    opacity: 1,
+                    y: 0,
+                    duration: 0.8,
+                    stagger: 0.1,
+                    ease: 'power3.out'
+                },
+                '-=0.3'
+            )
+            .to(
+                subtitle,
+                { opacity: 1, y: 0, duration: 0.6, ease: 'power2.out' },
+                '-=0.4'
+            );
+
+        gsap.to(testimonialCards, {
+            opacity: 1,
+            y: 0,
+            duration: 0.8,
+            stagger: 0.1,
+            ease: 'power3.out',
+            scrollTrigger: {
+                trigger: '.testimonials-grid',
+                start: 'top 80%',
+                toggleActions: 'play none none reverse'
+            }
+        });
+
+        gsap.to(clientsSection, {
+            opacity: 1,
+            y: 0,
+            duration: 0.6,
+            ease: 'power2.out',
+            scrollTrigger: {
+                trigger: clientsSection,
+                start: 'top 80%',
+                toggleActions: 'play none none reverse'
+            }
+        });
+
+        testimonialCards.forEach((card) => {
+            card.addEventListener('mouseenter', () => {
+                gsap.to(card, { y: -5, duration: 0.3, ease: 'power2.out' });
+            });
+
+            card.addEventListener('mouseleave', () => {
+                gsap.to(card, { y: 0, duration: 0.3, ease: 'power2.out' });
+            });
+        });
+    });
+</script>
+
+<style>
+    .testimonial-card {
+        will-change: transform;
+        transition: all 0.3s ease;
+    }
+
+    .testimonial-card:hover {
+        box-shadow:
+            0 20px 25px -5px rgba(0, 0, 0, 0.1),
+            0 10px 10px -5px rgba(0, 0, 0, 0.04);
+    }
+
+    .client-logo {
+        transition: all 0.3s ease;
+    }
+
+    .client-logo:hover {
+        transform: translateY(-2px);
+        background-color: #f3f4f6;
+    }
+</style>

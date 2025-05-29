@@ -2,84 +2,65 @@
 import Container from './Container.astro';
 ---
 
-<header>
-    <Container class="grid grid-cols-[1fr_auto_1fr] items-center py-6 relative">
-        <!-- Menú de navegación para escritorio -->
+<header
+    class="fixed top-0 left-0 right-0 z-40 bg-white/80 dark:bg-gray-900/80 backdrop-blur-md border-b border-gray-100 dark:border-gray-800"
+>
+    <Container class="grid grid-cols-[1fr_auto_1fr] items-center py-4 relative">
+        <!-- Navegación izquierda -->
         <nav class="hidden md:block">
-            <ul class="flex items-center space-x-6">
+            <ul class="flex items-center space-x-8">
                 <li>
                     <a
-                        href="/"
-                        class="text-gray-800 hover:text-lime-500 transition-colors"
+                        href="#about"
+                        class="text-sm font-medium text-gray-700 dark:text-gray-300 hover:text-lime-500 dark:hover:text-lime-400 transition-all duration-300 relative group"
                     >
-                        Inicio
+                        <span class="relative z-10">Sobre Mí</span>
+                        <span
+                            class="absolute bottom-0 left-0 w-0 h-0.5 bg-lime-500 transition-all duration-300 group-hover:w-full"
+                        ></span>
                     </a>
                 </li>
                 <li>
                     <a
-                        href="/about"
-                        class="text-gray-800 hover:text-lime-500 transition-colors"
+                        href="#services"
+                        class="text-sm font-medium text-gray-700 dark:text-gray-300 hover:text-lime-500 dark:hover:text-lime-400 transition-all duration-300 relative group"
                     >
-                        Sobre mi
-                    </a>
-                </li>
-                <li>
-                    <a
-                        href="/projects"
-                        class="text-gray-800 hover:text-lime-500 transition-colors"
-                    >
-                        Proyectos
-                    </a>
-                </li>
-                <li>
-                    <a
-                        href="/contact"
-                        class="text-gray-800 hover:text-lime-500 transition-colors"
-                    >
-                        Contacto
+                        <span class="relative z-10">Servicios</span>
+                        <span
+                            class="absolute bottom-0 left-0 w-0 h-0.5 bg-lime-500 transition-all duration-300 group-hover:w-full"
+                        ></span>
                     </a>
                 </li>
             </ul>
         </nav>
 
-        <!-- Botón de hamburguesa para móvil -->
+        <!-- Indicador de contacto móvil -->
         <div class="md:hidden flex items-center justify-start">
-            <button
-                id="menu-toggle"
-                class="text-gray-800 hover:text-lime-500 transition-colors focus:outline-none relative z-[100]"
-                aria-label="Toggle menu"
+            <a
+                href="#contact"
+                class="w-10 h-10 bg-lime-500 dark:bg-lime-600 rounded-full flex items-center justify-center hover:bg-lime-600 dark:hover:bg-lime-700 transition-colors duration-300"
             >
                 <svg
-                    xmlns="http://www.w3.org/2000/svg"
-                    class="h-6 w-6 hamburger-icon block"
+                    class="w-4 h-4 text-white"
                     fill="none"
-                    viewBox="0 0 24 24"
                     stroke="currentColor"
+                    viewBox="0 0 24 24"
                 >
                     <path
                         stroke-linecap="round"
                         stroke-linejoin="round"
                         stroke-width="2"
-                        d="M4 6h16M4 12h16M4 18h16"></path>
+                        d="M8 12h.01M12 12h.01M16 12h.01M21 12c0 4.418-4.03 8-9 8a9.863 9.863 0 01-4.255-.949L3 20l1.395-3.72C3.512 15.042 3 13.574 3 12c0-4.418 4.03-8 9-8s9 3.582 9 8z"
+                    ></path>
                 </svg>
-                <svg
-                    xmlns="http://www.w3.org/2000/svg"
-                    class="h-6 w-6 close-icon hidden"
-                    fill="none"
-                    viewBox="0 0 24 24"
-                    stroke="currentColor"
-                >
-                    <path
-                        stroke-linecap="round"
-                        stroke-linejoin="round"
-                        stroke-width="2"
-                        d="M6 18L18 6M6 6l12 12"></path>
-                </svg>
-            </button>
+            </a>
         </div>
 
+        <!-- Logo central (mantenemos la animación original) -->
         <a href="/" class="logo-link justify-self-center">
-            <h1 class="text-xl font-[700] text-black logo-text">
+            <h1
+                class="text-2xl font-[700] text-black dark:text-white logo-text"
+            >
                 <span class="letter-container">
                     <span class="letter">l</span>
                     <span class="letter">e</span>
@@ -92,83 +73,238 @@ import Container from './Container.astro';
                     <span class="letter">v</span>
                     <span class="letter">a</span>
                     <span class="letter">z</span>
-                    <span class="letter text-[1.25em] font-[700] text-lime-500"
+                    <span
+                        class="letter text-[1.25em] font-[700] text-lime-500 dark:text-lime-400"
                         >.</span
                     >
                 </span>
             </h1>
         </a>
 
-        <div class="flex items-center space-x-4 justify-end">
-            <button
-                class="bg-lime-500 text-white rounded-full download-btn overflow-hidden"
-            >
-                <a href="/" class="flex items-center px-4 py-2">
-                    <svg
-                        xmlns="http://www.w3.org/2000/svg"
-                        width="24"
-                        height="24"
-                        viewBox="0 0 24 24"
-                        fill="none"
-                        stroke="currentColor"
-                        stroke-width="2"
-                        stroke-linecap="round"
-                        stroke-linejoin="round"
-                        class="w-4 h-4"
-                    >
-                        <path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"
-                        ></path>
-                        <polyline points="7 10 12 15 17 10"></polyline>
-                        <line x1="12" y1="15" x2="12" y2="3"></line>
-                    </svg>
-                </a>
-            </button>
-        </div>
-    </Container>
-
-    <!-- Menú móvil desplegable -->
-    <div
-        id="mobile-menu"
-        class="fixed inset-0 bg-white z-50 transform -translate-y-full transition-transform duration-300 ease-in-out flex items-center justify-center"
-    >
-        <Container class="h-full flex flex-col justify-center items-center">
-            <nav class="text-center">
-                <ul class="space-y-6">
-                    <li class="mobile-menu-item overflow-hidden">
+        <!-- Navegación derecha -->
+        <div class="hidden md:flex items-center justify-end space-x-6">
+            <nav>
+                <ul class="flex items-center space-x-8">
+                    <li>
                         <a
-                            href="/"
-                            class="text-2xl font-medium text-gray-800 hover:text-lime-500 transition-colors inline-block"
+                            href="#portfolio"
+                            class="text-sm font-medium text-gray-700 dark:text-gray-300 hover:text-lime-500 dark:hover:text-lime-400 transition-all duration-300 relative group"
                         >
-                            Inicio
-                        </a>
-                    </li>
-                    <li class="mobile-menu-item overflow-hidden">
-                        <a
-                            href="/about"
-                            class="text-2xl font-medium text-gray-800 hover:text-lime-500 transition-colors inline-block"
-                        >
-                            Sobre mi
-                        </a>
-                    </li>
-                    <li class="mobile-menu-item overflow-hidden">
-                        <a
-                            href="/projects"
-                            class="text-2xl font-medium text-gray-800 hover:text-lime-500 transition-colors inline-block"
-                        >
-                            Proyectos
-                        </a>
-                    </li>
-                    <li class="mobile-menu-item overflow-hidden">
-                        <a
-                            href="/contact"
-                            class="text-2xl font-medium text-gray-800 hover:text-lime-500 transition-colors inline-block"
-                        >
-                            Contacto
+                            <span class="relative z-10">Portfolio</span>
+                            <span
+                                class="absolute bottom-0 left-0 w-0 h-0.5 bg-lime-500 transition-all duration-300 group-hover:w-full"
+                            ></span>
                         </a>
                     </li>
                 </ul>
             </nav>
-        </Container>
+
+            <a
+                href="#contact"
+                class="inline-flex items-center px-6 py-2 text-sm font-medium text-white bg-lime-500 dark:bg-lime-600 rounded-full hover:bg-lime-600 dark:hover:bg-lime-700 transition-all duration-300 transform hover:scale-105"
+            >
+                Contacto
+            </a>
+        </div>
+
+        <!-- Botón hamburguesa para móvil -->
+        <div class="md:hidden flex items-center justify-end">
+            <button
+                id="menu-toggle"
+                class="text-gray-700 dark:text-gray-300 hover:text-lime-500 dark:hover:text-lime-400 transition-colors focus:outline-none relative z-[70] flex items-center justify-center w-10 h-10 cursor-pointer"
+                aria-label="Toggle menu"
+            >
+                <div class="hamburger-lines">
+                    <span class="line line1"></span>
+                    <span class="line line2"></span>
+                    <span class="line line3"></span>
+                </div>
+            </button>
+        </div>
+    </Container>
+
+    <!-- Menú móvil moderno -->
+    <div
+        id="mobile-menu"
+        class="fixed inset-0 bg-white dark:bg-gray-900 z-[60] transform -translate-x-full transition-transform duration-500 ease-out h-screen"
+    >
+        <div class="h-full flex flex-col relative bg-white dark:bg-gray-900">
+            <!-- Header del menú móvil -->
+            <div
+                class="flex items-center justify-between p-6 border-b border-gray-100 dark:border-gray-800 bg-white dark:bg-gray-900"
+            >
+                <div class="flex items-center">
+                    <h2 class="text-xl font-bold text-gray-900 dark:text-white">
+                        lestradavaz<span
+                            class="text-lime-500 dark:text-lime-400">.</span
+                        >
+                    </h2>
+                </div>
+            </div>
+
+            <!-- Navegación principal -->
+            <div class="flex-1 flex flex-col px-4 bg-white dark:bg-gray-900">
+                <nav class="flex flex-col flex-1">
+                    <ul class="flex flex-col flex-1">
+                        <li class="mobile-menu-item flex flex-col flex-1">
+                            <a
+                                href="#about"
+                                class="text-2xl font-light text-gray-900 dark:text-white hover:text-lime-500 dark:hover:text-lime-400 transition-colors duration-300 py-3 border-b border-gray-100 dark:border-gray-800 hover:border-lime-200 dark:hover:border-lime-700 flex-1 flex items-center justify-center"
+                            >
+                                <span
+                                    class="flex items-center justify-between w-full"
+                                >
+                                    <span>Sobre Mí</span>
+                                    <svg
+                                        class="w-5 h-5 text-gray-400 dark:text-gray-500"
+                                        fill="none"
+                                        stroke="currentColor"
+                                        viewBox="0 0 24 24"
+                                    >
+                                        <path
+                                            stroke-linecap="round"
+                                            stroke-linejoin="round"
+                                            stroke-width="2"
+                                            d="M9 5l7 7-7 7"></path>
+                                    </svg>
+                                </span>
+                            </a>
+                        </li>
+                        <li class="mobile-menu-item flex flex-col flex-1">
+                            <a
+                                href="#services"
+                                class="text-2xl font-light text-gray-900 dark:text-white hover:text-lime-500 dark:hover:text-lime-400 transition-colors duration-300 py-3 border-b border-gray-100 dark:border-gray-800 hover:border-lime-200 dark:hover:border-lime-700 flex-1 flex items-center justify-center"
+                            >
+                                <span
+                                    class="flex items-center justify-between w-full"
+                                >
+                                    <span>Servicios</span>
+                                    <svg
+                                        class="w-5 h-5 text-gray-400 dark:text-gray-500"
+                                        fill="none"
+                                        stroke="currentColor"
+                                        viewBox="0 0 24 24"
+                                    >
+                                        <path
+                                            stroke-linecap="round"
+                                            stroke-linejoin="round"
+                                            stroke-width="2"
+                                            d="M9 5l7 7-7 7"></path>
+                                    </svg>
+                                </span>
+                            </a>
+                        </li>
+                        <li class="mobile-menu-item flex flex-col flex-1">
+                            <a
+                                href="#portfolio"
+                                class="text-2xl font-light text-gray-900 dark:text-white hover:text-lime-500 dark:hover:text-lime-400 transition-colors duration-300 py-3 border-b border-gray-100 dark:border-gray-800 hover:border-lime-200 dark:hover:border-lime-700 flex-1 flex items-center justify-center"
+                            >
+                                <span
+                                    class="flex items-center justify-between w-full"
+                                >
+                                    <span>Portfolio</span>
+                                    <svg
+                                        class="w-5 h-5 text-gray-400 dark:text-gray-500"
+                                        fill="none"
+                                        stroke="currentColor"
+                                        viewBox="0 0 24 24"
+                                    >
+                                        <path
+                                            stroke-linecap="round"
+                                            stroke-linejoin="round"
+                                            stroke-width="2"
+                                            d="M9 5l7 7-7 7"></path>
+                                    </svg>
+                                </span>
+                            </a>
+                        </li>
+                        <li class="mobile-menu-item flex flex-col flex-1">
+                            <a
+                                href="#contact"
+                                class="text-2xl font-light text-gray-900 dark:text-white hover:text-lime-500 dark:hover:text-lime-400 transition-colors duration-300 py-3 border-b border-gray-100 dark:border-gray-800 hover:border-lime-200 dark:hover:border-lime-700 flex-1 flex items-center justify-center"
+                            >
+                                <span
+                                    class="flex items-center justify-between w-full"
+                                >
+                                    <span>Contacto</span>
+                                    <svg
+                                        class="w-5 h-5 text-gray-400 dark:text-gray-500"
+                                        fill="none"
+                                        stroke="currentColor"
+                                        viewBox="0 0 24 24"
+                                    >
+                                        <path
+                                            stroke-linecap="round"
+                                            stroke-linejoin="round"
+                                            stroke-width="2"
+                                            d="M9 5l7 7-7 7"></path>
+                                    </svg>
+                                </span>
+                            </a>
+                        </li>
+                    </ul>
+                </nav>
+            </div>
+
+            <!-- Footer del menú móvil -->
+            <div
+                class="p-8 border-t border-gray-100 dark:border-gray-800 bg-gray-50 dark:bg-gray-800"
+            >
+                <div class="mb-6">
+                    <a
+                        href="#contact"
+                        id="mobileContactButton"
+                        class="block w-full text-center bg-lime-500 dark:bg-lime-600 text-white py-3 px-6 rounded-full font-semibold hover:bg-lime-600 dark:hover:bg-lime-700 transition-colors duration-300"
+                    >
+                        Comenzar Proyecto
+                    </a>
+                </div>
+
+                <div class="text-center">
+                    <p class="text-sm text-gray-600 dark:text-gray-400 mb-2">
+                        contacto@lestradavaz.com
+                    </p>
+                    <div class="flex justify-center space-x-4">
+                        <a
+                            href="https://linkedin.com/in/lestradavaz"
+                            target="_blank"
+                            class="text-gray-400 dark:text-gray-500 hover:text-lime-500 dark:hover:text-lime-400 transition-colors duration-300"
+                        >
+                            <svg
+                                class="w-5 h-5"
+                                fill="currentColor"
+                                viewBox="0 0 24 24"
+                            >
+                                <path
+                                    d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433c-1.144 0-2.063-.926-2.063-2.065 0-1.138.92-2.063 2.063-2.063 1.14 0 2.064.925 2.064 2.063 0 1.139-.925 2.065-2.064 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z"
+                                ></path>
+                            </svg>
+                        </a>
+                        <a
+                            href="https://instagram.com/lestradavaz"
+                            target="_blank"
+                            class="text-gray-400 dark:text-gray-500 hover:text-lime-500 dark:hover:text-lime-400 transition-colors duration-300"
+                        >
+                            <svg
+                                class="w-5 h-5"
+                                fill="currentColor"
+                                viewBox="0 0 24 24"
+                            >
+                                <path
+                                    d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zm0-2.163c-3.259 0-3.667.014-4.947.072-4.358.2-6.78 2.618-6.98 6.98-.059 1.281-.073 1.689-.073 4.948 0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98 1.281.058 1.689.072 4.948.072 3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98-1.281-.059-1.69-.073-4.949-.073zm0 5.838c-3.403 0-6.162 2.759-6.162 6.162s2.759 6.163 6.162 6.163 6.162-2.759 6.162-6.163c0-3.403-2.759-6.162-6.162-6.162zm0 10.162c-2.209 0-4-1.79-4-4 0-2.209 1.791-4 4-4s4 1.791 4 4c0 2.21-1.791 4-4 4zm6.406-11.845c-.796 0-1.441.645-1.441 1.44s.645 1.44 1.441 1.44c.795 0 1.439-.645 1.439-1.44s-.644-1.44-1.439-1.44z"
+                                ></path>
+                            </svg>
+                        </a>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Decoración de fondo sutil - MÁS SUTIL -->
+            <div
+                class="absolute top-0 right-0 w-1/4 h-full bg-gradient-to-l from-lime-50 dark:from-lime-900/20 to-transparent opacity-20 pointer-events-none"
+            >
+            </div>
+        </div>
     </div>
 </header>
 
@@ -178,173 +314,76 @@ import Container from './Container.astro';
     document.addEventListener('DOMContentLoaded', () => {
         const logoLink = document.querySelector('.logo-link');
         const letters = document.querySelectorAll('.letter');
-        const navLinks = document.querySelectorAll(
-            'nav li:not(.mobile-menu-item)'
-        );
-        const downloadBtn = document.querySelector('.download-btn');
+        const navLinks = document.querySelectorAll('nav a');
         const menuToggle = document.getElementById('menu-toggle');
         const mobileMenu = document.getElementById('mobile-menu');
         const mobileMenuItems = document.querySelectorAll(
             '.mobile-menu-item a'
         );
-        const hamburgerIcon = document.querySelector('.hamburger-icon');
-        const closeIcon = document.querySelector('.close-icon');
+        const hamburgerLines = document.querySelectorAll('.line');
+        const mobileContactButton = document.getElementById(
+            'mobileContactButton'
+        );
 
         let menuOpen = false;
 
-        // Establecer estado inicial para garantizar que la animación funcione
-        gsap.set(navLinks, {
-            autoAlpha: 0,
-            x: -50 // Posición inicial fuera de la vista
-        });
+        // Establecer estado inicial
+        gsap.set(navLinks, { autoAlpha: 0, y: -20 });
+        gsap.set(letters, { opacity: 0, scale: 0 });
 
-        // Preparar animaciones para el menú móvil
-        gsap.set(mobileMenuItems, {
-            y: 50,
-            opacity: 0
-        });
+        // Función para ejecutar las animaciones del Header
+        const executeHeaderAnimations = () => {
+            // Animación de entrada del header
+            const headerTl = gsap.timeline({ delay: 0.5 });
 
-        // Ocultar inicialmente el botón de hamburguesa para evitar solapamiento con la pantalla de carga
-        if (menuToggle) {
-            gsap.set(menuToggle, {
-                autoAlpha: 0,
-                x: -20 // Posición inicial fuera de la vista para animación de entrada
-            });
-        }
-
-        // Creamos un timeline para las animaciones de entrada
-        const headerEntryTl = gsap.timeline({ paused: true });
-
-        // Configuramos las animaciones con duraciones más cortas
-        headerEntryTl
-            .to(navLinks, {
-                autoAlpha: 1,
-                x: 0, // Mover a su posición original
-                stagger: 0.05,
-                duration: 0.4,
-                ease: 'power2.out',
-                clearProps: 'all' // Limpiar propiedades después de la animación
-            })
-            .to(
-                menuToggle,
-                {
-                    autoAlpha: 1,
-                    x: 0,
-                    duration: 0.3,
-                    ease: 'power2.out'
-                },
-                '<'
-            ) // Animar simultáneamente con los navLinks
-            .from(
-                letters,
-                {
-                    opacity: 0,
-                    scale: 0,
-                    stagger: 0.02,
-                    duration: 0.3,
+            headerTl
+                .to(letters, {
+                    opacity: 1,
+                    scale: 1,
+                    stagger: 0.03,
+                    duration: 0.4,
                     ease: 'back.out(1.7)'
-                },
-                '-=0.15'
-            )
-            .from(
-                downloadBtn,
-                {
-                    opacity: 0,
-                    x: 30,
-                    duration: 0.3,
-                    ease: 'power2.out'
-                },
-                '-=0.2'
-            );
+                })
+                .to(
+                    navLinks,
+                    {
+                        autoAlpha: 1,
+                        y: 0,
+                        stagger: 0.1,
+                        duration: 0.6,
+                        ease: 'power2.out'
+                    },
+                    '-=0.2'
+                );
+        };
 
-        // Método más eficiente para detectar cuando termina la pantalla de carga
-        // Usar un observador de mutaciones para detectar cambios en el DOM
+        // Esperar al evento loadingComplete para ejecutar las animaciones
+        document.addEventListener('loadingComplete', () => {
+            executeHeaderAnimations();
+        });
+
+        // Fallback: si no hay LoadingScreen, ejecutar las animaciones después de un delay
         const loadingScreen = document.getElementById('loading-screen');
-
-        if (loadingScreen) {
-            // Asegurarnos de que el menú está oculto mientras la pantalla de carga es visible
-            if (menuToggle) {
-                menuToggle.style.visibility = 'hidden';
-                menuToggle.style.opacity = '0';
-            }
-
-            // Iniciar inmediatamente si la pantalla de carga ya no está visible
-            if (
-                loadingScreen.style.display === 'none' ||
-                loadingScreen.style.opacity === '0'
-            ) {
-                headerEntryTl.play();
-            } else {
-                // Escuchar el evento personalizado que puede emitir la pantalla de carga
-                document.addEventListener('loadingComplete', () => {
-                    headerEntryTl.play();
-                });
-
-                // Como respaldo, también usar MutationObserver
-                const observer = new MutationObserver((mutations) => {
-                    mutations.forEach((mutation) => {
-                        if (
-                            (mutation.type === 'attributes' &&
-                                (mutation.attributeName === 'style' ||
-                                    mutation.attributeName === 'class')) ||
-                            mutation.type === 'childList'
-                        ) {
-                            if (
-                                loadingScreen.style.display === 'none' ||
-                                loadingScreen.style.opacity === '0' ||
-                                parseFloat(
-                                    getComputedStyle(loadingScreen).opacity
-                                ) === 0
-                            ) {
-                                headerEntryTl.play();
-                                observer.disconnect();
-                            }
-                        }
-                    });
-                });
-
-                observer.observe(loadingScreen, {
-                    attributes: true,
-                    attributeFilter: ['style', 'class'],
-                    childList: true
-                });
-
-                // Y como última opción, verificar periódicamente pero con menor intervalo
-                const checkLoadingScreen = () => {
-                    if (
-                        loadingScreen.style.display === 'none' ||
-                        loadingScreen.style.opacity === '0' ||
-                        parseFloat(getComputedStyle(loadingScreen).opacity) ===
-                            0
-                    ) {
-                        headerEntryTl.play();
-                        return;
-                    }
-                    setTimeout(checkLoadingScreen, 50); // Intervalo reducido a 50ms
-                };
-
-                checkLoadingScreen();
-            }
-        } else {
-            // Si no hay pantalla de carga, ejecutar las animaciones inmediatamente
-            headerEntryTl.play();
+        if (!loadingScreen) {
+            setTimeout(executeHeaderAnimations, 500);
         }
 
-        // Animación de hover para el logo
+        // Animación de hover para el logo (mantenemos la original)
         if (logoLink && letters.length) {
             let logoHoverAnimation: gsap.core.Timeline | null = null;
 
+            // Función para obtener el color correcto según el tema
+            const getCurrentThemeColor = () => {
+                const isDark =
+                    document.documentElement.classList.contains('dark');
+                return isDark ? '#ffffff' : '#000000';
+            };
+
             logoLink.addEventListener('mouseenter', () => {
-                // Detener cualquier animación en curso
                 gsap.killTweensOf(letters);
 
-                // Crear un nuevo timeline para la animación de hover
-                logoHoverAnimation = gsap.timeline({
-                    repeat: -1, // Repetir infinitamente mientras está en hover
-                    yoyo: false // No hacer yoyo, dejar que la animación complete su ciclo
-                });
+                logoHoverAnimation = gsap.timeline({ repeat: -1, yoyo: false });
 
-                // Animación más lenta y continua para cada letra
                 letters.forEach((letter, index) => {
                     if (logoHoverAnimation) {
                         logoHoverAnimation
@@ -353,14 +392,17 @@ import Container from './Container.astro';
                                 {
                                     y: -12,
                                     rotation: gsap.utils.random(-15, 15),
-                                    color: index % 2 === 0 ? '#84cc16' : '#000',
+                                    color:
+                                        index % 2 === 0
+                                            ? '#84cc16'
+                                            : getCurrentThemeColor(),
                                     scale: 1.2,
-                                    duration: 0.4, // Más lenta
+                                    duration: 0.4,
                                     ease: 'power2.out',
                                     delay: 0
                                 },
                                 index * 0.06
-                            ) // Tiempo escalonado entre letras
+                            )
                             .to(
                                 letter,
                                 {
@@ -369,24 +411,22 @@ import Container from './Container.astro';
                                     color:
                                         index === letters.length - 1
                                             ? '#84cc16'
-                                            : '#000',
+                                            : getCurrentThemeColor(),
                                     scale: 1,
-                                    duration: 0.5, // Más lenta para el regreso
+                                    duration: 0.5,
                                     ease: 'elastic.out(1.2, 0.5)'
                                 },
                                 `>-0.2`
-                            ); // Superposición para un efecto más fluido
+                            );
                     }
                 });
             });
 
-            // Detener la animación al quitar el cursor
             logoLink.addEventListener('mouseleave', () => {
                 if (logoHoverAnimation) {
-                    logoHoverAnimation.kill(); // Detener completamente la animación
+                    logoHoverAnimation.kill();
                     logoHoverAnimation = null;
 
-                    // Animar todas las letras de vuelta a su estado original de forma suave
                     gsap.to(letters, {
                         y: 0,
                         rotation: 0,
@@ -394,7 +434,7 @@ import Container from './Container.astro';
                         color: function (i) {
                             return i === letters.length - 1
                                 ? '#84cc16'
-                                : '#000';
+                                : getCurrentThemeColor();
                         },
                         duration: 0.4,
                         ease: 'power2.out',
@@ -405,57 +445,76 @@ import Container from './Container.astro';
         }
 
         // Manejo del menú móvil
-        if (menuToggle && mobileMenu && hamburgerIcon && closeIcon) {
+        if (menuToggle && mobileMenu && hamburgerLines) {
+            // Configurar estado inicial del menú móvil
+            gsap.set(mobileMenuItems, { y: 30, opacity: 0 });
+
             menuToggle.addEventListener('click', () => {
                 menuOpen = !menuOpen;
 
                 if (menuOpen) {
-                    // Mostrar ícono de cierre, ocultar hamburguesa
-                    hamburgerIcon.classList.add('hidden');
-                    hamburgerIcon.classList.remove('block');
-                    closeIcon.classList.remove('hidden');
-                    closeIcon.classList.add('block');
+                    // Bloquear scroll del body con clase CSS
+                    document.body.classList.add('menu-open');
 
-                    // Cambiar el color del ícono cuando el menú está abierto
-                    menuToggle.classList.add('text-lime-500');
+                    // Animar hamburguesa a X con translate para centrar perfectamente
+                    gsap.to('.line1', {
+                        rotation: 45,
+                        y: 6,
+                        x: 0,
+                        duration: 0.3
+                    });
+                    gsap.to('.line2', { opacity: 0, duration: 0.3 });
+                    gsap.to('.line3', {
+                        rotation: -45,
+                        y: -6,
+                        x: 0,
+                        duration: 0.3
+                    });
 
-                    // Animar apertura del menú - más rápida
+                    // Mostrar menú
                     gsap.to(mobileMenu, {
-                        y: '0%',
-                        duration: 0.35,
+                        x: '0%',
+                        duration: 0.4,
                         ease: 'power2.out',
                         onComplete: () => {
-                            // Animar cada elemento del menú - más rápida
                             gsap.to(mobileMenuItems, {
                                 y: 0,
                                 opacity: 1,
-                                stagger: 0.06,
-                                duration: 0.25,
+                                stagger: 0.08,
+                                duration: 0.5,
                                 ease: 'power2.out'
                             });
                         }
                     });
                 } else {
-                    // Mostrar ícono de hamburguesa, ocultar cierre
-                    hamburgerIcon.classList.remove('hidden');
-                    hamburgerIcon.classList.add('block');
-                    closeIcon.classList.add('hidden');
-                    closeIcon.classList.remove('block');
+                    // Restaurar scroll del body removiendo clase CSS
+                    document.body.classList.remove('menu-open');
 
-                    // Revertir el color del ícono
-                    menuToggle.classList.remove('text-lime-500');
+                    // Revertir hamburguesa con reset completo
+                    gsap.to('.line1', {
+                        rotation: 0,
+                        y: 0,
+                        x: 0,
+                        duration: 0.3
+                    });
+                    gsap.to('.line2', { opacity: 1, duration: 0.3 });
+                    gsap.to('.line3', {
+                        rotation: 0,
+                        y: 0,
+                        x: 0,
+                        duration: 0.3
+                    });
 
-                    // Animar salida de los elementos del menú - más rápida
+                    // Ocultar elementos del menú
                     gsap.to(mobileMenuItems, {
                         y: 30,
                         opacity: 0,
-                        stagger: 0.03,
-                        duration: 0.2,
+                        stagger: 0.04,
+                        duration: 0.3,
                         ease: 'power2.in',
                         onComplete: () => {
-                            // Cerrar el menú - más rápido
                             gsap.to(mobileMenu, {
-                                y: '-100%',
+                                x: '-100%',
                                 duration: 0.3,
                                 ease: 'power2.in'
                             });
@@ -467,10 +526,23 @@ import Container from './Container.astro';
             // Cerrar menú al hacer clic en un enlace
             mobileMenuItems.forEach((item) => {
                 item.addEventListener('click', () => {
-                    // Simular clic en el botón de menú para cerrarlo
-                    menuToggle.click();
+                    if (menuOpen) {
+                        // Restaurar scroll del body inmediatamente con clase CSS
+                        document.body.classList.remove('menu-open');
+                        menuToggle.click();
+                    }
                 });
             });
+
+            if (mobileContactButton) {
+                mobileContactButton.addEventListener('click', () => {
+                    if (menuOpen) {
+                        // Restaurar scroll del body inmediatamente con clase CSS
+                        document.body.classList.remove('menu-open');
+                    }
+                    menuToggle.click();
+                });
+            }
         }
     });
 </script>
@@ -479,52 +551,132 @@ import Container from './Container.astro';
     .letter-container {
         display: inline-block;
     }
+
     .letter {
         display: inline-block;
         position: relative;
         margin-right: -0.25em;
     }
 
-    /* Estilos adicionales para el menú móvil */
+    /* Hamburguesa animada */
+    .hamburger-lines {
+        width: 20px;
+        height: 14px;
+        position: relative;
+        cursor: pointer;
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+    }
+
+    .line {
+        width: 100%;
+        height: 2px;
+        background-color: currentColor;
+        transition: all 0.3s ease;
+        transform-origin: center center;
+        border-radius: 1px;
+        position: relative;
+    }
+
+    .line1 {
+        /* top line */
+    }
+    .line2 {
+        /* middle line */
+    }
+    .line3 {
+        /* bottom line */
+    }
+
+    /* Efectos de navegación */
+    nav a::before {
+        content: '';
+        position: absolute;
+        top: 0;
+        left: -10px;
+        right: -10px;
+        bottom: 0;
+        background: linear-gradient(
+            45deg,
+            transparent,
+            rgba(132, 204, 22, 0.1),
+            transparent
+        );
+        opacity: 0;
+        transition: opacity 0.3s ease;
+        border-radius: 8px;
+        z-index: -1;
+    }
+
+    nav a:hover::before {
+        opacity: 1;
+    }
+
+    /* Menú móvil */
     #mobile-menu {
         will-change: transform;
-        overflow: hidden;
-        z-index: 45; /* Un z-index menor que la pantalla de carga pero mayor que el resto del header */
+        background-color: white !important;
     }
 
-    #menu-toggle {
-        cursor: pointer;
-        transition: color 0.3s ease;
-        z-index: 46; /* Mayor que el menú móvil pero menor que la pantalla de carga */
-    }
-
-    .hamburger-icon,
-    .close-icon {
-        transition: opacity 0.3s ease;
+    :root.dark #mobile-menu {
+        background-color: rgb(17 24 39) !important;
     }
 
     .mobile-menu-item a {
         position: relative;
+        transition: all 0.3s ease;
     }
 
-    .mobile-menu-item a::after {
-        content: '';
-        position: absolute;
-        bottom: -5px;
-        left: 0;
-        width: 0;
-        height: 2px;
-        background-color: #84cc16;
-        transition: width 0.3s ease;
+    .mobile-menu-item a:hover {
+        background-color: rgba(132, 204, 22, 0.05);
+        border-radius: 8px;
+        padding-left: 1rem;
+        padding-right: 1rem;
     }
 
-    .mobile-menu-item a:hover::after {
+    :root.dark .mobile-menu-item a:hover {
+        background-color: rgba(132, 204, 22, 0.1);
+    }
+
+    .mobile-menu-item a:hover svg {
+        transform: translateX(4px);
+        color: #84cc16;
+    }
+
+    /* Header glassmorphism */
+    header {
+        backdrop-filter: blur(20px);
+        -webkit-backdrop-filter: blur(20px);
+    }
+
+    /* Smooth scroll para anclas */
+    html {
+        scroll-behavior: smooth;
+    }
+
+    /* Mejoras para modo oscuro */
+    :root.dark .letter {
+        color: white;
+    }
+
+    :root.dark .letter:last-child {
+        color: #a3e635 !important;
+    }
+
+    /* Prevenir scroll issues cuando el menú móvil está abierto */
+    body.menu-open {
+        overflow: hidden !important;
+        position: fixed;
         width: 100%;
     }
 
-    /* Aseguramos que el header y sus elementos estén detrás de la pantalla de carga */
-    header {
-        position: relative;
-        z-index: 10; /* Un z-index menor que la pantalla de carga */
+    /* Asegurar que el menú móvil sea completamente opaco en el fondo */
+    #mobile-menu {
+        background-color: white !important;
+    }
+
+    :root.dark #mobile-menu {
+        background-color: rgb(17 24 39) !important;
     }
 </style>

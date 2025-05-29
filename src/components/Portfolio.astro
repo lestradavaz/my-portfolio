@@ -1,0 +1,683 @@
+---
+import Container from './Container.astro';
+
+// Paleta de grises por defecto
+const defaultGrayPalette = {
+    name: 'default-gray',
+    gradient: 'from-gray-500 to-gray-600',
+    tagBg: 'bg-gray-100 dark:bg-gray-800',
+    tagText: 'text-gray-700 dark:text-gray-300'
+};
+
+// Paletas de colores disponibles
+const colorPalettes = [
+    {
+        name: 'orange',
+        gradient: 'from-orange-500 to-red-600',
+        tagBg: 'bg-orange-100 dark:bg-orange-900/30',
+        tagText: 'text-orange-700 dark:text-orange-300'
+    },
+    {
+        name: 'blue',
+        gradient: 'from-blue-500 to-indigo-600',
+        tagBg: 'bg-blue-100 dark:bg-blue-900/30',
+        tagText: 'text-blue-700 dark:text-blue-300'
+    },
+    {
+        name: 'purple',
+        gradient: 'from-purple-500 to-pink-600',
+        tagBg: 'bg-purple-100 dark:bg-purple-900/30',
+        tagText: 'text-purple-700 dark:text-purple-300'
+    },
+    {
+        name: 'green',
+        gradient: 'from-green-500 to-emerald-600',
+        tagBg: 'bg-green-100 dark:bg-green-900/30',
+        tagText: 'text-green-700 dark:text-green-300'
+    },
+    {
+        name: 'teal',
+        gradient: 'from-teal-500 to-cyan-600',
+        tagBg: 'bg-teal-100 dark:bg-teal-900/30',
+        tagText: 'text-teal-700 dark:text-teal-300'
+    },
+    {
+        name: 'rose',
+        gradient: 'from-rose-500 to-pink-600',
+        tagBg: 'bg-rose-100 dark:bg-rose-900/30',
+        tagText: 'text-rose-700 dark:text-rose-300'
+    },
+    {
+        name: 'amber',
+        gradient: 'from-amber-500 to-yellow-600',
+        tagBg: 'bg-amber-100 dark:bg-amber-900/30',
+        tagText: 'text-amber-700 dark:text-amber-300'
+    },
+    {
+        name: 'violet',
+        gradient: 'from-violet-500 to-purple-600',
+        tagBg: 'bg-violet-100 dark:bg-violet-900/30',
+        tagText: 'text-violet-700 dark:text-violet-300'
+    },
+    {
+        name: 'sky',
+        gradient: 'from-sky-500 to-blue-600',
+        tagBg: 'bg-sky-100 dark:bg-sky-900/30',
+        tagText: 'text-sky-700 dark:text-sky-300'
+    },
+    {
+        name: 'emerald',
+        gradient: 'from-emerald-500 to-green-600',
+        tagBg: 'bg-emerald-100 dark:bg-emerald-900/30',
+        tagText: 'text-emerald-700 dark:text-emerald-300'
+    },
+    {
+        name: 'fuchsia',
+        gradient: 'from-fuchsia-500 to-purple-600',
+        tagBg: 'bg-fuchsia-100 dark:bg-fuchsia-900/30',
+        tagText: 'text-fuchsia-700 dark:text-fuchsia-300'
+    },
+    {
+        name: 'slate',
+        gradient: 'from-slate-500 to-gray-600',
+        tagBg: 'bg-slate-100 dark:bg-slate-900/30',
+        tagText: 'text-slate-700 dark:text-slate-300'
+    }
+];
+
+// Función para asignar paletas únicas aleatoriamente
+function assignColorPalettes(projects: any[]) {
+    // Crear una copia de las paletas para mezclar
+    const availablePalettes = [...colorPalettes];
+
+    return projects.map((project, index) => {
+        // Si no hay más paletas disponibles, resetear la lista
+        if (availablePalettes.length === 0) {
+            availablePalettes.push(...colorPalettes);
+        }
+
+        // Obtener una paleta aleatoria específica
+        const randomIndex = Math.floor(
+            Math.random() * availablePalettes.length
+        );
+        const selectedPalette = availablePalettes.splice(randomIndex, 1)[0];
+
+        // Sobrescribir la paleta gris con la específica
+        const finalProject = {
+            ...project,
+            colorPalette: selectedPalette
+        };
+
+        console.log(
+            `Proyecto ${index + 1}: ${project.title} - Paleta: ${selectedPalette.name}`
+        );
+
+        return finalProject;
+    });
+}
+
+const projects: {
+    title: string;
+    subtitle: string;
+    description: string;
+    image?: string;
+    tags: string[];
+    link?: string;
+    colorPalette?: any;
+}[] = [
+    {
+        title: 'Lestradavaz Portfolio',
+        subtitle: 'Sitio web personal',
+        description:
+            'Portfolio personal con diseño moderno y animaciones fluidas. Incluye secciones de proyectos, servicios y contacto.',
+        image: 'https://images.unsplash.com/photo-1460925895917-afdab827c52f?w=600&h=400&fit=crop&auto=format',
+        tags: ['', '', ''],
+        link: 'https://lestradavaz.com',
+        colorPalette: defaultGrayPalette
+    },
+    {
+        title: 'Sistema de Gestión Empresarial',
+        subtitle: 'Aplicación web corporativa',
+        description:
+            'Sistema completo de gestión empresarial con dashboard administrativo, reportes y módulos de facturación.',
+        image: 'https://images.unsplash.com/photo-1551288049-bebda4e38f71?w=600&h=400&fit=crop&auto=format',
+        tags: ['', '', ''],
+        link: '',
+        colorPalette: defaultGrayPalette
+    },
+    {
+        title: 'Plataforma E-learning',
+        subtitle: 'Sistema educativo online',
+        description:
+            'Plataforma de educación en línea con cursos interactivos, evaluaciones automáticas y seguimiento de progreso.',
+        image: 'https://images.unsplash.com/photo-1522202176988-66273c2fd55f?w=600&h=400&fit=crop&auto=format',
+        tags: ['', '', ''],
+        link: '',
+        colorPalette: defaultGrayPalette
+    },
+    {
+        title: 'App de Delivery',
+        subtitle: 'Aplicación móvil',
+        description:
+            'Aplicación de delivery con geolocalización en tiempo real, pagos integrados y sistema de calificaciones.',
+        image: 'https://images.unsplash.com/photo-1556742049-0cfed4f6a45d?w=600&h=400&fit=crop&auto=format',
+        tags: ['', '', ''],
+        link: '',
+        colorPalette: defaultGrayPalette
+    },
+    {
+        title: 'Dashboard Analytics',
+        subtitle: 'Panel de análisis',
+        description:
+            'Dashboard de análisis de datos con gráficos interactivos, métricas en tiempo real y reportes personalizables.',
+        tags: ['', '', ''],
+        link: '',
+        colorPalette: defaultGrayPalette
+    },
+    {
+        title: 'Sitio Web Inmobiliaria',
+        subtitle: 'Portal inmobiliario',
+        description:
+            'Portal inmobiliario con búsqueda avanzada de propiedades, tours virtuales y sistema de contacto con agentes.',
+        image: 'https://images.unsplash.com/photo-1560518883-ce09059eeffa?w=600&h=400&fit=crop&auto=format',
+        tags: ['', '', ''],
+        link: '',
+        colorPalette: defaultGrayPalette
+    },
+    {
+        title: 'Blog Tecnológico',
+        subtitle: 'CMS personalizado',
+        description:
+            'Blog especializado en tecnología con sistema de comentarios, categorías avanzadas y optimización SEO.',
+        image: 'https://images.unsplash.com/photo-1432888622747-4eb9a8efeb07?w=600&h=400&fit=crop&auto=format',
+        tags: ['', '', ''],
+        link: '',
+        colorPalette: defaultGrayPalette
+    },
+    {
+        title: 'Tienda Online Artesanías',
+        subtitle: 'E-commerce especializado',
+        description:
+            'Tienda en línea para productos artesanales con carrito de compras, pasarela de pagos y gestión de inventario.',
+        image: 'https://images.unsplash.com/photo-1441986300917-64674bd600d8?w=600&h=400&fit=crop&auto=format',
+        tags: ['', '', ''],
+        link: '',
+        colorPalette: defaultGrayPalette
+    }
+];
+
+// Asignar paletas de colores a los proyectos
+const projectsWithColors = assignColorPalettes(projects);
+---
+
+<section
+    id="portfolio"
+    class="portfolio py-32 bg-white dark:bg-gray-900 relative overflow-hidden"
+>
+    <!-- Fondo decorativo -->
+    <div
+        class="absolute top-0 right-0 w-1/2 h-full bg-gradient-to-l from-lime-50 dark:from-lime-900/20 to-transparent opacity-30 pointer-events-none"
+    >
+    </div>
+
+    <Container>
+        <!-- Cabecera de la sección -->
+        <div class="text-center mb-20">
+            <div class="section-label mb-8 overflow-hidden">
+                <span class="inline-block text-label"> Portfolio </span>
+            </div>
+            <div class="portfolio-heading mb-8">
+                <h2 class="heading-display">
+                    <span class="block heading-line overflow-hidden">
+                        <span class="inline-block">Proyectos</span>
+                    </span>
+                    <span class="block heading-line overflow-hidden">
+                        <span
+                            class="inline-block text-lime-500 dark:text-lime-400"
+                            >Destacados</span
+                        >
+                    </span>
+                </h2>
+            </div>
+            <div class="portfolio-description overflow-hidden">
+                <p class="text-subtitle max-w-3xl mx-auto">
+                    Una selección de mis trabajos más recientes que demuestran
+                    mi capacidad para crear experiencias digitales
+                    excepcionales.
+                </p>
+            </div>
+        </div>
+
+        <!-- Slider de proyectos -->
+        <div class="portfolio-slider-container relative">
+            <div class="portfolio-slider" id="portfolio-slider">
+                <!-- Proyectos -->
+                {
+                    projectsWithColors.map((project) => (
+                        <div class="project-slide">
+                            <a
+                                href={project.link}
+                                class="project-card group cursor-pointer"
+                            >
+                                <div
+                                    class={`project-image relative overflow-hidden rounded-2xl aspect-[4/3] ${project.image ? '' : `bg-gradient-to-br ${project.colorPalette.gradient}`}`}
+                                >
+                                    {project.image && (
+                                        <img
+                                            src={project.image}
+                                            alt={project.title}
+                                            class="absolute inset-0 w-full h-full object-cover"
+                                        />
+                                    )}
+                                    <div class="absolute inset-0 bg-black/20 group-hover:bg-black/40 transition-all duration-500" />
+                                    {!project.image && (
+                                        <div class="absolute inset-0 flex items-center justify-center">
+                                            <div class="text-center text-white">
+                                                <h3 class="text-2xl font-bold mb-2">
+                                                    {project.title}
+                                                </h3>
+                                                <p class="text-sm opacity-80">
+                                                    {project.subtitle}
+                                                </p>
+                                            </div>
+                                        </div>
+                                    )}
+                                    {project.link && (
+                                        <div class="absolute top-4 right-4 opacity-0 group-hover:opacity-100 transition-opacity duration-300">
+                                            <div class="w-10 h-10 bg-white/20 backdrop-blur-sm rounded-full flex items-center justify-center">
+                                                <svg
+                                                    class="w-5 h-5 text-white"
+                                                    fill="none"
+                                                    stroke="currentColor"
+                                                    viewBox="0 0 24 24"
+                                                >
+                                                    <path
+                                                        stroke-linecap="round"
+                                                        stroke-linejoin="round"
+                                                        stroke-width="2"
+                                                        d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14"
+                                                    />
+                                                </svg>
+                                            </div>
+                                        </div>
+                                    )}
+                                </div>
+                                <div class="project-info pt-6">
+                                    <div class="project-tags flex flex-wrap gap-2 mb-3">
+                                        {project.tags.map((tag: string) => (
+                                            <span
+                                                class={`tag ${project.colorPalette.tagBg} ${project.colorPalette.tagText} px-3 py-1 rounded-full text-xs font-medium`}
+                                            >
+                                                {tag}
+                                            </span>
+                                        ))}
+                                    </div>
+                                    <h3 class="project-title text-xl font-semibold text-gray-900 dark:text-white mb-2">
+                                        {project.title}
+                                    </h3>
+                                    <p class="project-description text-gray-600 dark:text-gray-400 text-sm leading-relaxed">
+                                        {project.description}
+                                    </p>
+                                </div>
+                            </a>
+                        </div>
+                    ))
+                }
+            </div>
+
+            <!-- Navegación del slider -->
+            <div
+                class="slider-navigation flex justify-center items-center mt-12 space-x-4"
+            >
+                <button
+                    id="prevBtn"
+                    class="cursor-pointer nav-btn bg-white dark:bg-gray-800 shadow-lg rounded-full p-3 hover:bg-gray-50 dark:hover:bg-gray-700 transition-all duration-300"
+                >
+                    <svg
+                        class="w-5 h-5 text-gray-700 dark:text-gray-300"
+                        fill="none"
+                        stroke="currentColor"
+                        viewBox="0 0 24 24"
+                    >
+                        <path
+                            stroke-linecap="round"
+                            stroke-linejoin="round"
+                            stroke-width="2"
+                            d="M15 19l-7-7 7-7"></path>
+                    </svg>
+                </button>
+
+                <div class="slide-indicators flex space-x-2">
+                    {
+                        projectsWithColors.map((_, index) => (
+                            <span
+                                class={`indicator w-2 h-2 rounded-full ${
+                                    index === 0
+                                        ? 'bg-lime-500 dark:bg-lime-400'
+                                        : 'bg-gray-300 dark:bg-gray-600'
+                                }`}
+                            />
+                        ))
+                    }
+                </div>
+
+                <button
+                    id="nextBtn"
+                    class="cursor-pointer nav-btn bg-white dark:bg-gray-800 shadow-lg rounded-full p-3 hover:bg-gray-50 dark:hover:bg-gray-700 transition-all duration-300"
+                >
+                    <svg
+                        class="w-5 h-5 text-gray-700 dark:text-gray-300"
+                        fill="none"
+                        stroke="currentColor"
+                        viewBox="0 0 24 24"
+                    >
+                        <path
+                            stroke-linecap="round"
+                            stroke-linejoin="round"
+                            stroke-width="2"
+                            d="M9 5l7 7-7 7"></path>
+                    </svg>
+                </button>
+            </div>
+        </div>
+
+        <!-- CTA final -->
+        <div class="text-center mt-20">
+            <h3
+                class="text-2xl md:text-3xl font-semibold text-gray-900 dark:text-white mb-6"
+            >
+                ¿Tu proyecto será el próximo?
+            </h3>
+            <a
+                href="#contact"
+                class="inline-flex items-center px-8 py-4 bg-lime-500 dark:bg-lime-600 text-white font-semibold rounded-full hover:bg-lime-600 dark:hover:bg-lime-700 transition-all duration-300 transform hover:scale-105 shadow-lg hover:shadow-xl"
+            >
+                Comenzar Proyecto
+            </a>
+        </div>
+    </Container>
+</section>
+
+<script>
+    import gsap from 'gsap';
+    import { ScrollTrigger } from 'gsap/ScrollTrigger';
+
+    gsap.registerPlugin(ScrollTrigger);
+
+    document.addEventListener('DOMContentLoaded', () => {
+        // Elementos de la sección
+        const sectionLabel = document.querySelector(
+            '.portfolio .section-label span'
+        );
+        const headingLines = document.querySelectorAll('.heading-line span');
+        const subtitle = document.querySelector('.portfolio-subtitle p');
+        const sliderContainer = document.querySelector(
+            '.portfolio-slider-container'
+        );
+        const slider = document.getElementById('portfolio-slider');
+        const slides = document.querySelectorAll('.project-slide');
+        const prevBtn = document.getElementById('prevBtn');
+        const nextBtn = document.getElementById('nextBtn');
+        const indicators = document.querySelectorAll('.indicator');
+
+        // Configuración del slider
+        let currentSlide = 0;
+        const slideWidth = 400; // Ancho de cada slide + gap
+        const visibleSlides =
+            window.innerWidth >= 1024 ? 3 : window.innerWidth >= 768 ? 2 : 1;
+
+        // Configurar estado inicial
+        gsap.set([sectionLabel, subtitle, sliderContainer], {
+            opacity: 0,
+            y: 50
+        });
+        gsap.set(headingLines, { y: '100%' });
+
+        // Animación de entrada
+        gsap.to([sectionLabel, subtitle], {
+            opacity: 1,
+            y: 0,
+            duration: 0.6,
+            stagger: 0.2,
+            ease: 'power2.out',
+            scrollTrigger: {
+                trigger: '.portfolio-heading',
+                start: 'top 70%',
+                toggleActions: 'play none none none'
+            }
+        });
+
+        // Animación del título
+        gsap.to(headingLines, {
+            y: '0%',
+            duration: 1,
+            stagger: 0.1,
+            ease: 'power3.out',
+            scrollTrigger: {
+                trigger: '.portfolio-heading',
+                start: 'top 70%',
+                toggleActions: 'play none none none'
+            }
+        });
+
+        // Animación del slider
+        gsap.to(sliderContainer, {
+            opacity: 1,
+            y: 0,
+            duration: 0.8,
+            ease: 'power2.out',
+            scrollTrigger: {
+                trigger: '.portfolio-slider',
+                start: 'top 80%',
+                toggleActions: 'play none none none'
+            }
+        });
+
+        // Configurar el slider
+        function setupSlider() {
+            if (!slider) return;
+
+            const totalSlides = slides.length;
+
+            // Clonar slides para efecto infinito
+            const firstSlides = Array.from(slides).slice(0, visibleSlides);
+            const lastSlides = Array.from(slides).slice(-visibleSlides);
+
+            firstSlides.forEach((slide) => {
+                const clone = slide.cloneNode(true);
+                slider!.appendChild(clone);
+            });
+
+            lastSlides.forEach((slide) => {
+                const clone = slide.cloneNode(true);
+                slider!.insertBefore(clone, slider!.firstChild);
+            });
+
+            // Posicionar el slider inicial
+            gsap.set(slider, {
+                x: -slideWidth * visibleSlides,
+                display: 'flex',
+                gap: '2rem'
+            });
+
+            // Configurar cada slide
+            document.querySelectorAll('.project-slide').forEach((slide) => {
+                gsap.set(slide, {
+                    width: `${slideWidth - 32}px`,
+                    flexShrink: 0
+                });
+            });
+        }
+
+        // Función para mover el slider
+        function moveSlider(direction: 'next' | 'prev') {
+            if (!slider) return;
+
+            const totalSlides = slides.length;
+
+            if (direction === 'next') {
+                currentSlide = (currentSlide + 1) % totalSlides;
+            } else {
+                currentSlide = (currentSlide - 1 + totalSlides) % totalSlides;
+            }
+
+            const targetX = -slideWidth * (visibleSlides + currentSlide);
+
+            gsap.to(slider, {
+                x: targetX,
+                duration: 0.8,
+                ease: 'power2.out',
+                onComplete: () => {
+                    // Reset para efecto infinito
+                    if (currentSlide === 0 && slider) {
+                        gsap.set(slider, { x: -slideWidth * visibleSlides });
+                    }
+                    if (currentSlide === totalSlides - 1 && slider) {
+                        gsap.set(slider, {
+                            x: -slideWidth * (visibleSlides + totalSlides - 1)
+                        });
+                    }
+                }
+            });
+
+            updateIndicators();
+        }
+
+        // Actualizar indicadores
+        function updateIndicators() {
+            indicators.forEach((indicator, index) => {
+                if (index === currentSlide) {
+                    gsap.to(indicator, {
+                        backgroundColor: '#84cc16',
+                        scale: 1.2,
+                        duration: 0.3
+                    });
+                } else {
+                    gsap.to(indicator, {
+                        backgroundColor: '#d1d5db',
+                        scale: 1,
+                        duration: 0.3
+                    });
+                }
+            });
+        }
+
+        // Event listeners
+        if (nextBtn) {
+            nextBtn.addEventListener('click', () => {
+                moveSlider('next');
+            });
+        }
+
+        if (prevBtn) {
+            prevBtn.addEventListener('click', () => {
+                moveSlider('prev');
+            });
+        }
+
+        // Indicadores clickeables
+        indicators.forEach((indicator, index) => {
+            indicator.addEventListener('click', () => {
+                currentSlide = index;
+                const targetX = -slideWidth * (visibleSlides + currentSlide);
+                gsap.to(slider, {
+                    x: targetX,
+                    duration: 0.8,
+                    ease: 'power2.out'
+                });
+                updateIndicators();
+            });
+        });
+
+        // Inicializar
+        setupSlider();
+
+        // Responsive
+        window.addEventListener('resize', () => {
+            // Reconfigurar slider en resize
+            setTimeout(() => {
+                setupSlider();
+                updateIndicators();
+            }, 100);
+        });
+    });
+</script>
+
+<style>
+    .portfolio-slider {
+        display: flex;
+        gap: 2rem;
+        transition: none;
+        will-change: transform;
+    }
+
+    .project-slide {
+        flex-shrink: 0;
+        width: 350px;
+    }
+
+    .project-card {
+        cursor: pointer;
+    }
+
+    .project-image {
+        transition: transform 0.3s ease;
+    }
+
+    .project-card:hover .project-image {
+        transform: scale(1.02);
+    }
+
+    .tag {
+        transition: all 0.2s ease;
+    }
+
+    .tag:hover {
+        transform: translateY(-1px);
+    }
+
+    .nav-btn {
+        transition: all 0.3s ease;
+    }
+
+    .nav-btn:hover {
+        transform: scale(1.05);
+    }
+
+    .indicator {
+        cursor: pointer;
+        transition: all 0.3s ease;
+    }
+
+    .indicator:hover {
+        transform: scale(1.2);
+    }
+
+    .heading-line {
+        overflow: hidden;
+        display: block;
+    }
+
+    /* Responsive */
+    @media (max-width: 1024px) {
+        .project-slide {
+            width: 320px;
+        }
+    }
+
+    @media (max-width: 768px) {
+        .project-slide {
+            width: 280px;
+        }
+
+        .portfolio-slider {
+            gap: 1rem;
+        }
+    }
+
+    @media (max-width: 640px) {
+        .project-slide {
+            width: 90vw;
+        }
+    }
+</style>

@@ -1,0 +1,1202 @@
+---
+import Container from './Container.astro';
+import Button from './Button.astro';
+---
+
+<section
+    id="about"
+    class="about py-32 bg-white dark:bg-gray-900 relative overflow-hidden"
+>
+    <div
+        class="absolute top-0 left-0 w-1/2 h-full bg-gradient-to-r from-lime-50 dark:from-lime-900/20 to-transparent opacity-30"
+    >
+    </div>
+
+    <Container>
+        <div class="text-center mb-20">
+            <div class="section-label mb-8 overflow-hidden">
+                <span class="inline-block text-label"> Acerca de Mí </span>
+            </div>
+
+            <div class="about-heading mb-8">
+                <h2 class="heading-display">
+                    <span class="block heading-line overflow-hidden">
+                        <span class="inline-block">Creando</span>
+                    </span>
+                    <span class="block heading-line overflow-hidden">
+                        <span
+                            class="inline-block text-lime-500 dark:text-lime-400"
+                            >Experiencias</span
+                        >
+                    </span>
+                    <span class="block heading-line overflow-hidden">
+                        <span class="inline-block">Únicas</span>
+                    </span>
+                </h2>
+            </div>
+
+            <div class="about-description overflow-hidden">
+                <p class="text-subtitle max-w-4xl mx-auto">
+                    Con años de experiencia en desarrollo web y diseño digital,
+                    me especializo en crear soluciones que no solo se ven
+                    increíbles, sino que también generan resultados reales para
+                    tu negocio.
+                </p>
+            </div>
+        </div>
+
+        <div
+            class="value-propositions grid md:grid-cols-2 lg:grid-cols-4 gap-8 mb-20"
+        >
+            <div class="value-item text-center">
+                <div
+                    class="value-icon w-16 h-16 bg-lime-100 dark:bg-lime-900/30 rounded-2xl flex items-center justify-center mx-auto mb-6"
+                >
+                    <svg
+                        class="w-8 h-8 text-lime-600 dark:text-lime-400"
+                        fill="none"
+                        stroke="currentColor"
+                        viewBox="0 0 24 24"
+                    >
+                        <path
+                            stroke-linecap="round"
+                            stroke-linejoin="round"
+                            stroke-width="2"
+                            d="M7 21a4 4 0 01-4-4V5a2 2 0 012-2h4a2 2 0 012 2v12a4 4 0 01-4 4zM21 5a2 2 0 00-2-2h-4a2 2 0 00-2 2v14a4 4 0 004 4h4a2 2 0 002-2V5z"
+                        ></path>
+                    </svg>
+                </div>
+                <h3
+                    class="text-xl font-semibold text-gray-900 dark:text-white mb-3"
+                >
+                    Diseño Centrado en el Usuario
+                </h3>
+                <p
+                    class="text-gray-600 dark:text-gray-400 text-sm leading-relaxed"
+                >
+                    Interfaces que convierten visitantes en clientes
+                </p>
+            </div>
+
+            <div class="value-item text-center">
+                <div
+                    class="value-icon w-16 h-16 bg-blue-100 dark:bg-blue-900/30 rounded-2xl flex items-center justify-center mx-auto mb-6"
+                >
+                    <svg
+                        class="w-8 h-8 text-blue-600 dark:text-blue-400"
+                        fill="none"
+                        stroke="currentColor"
+                        viewBox="0 0 24 24"
+                    >
+                        <path
+                            stroke-linecap="round"
+                            stroke-linejoin="round"
+                            stroke-width="2"
+                            d="M13 10V3L4 14h7v7l9-11h-7z"></path>
+                    </svg>
+                </div>
+                <h3
+                    class="text-xl font-semibold text-gray-900 dark:text-white mb-3"
+                >
+                    Rendimiento Óptimo
+                </h3>
+                <p
+                    class="text-gray-600 dark:text-gray-400 text-sm leading-relaxed"
+                >
+                    Sitios web rápidos que mejoran el SEO
+                </p>
+            </div>
+
+            <div class="value-item text-center">
+                <div
+                    class="value-icon w-16 h-16 bg-purple-100 dark:bg-purple-900/30 rounded-2xl flex items-center justify-center mx-auto mb-6"
+                >
+                    <svg
+                        class="w-8 h-8 text-purple-600 dark:text-purple-400"
+                        fill="none"
+                        stroke="currentColor"
+                        viewBox="0 0 24 24"
+                    >
+                        <path
+                            stroke-linecap="round"
+                            stroke-linejoin="round"
+                            stroke-width="2"
+                            d="M12 18h.01M8 21h8a2 2 0 002-2V5a2 2 0 00-2-2H8a2 2 0 00-2 2v14a2 2 0 002 2z"
+                        ></path>
+                    </svg>
+                </div>
+                <h3
+                    class="text-xl font-semibold text-gray-900 dark:text-white mb-3"
+                >
+                    Responsive Design
+                </h3>
+                <p
+                    class="text-gray-600 dark:text-gray-400 text-sm leading-relaxed"
+                >
+                    Experiencias perfectas en todos los dispositivos
+                </p>
+            </div>
+
+            <div class="value-item text-center">
+                <div
+                    class="value-icon w-16 h-16 bg-green-100 dark:bg-green-900/30 rounded-2xl flex items-center justify-center mx-auto mb-6"
+                >
+                    <svg
+                        class="w-8 h-8 text-green-600 dark:text-green-400"
+                        fill="none"
+                        stroke="currentColor"
+                        viewBox="0 0 24 24"
+                    >
+                        <path
+                            stroke-linecap="round"
+                            stroke-linejoin="round"
+                            stroke-width="2"
+                            d="M9 19v-6a2 2 0 00-2-2H5a2 2 0 00-2 2v6a2 2 0 002 2h2a2 2 0 002-2zm0 0V9a2 2 0 012-2h2a2 2 0 012 2v10m-6 0a2 2 0 002 2h2a2 2 0 002-2m0 0V5a2 2 0 012-2h2a2 2 0 012 2v14a2 2 0 01-2 2h-2a2 2 0 01-2-2z"
+                        ></path>
+                    </svg>
+                </div>
+                <h3
+                    class="text-xl font-semibold text-gray-900 dark:text-white mb-3"
+                >
+                    Enfoque en Resultados
+                </h3>
+                <p
+                    class="text-gray-600 dark:text-gray-400 text-sm leading-relaxed"
+                >
+                    Desarrollo orientado a objetivos de negocio
+                </p>
+            </div>
+        </div>
+
+        <!-- Sección de Carrera y Experiencia -->
+        <div class="career-section mb-20">
+            <h3 class="text-3xl font-light text-gray-900 dark:text-white mb-12 text-center">
+                Carrera y Experiencia
+            </h3>
+
+            <!-- Experience Grid -->
+            <div class="max-w-6xl mx-auto">
+                <div class="grid lg:grid-cols-2 gap-6">
+                    <!-- Experiencia 1 -->
+                    <div class="career-card">
+                        <div class="career-badge">Agosto 2019 - Actualidad</div>
+                        <h4 class="career-title">Diseñador y Desarrollador Web</h4>
+                        <p class="career-desc">Desarrollo de sitios web personalizados y gestión SEO para múltiples clientes.</p>
+                    </div>
+
+                    <!-- Experiencia 2 -->
+                    <div class="career-card">
+                        <div class="career-badge">Junio 2023 - Actualidad</div>
+                        <h4 class="career-title">Desarrollador Web</h4>
+                        <p class="career-desc">Gestión y desarrollo de proyectos digitales empresariales y mantenimiento de infraestructura.</p>
+                    </div>
+
+                    <!-- Experiencia 3 -->
+                    <div class="career-card">
+                        <div class="career-badge">Junio 2024 - Actualidad</div>
+                        <h4 class="career-title">Líder de Proyecto Ecommerce</h4>
+                        <p class="career-desc">Coordinación y supervisión de equipos multidisciplinarios para proyectos E-commerce.</p>
+                    </div>
+
+                    <!-- Experiencia 4 -->
+                    <div class="career-card">
+                        <div class="career-badge">Abril 2022 - Septiembre 2022</div>
+                        <h4 class="career-title">Becario en Desarrollo de Software</h4>
+                        <p class="career-desc">Desarrollo full-stack con Angular y C#, gestión de versiones con Git.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="skills-section text-center">
+            <h3 class="text-3xl font-light text-gray-900 dark:text-white mb-12">
+                Tecnologías y Herramientas
+            </h3>
+
+            <div class="max-w-5xl mx-auto">
+                <div class="skills-category mb-12">
+                    <h4
+                        class="text-lg font-medium text-gray-700 dark:text-gray-300 mb-8 uppercase tracking-wider"
+                    >
+                        Frontend
+                    </h4>
+                    <div
+                        class="skills-grid grid grid-cols-2 md:grid-cols-3 lg:grid-cols-6 gap-6"
+                    >
+                        <div
+                            class="skill-item flex flex-col items-center p-6 bg-gray-50 dark:bg-gray-800 rounded-2xl hover:bg-gray-100 dark:hover:bg-gray-700 transition-colors duration-300"
+                        >
+                            <div
+                                class="skill-icon w-16 h-16 mb-4 flex items-center justify-center"
+                            >
+                                <svg
+                                    class="w-12 h-12"
+                                    viewBox="0 0 24 24"
+                                    fill="none"
+                                >
+                                    <path
+                                        d="M1.5 0h21l-1.91 21.563L11.977 24l-8.565-2.438L1.5 0zm7.031 9.75l-.232-2.718 10.059.003.23-2.622L5.412 4.41l.698 8.01h9.126l-.326 3.426-2.91.804-2.955-.81-.188-2.11H6.248l.33 4.171L12 19.351l5.379-1.443.744-8.157H8.531z"
+                                        fill="#E34F26"></path>
+                                </svg>
+                            </div>
+                            <span
+                                class="text-sm font-medium text-gray-700 dark:text-gray-300"
+                                >HTML5</span
+                            >
+                        </div>
+
+                        <div
+                            class="skill-item flex flex-col items-center p-6 bg-gray-50 dark:bg-gray-800 rounded-2xl hover:bg-gray-100 dark:hover:bg-gray-700 transition-colors duration-300"
+                        >
+                            <div
+                                class="skill-icon w-16 h-16 mb-4 flex items-center justify-center"
+                            >
+                                <svg
+                                    class="w-12 h-12"
+                                    viewBox="0 0 24 24"
+                                    fill="none"
+                                >
+                                    <path
+                                        d="M1.5 0h21l-1.91 21.563L11.977 24l-8.564-2.438L1.5 0zm17.09 4.413L5.41 4.41l.213 2.622 10.125.002-.255 2.716h-6.64l.24 2.573h6.182l-.366 3.523-2.91.804-2.956-.81-.188-2.11h-2.61l.29 3.855L12 19.288l5.373-1.53L18.59 4.414z"
+                                        fill="#1572B6"></path>
+                                </svg>
+                            </div>
+                            <span
+                                class="text-sm font-medium text-gray-700 dark:text-gray-300"
+                                >CSS3</span
+                            >
+                        </div>
+
+                        <div
+                            class="skill-item flex flex-col items-center p-6 bg-gray-50 dark:bg-gray-800 rounded-2xl hover:bg-gray-100 dark:hover:bg-gray-700 transition-colors duration-300"
+                        >
+                            <div
+                                class="skill-icon w-16 h-16 mb-4 flex items-center justify-center"
+                            >
+                                <svg
+                                    class="w-12 h-12"
+                                    viewBox="0 0 24 24"
+                                    fill="none"
+                                >
+                                    <path
+                                        d="M0 0h24v24H0V0zm22.034 18.276c-.175-1.095-.888-2.015-3.003-2.873-.736-.345-1.554-.585-1.797-1.14-.091-.33-.105-.51-.046-.705.15-.646.915-.84 1.515-.66.39.12.75.42.976.9 1.034-.676 1.034-.676 1.755-1.125-.27-.42-.404-.601-.51-.78-.63-.705-1.469-1.065-2.834-1.034l-.705.089c-.676.165-1.32.525-1.71 1.005-1.14 1.291-.811 3.541.569 4.471 1.365 1.02 3.361 1.244 3.616 2.205.24 1.17-.87 1.545-1.966 1.41-.811-.18-1.26-.586-1.755-1.336l-1.83 1.051c.21.48.45.689.81 1.109 1.74 1.756 6.09 1.666 6.871-1.004.029-.09.24-.705.074-1.65l.046.067zm-8.983-7.245h-2.248c0 1.938-.009 3.864-.009 5.805 0 1.232.063 2.363-.138 2.711-.33.689-1.18.601-1.566.48-.396-.196-.597-.466-.83-.855-.063-.105-.11-.196-.127-.196l-1.825 1.125c.305.63.75 1.172 1.324 1.517.855.51 2.004.675 3.207.405.783-.226 1.458-.691 1.811-1.411.51-.93.402-2.07.397-3.346.012-2.054 0-4.109 0-6.179l.004-.056z"
+                                        fill="#F7DF1E"></path>
+                                </svg>
+                            </div>
+                            <span
+                                class="text-sm font-medium text-gray-700 dark:text-gray-300"
+                                >JavaScript</span
+                            >
+                        </div>
+
+                        <div
+                            class="skill-item flex flex-col items-center p-6 bg-gray-50 dark:bg-gray-800 rounded-2xl hover:bg-gray-100 dark:hover:bg-gray-700 transition-colors duration-300"
+                        >
+                            <div
+                                class="skill-icon w-16 h-16 mb-4 flex items-center justify-center"
+                            >
+                                <svg
+                                    class="w-12 h-12"
+                                    viewBox="0 0 24 24"
+                                    fill="none"
+                                >
+                                    <path
+                                        d="M14.23 12.004a2.236 2.236 0 0 1-2.235 2.236 2.236 2.236 0 0 1-2.236-2.236 2.236 2.236 0 0 1 2.235-2.236 2.236 2.236 0 0 1 2.236 2.236zm2.648-10.69c-1.346 0-3.107.96-4.888 2.622-1.78-1.653-3.542-2.602-4.887-2.602-.41 0-.783.093-1.106.278-1.375.793-1.683 3.264-.973 6.365C1.98 8.917 0 10.42 0 12.004c0 1.59 1.99 3.097 5.043 4.03-.704 3.113-.39 5.588.988 6.38.32.187.69.275 1.102.275 1.345 0 3.107-.96 4.888-2.624 1.78 1.654 3.542 2.603 4.887 2.603.41 0 .783-.09 1.106-.275 1.374-.792 1.683-3.263.973-6.365C22.02 15.096 24 13.59 24 12.004c0-1.59-1.99-3.097-5.043-4.032.704-3.11.39-5.587-.988-6.38-.318-.184-.688-.277-1.092-.278zm-.005 1.09v.006c.225 0 .406.044.558.127.666.382.955 1.835.73 3.704-.054.46-.142.945-.25 1.44-.96-.236-2.006-.417-3.107-.534-.66-.905-1.345-1.727-2.035-2.857-2.857-1.592-1.48-3.087-2.292-4.105-2.295zm-9.77.02c1.012 0 2.514.808 4.11 2.28-.686.72-1.37 1.537-2.02 2.442-1.107.117-2.154.298-3.113.538-.112-.49-.195-.964-.254-1.42-.23-1.868.054-3.32.714-3.707.19-.09.4-.127.563-.132zm4.882 3.05c.455.468.91.992 1.36 1.564-.44-.02-.89-.034-1.36-.034-.47 0-.92.01-1.36.034.44-.572.895-1.096 1.36-1.564zM12 8.1c.74 0 1.477.034 2.202.093.406.582.802 1.203 1.183 1.86.372.64.71 1.29 1.018 1.946-.308.655-.646 1.31-1.013 1.95-.38.66-.773 1.288-1.18 1.87-.728.063-1.466.098-2.21.098-.74 0-1.477-.035-2.202-.093-.406-.582-.802-1.204-1.183-1.86-.372-.64-.71-1.29-1.018-1.946.303-.657.646-1.313 1.013-1.954.38-.66.773-1.286 1.18-1.868.728-.064 1.466-.098 2.21-.098zm-3.635.254c-.24.377-.48.763-.704 1.16-.225.39-.435.782-.635 1.174-.265-.656-.49-1.31-.676-1.947.64-.15 1.315-.283 2.015-.386zm7.26 0c.695.103 1.365.23 2.006.387-.18.632-.405 1.282-.66 1.933-.2-.39-.41-.783-.64-1.174-.225-.392-.465-.774-.705-1.146zm3.063.675c.484.15.944.317 1.375.498 1.732.74 2.852 1.708 2.852 2.476-.005.768-1.125 1.74-2.857 2.475-.42.18-.88.342-1.355.493-.28-.958-.646-1.956-1.1-2.98.45-1.017.81-2.01 1.085-2.964zm-13.395.004c.278.96.645 1.957 1.1 2.98-.45 1.017-.812 2.01-1.086 2.964-.484-.15-.944-.318-1.37-.5-1.732-.737-2.852-1.706-2.852-2.474 0-.768 1.12-1.742 2.852-2.476.42-.18.88-.342 1.356-.494zm11.678 4.28c.265.657.49 1.312.676 1.948-.64.157-1.316.29-2.016.39.24-.375.48-.762.705-1.158.225-.39.435-.788.636-1.18zm-9.945.02c.2.392.41.783.64 1.175.23.39.465.772.705 1.143-.695-.102-1.365-.23-2.006-.386.18-.63.406-1.282.66-1.933zM17.92 16.32c.112.493.2.968.254 1.423.23 1.868-.054 3.32-.714 3.708-.147.09-.338.128-.563.128-1.012 0-2.514-.807-4.11-2.28.686-.72 1.37-1.536 2.02-2.44 1.107-.118 2.154-.3 3.113-.54zm-11.83.01c.96.234 2.006.415 3.107.532.66.905 1.345 1.727 2.035 2.446-1.595 1.483-3.092 2.295-4.11 2.295-.22-.005-.406-.05-.553-.132-.666-.38-.955-1.834-.73-3.703.054-.46.142-.944.25-1.438zm4.56.64c.44.02.89.034 1.36.034.47 0 .92-.01 1.36-.034-.44.572-.895 1.095-1.36 1.56-.465-.467-.92-.992-1.36-1.56z"
+                                        fill="#61DAFB"></path>
+                                </svg>
+                            </div>
+                            <span
+                                class="text-sm font-medium text-gray-700 dark:text-gray-300"
+                                >React</span
+                            >
+                        </div>
+
+                        <div
+                            class="skill-item flex flex-col items-center p-6 bg-gray-50 dark:bg-gray-800 rounded-2xl hover:bg-gray-100 dark:hover:bg-gray-700 transition-colors duration-300"
+                        >
+                            <div
+                                class="skill-icon w-16 h-16 mb-4 flex items-center justify-center"
+                            >
+                                <svg
+                                    class="w-12 h-12"
+                                    viewBox="0 0 24 24"
+                                    fill="none"
+                                >
+                                    <path
+                                        d="M12.001,4.8c-3.2,0-5.2,1.6-6,4.8c1.2-1.6,2.6-2.2,4.2-1.8c0.913,0.228,1.565,0.89,2.288,1.624 C13.666,10.618,15.027,12,18.001,12c3.2,0,5.2-1.6,6-4.8c-1.2,1.6-2.6,2.2-4.2,1.8c-0.913-0.228-1.565-0.89-2.288-1.624 C16.337,6.182,14.976,4.8,12.001,4.8z M6.001,12c-3.2,0-5.2,1.6-6,4.8c1.2-1.6,2.6-2.2,4.2-1.8c0.913,0.228,1.565,0.89,2.288,1.624 C7.666,17.818,9.027,19.2,12.001,19.2c3.2,0,5.2-1.6,6-4.8c-1.2,1.6-2.6,2.2-4.2,1.8c-0.913-0.228-1.565-0.89-2.288-1.624 C10.337,13.382,8.976,12,6.001,12z"
+                                        fill="#06B6D4"></path>
+                                </svg>
+                            </div>
+                            <span
+                                class="text-sm font-medium text-gray-700 dark:text-gray-300"
+                                >Tailwind</span
+                            >
+                        </div>
+
+                        <div
+                            class="skill-item flex flex-col items-center p-6 bg-gray-50 dark:bg-gray-800 rounded-2xl hover:bg-gray-100 dark:hover:bg-gray-700 transition-colors duration-300"
+                        >
+                            <div
+                                class="skill-icon w-16 h-16 mb-4 flex items-center justify-center"
+                            >
+                                <svg
+                                    class="w-12 h-12"
+                                    viewBox="0 0 24 24"
+                                    fill="none"
+                                >
+                                    <path
+                                        d="M15.852 8.981h-4.588V0h4.588c2.476 0 4.49 2.014 4.49 4.49s-2.014 4.491-4.49 4.491zM12.735 7.51h3.117c1.665 0 3.019-1.355 3.019-3.019s-1.355-3.019-3.019-3.019h-3.117V7.51zm0 1.471H8.148c-2.476 0-4.49-2.014-4.49-4.49S5.672 0 8.148 0h4.588v8.981zm-4.587-7.51c-1.665 0-3.019 1.355-3.019 3.019s1.355 3.019 3.019 3.019h3.117V1.471H8.148zm4.587 15.019H8.148c-2.476 0-4.49-2.014-4.49-4.49s2.014-4.49 4.49-4.49h4.588v8.98zM8.148 8.981c-1.665 0-3.019 1.355-3.019 3.019s1.355 3.019 3.019 3.019h3.117v-6.038H8.148zm7.704 0c2.476 0 4.49 2.014 4.49 4.49s-2.014 4.49-4.49 4.49-4.49-2.014-4.49-4.49 2.014-4.49 4.49-4.49zm0 7.509c1.665 0 3.019-1.355 3.019-3.019s-1.355-3.019-3.019-3.019-3.019 1.355-3.019 3.019 1.355 3.019 3.019 3.019zM8.148 24c-2.476 0-4.49-2.014-4.49-4.49s2.014-4.49 4.49-4.49 4.49 2.014 4.49 4.49S10.624 24 8.148 24zm0-7.509c-1.665 0-3.019 1.355-3.019 3.019s1.355 3.019 3.019 3.019 3.019-1.355 3.019-3.019-1.355-3.019-3.019-3.019z"
+                                        fill="#F24E1E"></path>
+                                </svg>
+                            </div>
+                            <span
+                                class="text-sm font-medium text-gray-700 dark:text-gray-300"
+                                >Figma</span
+                            >
+                        </div>
+                    </div>
+                </div>
+
+                <div class="skills-category mb-12">
+                    <h4
+                        class="text-lg font-medium text-gray-700 dark:text-gray-300 mb-8 uppercase tracking-wider"
+                    >
+                        Backend
+                    </h4>
+                    <div
+                        class="skills-grid grid grid-cols-2 md:grid-cols-3 lg:grid-cols-6 gap-6"
+                    >
+                        <div
+                            class="skill-item flex flex-col items-center p-6 bg-gray-50 dark:bg-gray-800 rounded-2xl hover:bg-gray-100 dark:hover:bg-gray-700 transition-colors duration-300"
+                        >
+                            <div
+                                class="skill-icon w-16 h-16 mb-4 flex items-center justify-center"
+                            >
+                                <svg
+                                    class="w-12 h-12"
+                                    viewBox="0 0 24 24"
+                                    fill="#68A063"
+                                >
+                                    <path
+                                        d="M11.998,24c-0.321,0-0.641-0.084-0.922-0.247l-2.936-1.737c-0.438-0.245-0.224-0.332-0.08-0.333 c0.585-0.203,0.703-0.25,1.328-0.604c0.065-0.037,0.151-0.023,0.218,0.017l2.256,1.339c0.082,0.045,0.197,0.045,0.272,0l8.795-5.076 c0.082-0.047,0.134-0.141,0.134-0.238V6.921c0-0.099-0.053-0.192-0.137-0.242l-8.791-5.072c-0.081-0.047-0.189-0.047-0.271,0 L3.075,6.68C2.99,6.729,2.936,6.825,2.936,6.921v10.15c0,0.097,0.054,0.189,0.139,0.235l2.409,1.392 c1.307,0.654,2.108-0.116,2.108-0.89V7.787c0-0.142,0.114-0.253,0.256-0.253h1.115c0,0.139,0.116,0.255,0.255,0.253v10.021 c0,1.745-0.95,2.745-2.604,2.745c-0.508,0-0.909,0-2.026-0.551L2.28,18.675c-0.57-0.329-0.922-0.945-0.922-1.604V6.921 c0-0.659,0.353-1.275,0.922-1.603l8.795-5.082c0.557-0.315,1.296-0.315,1.848,0l8.794,5.082c0.570,0.329,0.924,0.944,0.924,1.603 v10.15c0,0.659-0.354,1.273-0.924,1.604l-8.794,5.078C12.643,23.916,12.324,24,11.998,24z M19.099,13.993 c0-1.9-1.284-2.406-3.987-2.763c-2.731-0.361-3.009-0.548-3.009-1.187c0-0.528,0.235-1.233,2.258-1.233 c1.807,0,2.473,0.389,2.747,1.607c0.024,0.115,0.129,0.199,0.247,0.199h1.141c0.071,0,0.138-0.031,0.186-0.081 c0.048-0.054,0.074-0.123,0.067-0.196c-0.177-2.098-1.571-3.076-4.388-3.076c-2.508,0-4.004,1.058-4.004,2.833 c0,1.925,1.488,2.457,3.895,2.695c2.88,0.282,3.103,0.703,3.103,1.269c0,0.983-0.789,1.402-2.642,1.402 c-2.327,0-2.839-0.584-3.011-1.742c-0.02-0.124-0.126-0.215-0.253-0.215h-1.137c-0.141,0-0.254,0.112-0.254,0.253 c0,1.482,0.806,3.248,4.655,3.248C17.501,17.007,19.099,15.91,19.099,13.993z"
+                                    ></path>
+                                </svg>
+                            </div>
+                            <span
+                                class="text-sm font-medium text-gray-700 dark:text-gray-300"
+                                >Node.js</span
+                            >
+                        </div>
+
+                        <div
+                            class="skill-item flex flex-col items-center p-6 bg-gray-50 dark:bg-gray-800 rounded-2xl hover:bg-gray-100 dark:hover:bg-gray-700 transition-colors duration-300"
+                        >
+                            <div
+                                class="skill-icon w-16 h-16 mb-4 flex items-center justify-center"
+                            >
+                                <svg
+                                    class="w-12 h-12"
+                                    viewBox="0 0 24 24"
+                                    fill="#000000"
+                                >
+                                    <path
+                                        d="M24 18.588a1.529 1.529 0 01-1.895-.72l-3.45-4.771-.5-.667-4.003 5.444a1 1 0 01-1.802.708l5.158-6.92-4.798-6.251a1.595 1.595 0 011.9-.666l3.576 4.83 3.596-4.81a1.435 1.435 0 011.788-.668L21.708 7.9l-2.522 3.283a.666.666 0 000 .994l4.804 6.412zM.002 11.576l.42-2.075c1.154-4.103 5.858-5.81 9.094-3.27 1.895 1.489 2.368 3.597 2.275 5.973H1.116C.943 16.447 4.005 19.009 7.92 17.7a4.078 4.078 0 002.582-2.876c.207-.666.548-.78 1.174-.588a5.417 5.417 0 01-2.589 3.957c-2.864 1.807-6.924.018-7.51-3.2C.85 14.458-.316 12.984.002 11.576zm8.031-2.142c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"
+                                        fill="#3ECF8E"></path>
+                                    <circle
+                                        cx="12"
+                                        cy="12"
+                                        r="10"
+                                        stroke="#3ECF8E"
+                                        stroke-width="2"
+                                        fill="none"></circle>
+                                </svg>
+                            </div>
+                            <span
+                                class="text-sm font-medium text-gray-700 dark:text-gray-300"
+                                >Express</span
+                            >
+                        </div>
+
+                        <div
+                            class="skill-item flex flex-col items-center p-6 bg-gray-50 dark:bg-gray-800 rounded-2xl hover:bg-gray-100 dark:hover:bg-gray-700 transition-colors duration-300"
+                        >
+                            <div
+                                class="skill-icon w-16 h-16 mb-4 flex items-center justify-center"
+                            >
+                                <svg
+                                    class="w-12 h-12"
+                                    viewBox="0 0 24 24"
+                                    fill="#4DB33D"
+                                >
+                                    <path
+                                        d="M17.193 9.555c-1.264-5.58-4.252-7.414-4.573-8.115-.28-.394-.53-.954-.735-1.44-.036.495-.055.685-.523 1.184-.723.566-4.438 3.682-4.74 10.02-.282 5.912 4.27 9.435 4.888 9.884l.07.05A73.49 73.49 0 0111.91 24h.481c.114-1.032.284-2.056.51-3.07.417-.296.604-.463.85-.693a11.342 11.342 0 003.639-8.464c.01-.814-.103-1.662-.197-2.218zm-5.336 8.195s0-8.291.275-8.29c.213 0 .49 10.695.49 10.695-.381-.045-.765-1.76-.765-2.405z"
+                                    ></path>
+                                </svg>
+                            </div>
+                            <span
+                                class="text-sm font-medium text-gray-700 dark:text-gray-300"
+                                >MongoDB</span
+                            >
+                        </div>
+
+                        <div
+                            class="skill-item flex flex-col items-center p-6 bg-gray-50 dark:bg-gray-800 rounded-2xl hover:bg-gray-100 dark:hover:bg-gray-700 transition-colors duration-300"
+                        >
+                            <div
+                                class="skill-icon w-16 h-16 mb-4 flex items-center justify-center"
+                            >
+                                <svg
+                                    class="w-12 h-12"
+                                    viewBox="0 0 24 24"
+                                    fill="#F1502F"
+                                >
+                                    <path
+                                        d="M23.546 10.93L13.067.452c-.604-.603-1.582-.603-2.188 0L8.708 2.627l2.76 2.76c.645-.215 1.379-.07 1.889.441.516.515.658 1.258.438 1.9.9 1.034-.676 1.034-.676 1.755-1.125-.27-.42-.404-.601-.51-.78-.63-.705-1.469-1.065-2.834-1.034l-.705.089c-.676.165-1.32.525-1.71 1.005-1.14 1.291-.811 3.541.569 4.471 1.365 1.02 3.361 1.244 3.616 2.205.24 1.17-.87 1.545-1.966 1.41-.811-.18-1.26-.586-1.755-1.336l-1.83 1.051c.21.48.45.689.81 1.109 1.74 1.756 6.09 1.666 6.871-1.004.029-.09.24-.705.074-1.65l.046.067zm-8.983-7.245h-2.248c0 1.938-.009 3.864-.009 5.805 0 1.232.063 2.363-.138 2.711-.33.689-1.18.601-1.566.48-.396-.196-.597-.466-.83-.855-.063-.105-.11-.196-.127-.196l-1.825 1.125c.305.63.75 1.172 1.324 1.517.855.51 2.004.675 3.207.405.783-.226 1.458-.691 1.811-1.411.51-.93.402-2.07.397-3.346.012-2.054 0-4.109 0-6.179l.004-.056z"
+                                    ></path>
+                                </svg>
+                            </div>
+                            <span
+                                class="text-sm font-medium text-gray-700 dark:text-gray-300"
+                                >Git</span
+                            >
+                        </div>
+
+                        <div
+                            class="skill-item flex flex-col items-center p-6 bg-gray-50 dark:bg-gray-800 rounded-2xl hover:bg-gray-100 dark:hover:bg-gray-700 transition-colors duration-300"
+                        >
+                            <div
+                                class="skill-icon w-16 h-16 mb-4 flex items-center justify-center"
+                            >
+                                <svg
+                                    class="w-12 h-12"
+                                    viewBox="0 0 24 24"
+                                    fill="none"
+                                >
+                                    <rect
+                                        x="2"
+                                        y="2"
+                                        width="20"
+                                        height="20"
+                                        rx="4"
+                                        fill="#FF6B35"
+                                        stroke="none"></rect>
+                                    <path
+                                        d="M7 7h10v2H7zM7 11h6v2H7zM7 15h8v2H7z"
+                                        fill="white"></path>
+                                </svg>
+                            </div>
+                            <span
+                                class="text-sm font-medium text-gray-700 dark:text-gray-300"
+                                >PocketBase</span
+                            >
+                        </div>
+
+                        <div
+                            class="skill-item flex flex-col items-center p-6 bg-gray-50 dark:bg-gray-800 rounded-2xl hover:bg-gray-100 dark:hover:bg-gray-700 transition-colors duration-300"
+                        >
+                            <div
+                                class="skill-icon w-16 h-16 mb-4 flex items-center justify-center"
+                            >
+                                <svg
+                                    class="w-12 h-12"
+                                    viewBox="0 0 24 24"
+                                    fill="none"
+                                >
+                                    <path
+                                        d="M21.362 9.354H12.65c-.4 0-.72.323-.72.72 0 .4.323.72.72.72h8.71c.4 0 .72-.32.72-.72a.72.72 0 00-.72-.72zm0 2.16h-4.93c-.4 0-.72.323-.72.72 0 .4.323.72.72.72h4.93c.4 0 .72-.32.72-.72a.72.72 0 00-.72-.72zm0 2.16h-8.71c-.4 0-.72.323-.72.72 0 .4.323.72.72.72h8.71c.4 0 .72-.32.72-.72a.72.72 0 00-.72-.72z"
+                                        fill="#3ECF8E"></path>
+                                    <path
+                                        d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"
+                                        fill="#3ECF8E"></path>
+                                    <circle
+                                        cx="12"
+                                        cy="12"
+                                        r="10"
+                                        stroke="#3ECF8E"
+                                        stroke-width="2"
+                                        fill="none"></circle>
+                                </svg>
+                            </div>
+                            <span
+                                class="text-sm font-medium text-gray-700 dark:text-gray-300"
+                                >Supabase</span
+                            >
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </Container>
+</section>
+
+<script>
+    import gsap from 'gsap';
+    import { ScrollTrigger } from 'gsap/ScrollTrigger';
+
+    gsap.registerPlugin(ScrollTrigger);
+
+    document.addEventListener('DOMContentLoaded', () => {
+        // Elementos de la sección About con selectores correctos
+        const sectionLabel = document.querySelector(
+            '.about .section-label span'
+        );
+        const headingLines = document.querySelectorAll(
+            '.about .heading-line span'
+        );
+        const aboutDescription = document.querySelector('.about-description');
+        const valueItems = document.querySelectorAll('.value-item');
+        const skillsSection = document.querySelector('.skills-section');
+
+        // Configurar estado inicial
+        gsap.set([sectionLabel, aboutDescription, skillsSection], {
+            opacity: 0,
+            y: 50
+        });
+        gsap.set(headingLines, { y: '100%' });
+        gsap.set(valueItems, {
+            opacity: 0,
+            y: 30
+        });
+
+        // Timeline de entrada
+        const aboutTl = gsap.timeline({
+            scrollTrigger: {
+                trigger: '.about-heading',
+                start: 'top 70%',
+                toggleActions: 'play none none none'
+            }
+        });
+
+        aboutTl
+            .to(sectionLabel, {
+                opacity: 1,
+                y: 0,
+                duration: 0.6,
+                ease: 'power2.out'
+            })
+            .to(
+                headingLines,
+                {
+                    y: '0%',
+                    duration: 1,
+                    stagger: 0.1,
+                    ease: 'power3.out'
+                },
+                '-=0.3'
+            )
+            .to(
+                aboutDescription,
+                {
+                    opacity: 1,
+                    y: 0,
+                    duration: 0.6,
+                    ease: 'power2.out'
+                },
+                '-=0.4'
+            )
+            .to(
+                valueItems,
+                {
+                    opacity: 1,
+                    y: 0,
+                    duration: 0.5,
+                    stagger: 0.1,
+                    ease: 'power2.out'
+                },
+                '-=0.2'
+            );
+
+        // Animación de la sección de carrera
+        const careerSection = document.querySelector('.career-section');
+        const careerCards = document.querySelectorAll('.career-card');
+
+        if (careerSection && careerCards.length > 0) {
+            // Configurar estado inicial de la sección de carrera
+            gsap.set(careerSection.querySelector('h3'), {
+                opacity: 0,
+                y: 30
+            });
+            gsap.set(careerCards, {
+                opacity: 0,
+                y: 50,
+                scale: 0.9
+            });
+
+            // Timeline de la sección de carrera
+            const careerTl = gsap.timeline({
+                scrollTrigger: {
+                    trigger: careerSection,
+                    start: 'top 70%',
+                    toggleActions: 'play none none none'
+                }
+            });
+
+            careerTl
+                .to(careerSection.querySelector('h3'), {
+                    opacity: 1,
+                    y: 0,
+                    duration: 0.6,
+                    ease: 'power2.out'
+                })
+                .to(careerCards, {
+                    opacity: 1,
+                    y: 0,
+                    scale: 1,
+                    duration: 0.8,
+                    stagger: 0.15,
+                    ease: 'back.out(1.7)'
+                }, '-=0.3');
+        }
+
+        // Animación de la sección de skills
+        gsap.to(skillsSection, {
+            opacity: 1,
+            y: 0,
+            duration: 0.6,
+            ease: 'power2.out',
+            scrollTrigger: {
+                trigger: skillsSection,
+                start: 'top 80%',
+                toggleActions: 'play none none none'
+            }
+        });
+    });
+</script>
+
+<style>
+    .feature-item {
+        transition: all 0.3s ease;
+    }
+
+    .feature-item:hover {
+        transform: translateY(-5px);
+        box-shadow:
+            0 20px 25px -5px rgba(0, 0, 0, 0.1),
+            0 10px 10px -5px rgba(0, 0, 0, 0.04);
+    }
+
+    .skill-item {
+        transition: all 0.3s ease;
+    }
+
+    .skill-item:hover {
+        transform: translateY(-2px);
+        box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1);
+        border-color: #84cc16;
+    }
+
+    /* Timeline Styles */
+    .timeline-container {
+        position: relative;
+        padding: 2rem 0;
+    }
+
+    .timeline-line {
+        position: absolute;
+        top: 1.5rem;
+        left: 0;
+        right: 0;
+        height: 2px;
+        background: linear-gradient(to right, #84cc16, #65a30d);
+        z-index: 5;
+    }
+
+    .timeline-items {
+        display: flex;
+        justify-content: space-between;
+        align-items: flex-start;
+        position: relative;
+        z-index: 10;
+    }
+
+    .timeline-item {
+        position: relative;
+        flex: 1;
+        max-width: 280px;
+        margin: 0 1rem;
+    }
+
+    .timeline-marker {
+        position: relative;
+        display: flex;
+        justify-content: center;
+        margin-bottom: 1rem;
+    }
+
+    .timeline-icon {
+        width: 3rem;
+        height: 3rem;
+        border-radius: 50%;
+        background: linear-gradient(135deg, #84cc16, #65a30d);
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        box-shadow: 0 4px 8px rgba(132, 204, 22, 0.3);
+        position: relative;
+        z-index: 15;
+        transition: all 0.3s ease;
+    }
+
+    .timeline-icon:hover {
+        transform: scale(1.1);
+        box-shadow: 0 6px 12px rgba(132, 204, 22, 0.4);
+    }
+
+    .timeline-content {
+        position: relative;
+        padding: 1rem 0;
+        text-align: center;
+    }
+
+    .timeline-date {
+        font-weight: 600;
+        letter-spacing: 0.025em;
+        display: block;
+        margin-bottom: 0.5rem;
+    }
+
+    .timeline-title {
+        line-height: 1.3;
+        margin-bottom: 0.75rem;
+    }
+
+    .timeline-description {
+        line-height: 1.6;
+        max-width: 240px;
+        margin: 0 auto;
+    }
+
+    /* Mobile Timeline Styles */
+    @media (max-width: 768px) {
+        .timeline-line {
+            top: 0;
+            bottom: 0;
+            left: 24px;
+            right: auto;
+            width: 2px;
+            height: auto;
+            background: linear-gradient(to bottom, #84cc16, #65a30d);
+            transform: none;
+        }
+
+        .timeline-items {
+            flex-direction: column;
+            align-items: stretch;
+            gap: 2rem;
+        }
+
+        .timeline-item {
+            display: flex;
+            align-items: flex-start;
+            max-width: none;
+            margin: 0;
+            padding-left: 4rem;
+        }
+
+        .timeline-marker {
+            position: absolute;
+            left: 0;
+            top: 0;
+            margin-bottom: 0;
+        }
+
+        .timeline-content {
+            flex: 1;
+        }
+
+        .timeline-icon {
+            width: 2.5rem;
+            height: 2.5rem;
+        }
+
+        .timeline-content {
+            text-align: left;
+            padding: 0;
+        }
+
+        .timeline-description {
+            max-width: none;
+            margin: 0;
+        }
+    }
+
+    @media (max-width: 640px) {
+        .timeline-item {
+            padding-left: 3rem;
+        }
+
+        .timeline-line {
+            left: 20px;
+        }
+
+        .timeline-icon {
+            width: 2rem;
+            height: 2rem;
+        }
+
+        .timeline-description {
+            font-size: 0.875rem;
+        }
+    }
+
+    /* Experience Grid Styles */
+    .experience-grid {
+        gap: 2rem;
+    }
+
+    .experience-block {
+        padding: 2rem;
+        background: rgba(255, 255, 255, 0.5);
+        dark:background: rgba(31, 41, 55, 0.5);
+        border-radius: 1rem;
+        border: 1px solid rgba(132, 204, 22, 0.1);
+        transition: all 0.3s ease;
+        backdrop-filter: blur(10px);
+    }
+
+    .experience-block:hover {
+        transform: translateY(-4px);
+        border-color: rgba(132, 204, 22, 0.3);
+        box-shadow: 0 10px 25px rgba(132, 204, 22, 0.1);
+    }
+
+    .dark .experience-block {
+        background: rgba(31, 41, 55, 0.5);
+        border-color: rgba(132, 204, 22, 0.1);
+    }
+
+    .dark .experience-block:hover {
+        border-color: rgba(132, 204, 22, 0.3);
+        box-shadow: 0 10px 25px rgba(132, 204, 22, 0.15);
+    }
+
+    .experience-date {
+        font-size: 1.125rem;
+        font-weight: 600;
+        letter-spacing: 0.025em;
+    }
+
+    .experience-title {
+        font-size: 1.25rem;
+        line-height: 1.3;
+    }
+
+    .experience-description {
+        line-height: 1.6;
+        font-size: 0.95rem;
+    }
+
+    @media (max-width: 768px) {
+        .experience-grid {
+            grid-template-columns: 1fr;
+            gap: 1.5rem;
+        }
+
+        .experience-block {
+            padding: 1.5rem;
+        }
+
+        .experience-date {
+            font-size: 1rem;
+            margin-bottom: 0.75rem;
+        }
+
+        .experience-title {
+            font-size: 1.125rem;
+            margin-bottom: 0.75rem;
+        }
+
+        .experience-description {
+            font-size: 0.875rem;
+        }
+    }
+
+    /* Experience Cards - Clean & Professional Design */
+    .experience-container {
+        position: relative;
+    }
+
+    .experience-grid {
+        gap: 1.5rem;
+    }
+
+    .experience-card {
+        position: relative;
+        background: #ffffff;
+        border: 1px solid #e5e7eb;
+        border-radius: 1rem;
+        padding: 1.5rem;
+        transition: all 0.3s ease;
+        cursor: pointer;
+        overflow: hidden;
+    }
+
+    .experience-card::before {
+        content: '';
+        position: absolute;
+        top: 0;
+        left: 0;
+        right: 0;
+        height: 4px;
+        background: linear-gradient(90deg, #84cc16, #65a30d);
+        border-radius: 1rem 1rem 0 0;
+    }
+
+    .experience-card:hover {
+        transform: translateY(-4px);
+        box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.1), 0 10px 10px -5px rgba(0, 0, 0, 0.04);
+        border-color: #84cc16;
+    }
+
+    /* Dark mode styles */
+    .dark .experience-card {
+        background: #1f2937;
+        border-color: #374151;
+    }
+
+    .dark .experience-card:hover {
+        border-color: #84cc16;
+        box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.25), 0 10px 10px -5px rgba(0, 0, 0, 0.1);
+    }
+
+    .experience-content {
+        position: relative;
+    }
+
+    .experience-indicator {
+        position: absolute;
+        top: 0.25rem;
+        right: 0;
+        width: 12px;
+        height: 12px;
+        background: #84cc16;
+        border-radius: 50%;
+        border: 3px solid #ffffff;
+        box-shadow: 0 0 0 2px #84cc16;
+    }
+
+    .dark .experience-indicator {
+        border-color: #1f2937;
+    }
+
+    .experience-info {
+        padding-right: 2rem;
+    }
+
+    .experience-period {
+        display: inline-block;
+        font-size: 0.75rem;
+        font-weight: 600;
+        color: #84cc16;
+        background: rgba(132, 204, 22, 0.1);
+        padding: 0.25rem 0.75rem;
+        border-radius: 1rem;
+        margin-bottom: 1rem;
+        text-transform: uppercase;
+        letter-spacing: 0.05em;
+    }
+
+    .dark .experience-period {
+        background: rgba(132, 204, 22, 0.2);
+        color: #a3e635;
+    }
+
+    .experience-role {
+        font-size: 1.25rem;
+        font-weight: 700;
+        color: #1f2937;
+        margin-bottom: 0.75rem;
+        line-height: 1.4;
+    }
+
+    .dark .experience-role {
+        color: #f9fafb;
+    }
+
+    .experience-desc {
+        font-size: 0.875rem;
+        color: #6b7280;
+        line-height: 1.6;
+        margin: 0;
+    }
+
+    .dark .experience-desc {
+        color: #9ca3af;
+    }
+
+    /* Responsive Design */
+    @media (max-width: 768px) {
+        .experience-grid {
+            grid-template-columns: 1fr;
+        }
+
+        .experience-card {
+            padding: 1.25rem;
+        }
+
+        .experience-info {
+            padding-right: 1.5rem;
+        }
+
+        .experience-role {
+            font-size: 1.125rem;
+        }
+    }
+
+    /* Career Cards - Clean & Simple */
+    .career-card {
+        background: #ffffff;
+        border: 1px solid #e5e7eb;
+        border-radius: 1rem;
+        padding: 1.5rem;
+        transition: all 0.3s ease;
+        position: relative;
+        overflow: hidden;
+    }
+
+    .career-card::before {
+        content: '';
+        position: absolute;
+        top: 0;
+        left: 0;
+        right: 0;
+        height: 4px;
+        background: linear-gradient(90deg, #84cc16, #65a30d);
+        border-radius: 1rem 1rem 0 0;
+    }
+
+    .career-card:hover {
+        transform: translateY(-4px);
+        border-color: #84cc16;
+    }
+
+    .career-badge {
+        display: inline-block;
+        font-size: 0.75rem;
+        font-weight: 600;
+        color: #84cc16;
+        background: rgba(132, 204, 22, 0.1);
+        padding: 0.25rem 0.75rem;
+        border-radius: 1rem;
+        margin-bottom: 1rem;
+        text-transform: uppercase;
+        letter-spacing: 0.05em;
+    }
+
+    .career-title {
+        font-size: 1.25rem;
+        font-weight: 700;
+        color: #1f2937;
+        margin-bottom: 0.75rem;
+        line-height: 1.4;
+    }
+
+    .career-desc {
+        font-size: 0.875rem;
+        color: #6b7280;
+        line-height: 1.6;
+        margin: 0;
+    }
+
+    /* Dark mode - Enhanced styles */
+    .dark .career-card {
+        background: #1f2937;
+        border-color: #374151;
+    }
+
+    .dark .career-card:hover {
+        border-color: #84cc16;
+        background: #243447;
+    }
+
+    .dark .career-card::before {
+        background: linear-gradient(90deg, #a3e635, #84cc16);
+    }
+
+    .dark .career-badge {
+        background: rgba(163, 230, 53, 0.15);
+        color: #a3e635;
+        border: 1px solid rgba(163, 230, 53, 0.2);
+    }
+
+    .dark .career-title {
+        color: #f9fafb;
+    }
+
+    .dark .career-desc {
+        color: #d1d5db;
+    }
+
+    /* Alternative dark mode selectors for better compatibility */
+    html.dark .career-card,
+    [data-theme="dark"] .career-card,
+    body.dark .career-card {
+        background: #1f2937 !important;
+        border-color: #374151 !important;
+    }
+
+    html.dark .career-card:hover,
+    [data-theme="dark"] .career-card:hover,
+    body.dark .career-card:hover {
+        border-color: #84cc16 !important;
+        background: #243447 !important;
+    }
+
+    html.dark .career-badge,
+    [data-theme="dark"] .career-badge,
+    body.dark .career-badge {
+        background: rgba(163, 230, 53, 0.15) !important;
+        color: #a3e635 !important;
+        border: 1px solid rgba(163, 230, 53, 0.2) !important;
+    }
+
+    html.dark .career-title,
+    [data-theme="dark"] .career-title,
+    body.dark .career-title {
+        color: #f9fafb !important;
+    }
+
+    html.dark .career-desc,
+    [data-theme="dark"] .career-desc,
+    body.dark .career-desc {
+        color: #d1d5db !important;
+    }
+
+    /* Responsive */
+    @media (max-width: 768px) {
+        .career-card {
+            padding: 1.25rem;
+        }
+
+        .career-title {
+            font-size: 1.125rem;
+        }
+    }
+
+    /* CSS Media Query dark mode support */
+    @media (prefers-color-scheme: dark) {
+        .career-card {
+            background: #1f2937;
+            border-color: #374151;
+        }
+
+        .career-card:hover {
+            border-color: #84cc16;
+            background: #243447;
+        }
+
+        .career-badge {
+            background: rgba(163, 230, 53, 0.15);
+            color: #a3e635;
+            border: 1px solid rgba(163, 230, 53, 0.2);
+        }
+
+        .career-title {
+            color: #f9fafb;
+        }
+
+        .career-desc {
+            color: #d1d5db;
+        }
+    }
+</style>

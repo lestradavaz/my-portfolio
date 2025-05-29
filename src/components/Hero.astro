@@ -1,0 +1,429 @@
+---
+import Container from './Container.astro';
+import Button from './Button.astro';
+---
+
+<section
+    class="hero relative min-h-screen flex items-center justify-center overflow-hidden bg-white dark:bg-gray-900"
+>
+    <!-- Fondo abstracto -->
+    <div class="absolute inset-0">
+        <div
+            class="absolute top-20 left-10 w-72 h-72 bg-lime-500/10 dark:bg-lime-400/10 rounded-full blur-3xl"
+        >
+        </div>
+        <div
+            class="absolute bottom-20 right-10 w-96 h-96 bg-lime-300/20 dark:bg-lime-500/20 rounded-full blur-3xl"
+        >
+        </div>
+        <div
+            class="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 w-[800px] h-[800px] bg-gradient-to-r from-lime-50 dark:from-lime-900/20 to-transparent rounded-full blur-3xl opacity-40"
+        >
+        </div>
+    </div>
+
+    <Container class="relative z-10 pt-8 pb-10">
+        <div class="max-w-6xl mx-auto text-center">
+            <!-- Etiqueta superior -->
+            <div class="hero-label mb-6 md:mb-8 overflow-hidden">
+                <span
+                    class="inline-block text-label bg-lime-50 dark:bg-lime-900/20 px-4 md:px-6 py-2 md:py-3 rounded-full border border-lime-200 dark:border-lime-700"
+                >
+                    Diseñador & Desarrollador Web
+                </span>
+            </div>
+
+            <!-- Título principal -->
+            <div class="hero-title mb-6 md:mb-8">
+                <h1
+                    class="heading-display text-4xl sm:text-5xl md:text-6xl lg:text-8xl xl:text-9xl text-gray-900 dark:text-white"
+                >
+                    <span class="block title-line overflow-hidden">
+                        <span class="inline-block">Experiencias</span>
+                    </span>
+                    <span class="block title-line overflow-hidden">
+                        <span
+                            class="inline-block text-lime-500 dark:text-lime-400"
+                            >Digitales</span
+                        >
+                    </span>
+                    <span class="block title-line overflow-hidden">
+                        <span class="inline-block">Extraordinarias</span>
+                    </span>
+                </h1>
+            </div>
+
+            <!-- Subtítulo -->
+            <div
+                class="hero-subtitle mb-8 md:mb-12 overflow-hidden px-4 md:px-0"
+            >
+                <p
+                    class="text-subtitle max-w-3xl mx-auto text-gray-600 dark:text-gray-300"
+                >
+                    Transformo ideas en sitios web de alto impacto que
+                    convierten visitantes en clientes y posicionan tu marca como
+                    líder en su industria.
+                </p>
+            </div>
+
+            <!-- Botones de acción -->
+            <div class="hero-actions mb-12 md:mb-16 px-4 md:px-0">
+                <div
+                    class="flex flex-col sm:flex-row gap-4 justify-center items-center"
+                >
+                    <Button
+                        href="#portfolio"
+                        variant="primary"
+                        size="lg"
+                        class="w-full sm:w-auto group"
+                    >
+                        <span>Ver Mi Trabajo</span>
+                        <svg
+                            class="ml-2 w-4 h-4 md:w-5 md:h-5 transform group-hover:translate-x-1 transition-transform duration-300"
+                            fill="none"
+                            stroke="currentColor"
+                            viewBox="0 0 24 24"
+                        >
+                            <path
+                                stroke-linecap="round"
+                                stroke-linejoin="round"
+                                stroke-width="2"
+                                d="M17 8l4 4m0 0l-4 4m4-4H3"></path>
+                        </svg>
+                    </Button>
+                    <Button
+                        href="#contact"
+                        variant="outline"
+                        size="lg"
+                        class="w-full sm:w-auto group"
+                    >
+                        <span>Iniciar Proyecto</span>
+                        <svg
+                            class="ml-2 w-4 h-4 md:w-5 md:h-5 transform group-hover:translate-x-1 transition-transform duration-300"
+                            fill="none"
+                            stroke="currentColor"
+                            viewBox="0 0 24 24"
+                        >
+                            <path
+                                stroke-linecap="round"
+                                stroke-linejoin="round"
+                                stroke-width="2"
+                                d="M8 12h.01M12 12h.01M16 12h.01M21 12c0 4.418-4.03 8-9 8a9.863 9.863 0 01-4.255-.949L3 20l1.395-3.72C3.512 15.042 3 13.574 3 12c0-4.418 4.03-8 9-8s9 3.582 9 8z"
+                            ></path>
+                        </svg>
+                    </Button>
+                </div>
+            </div>
+
+            <!-- Estadísticas -->
+            <div
+                class="hero-stats grid grid-cols-1 sm:grid-cols-3 gap-6 md:gap-8 max-w-2xl mx-auto px-4 md:px-0"
+            >
+                <div class="stat-item text-center">
+                    <div
+                        class="stat-number heading-secondary mb-2 text-gray-900 dark:text-white"
+                    >
+                        0+
+                    </div>
+                    <div class="stat-label text-label">
+                        Proyectos Completados
+                    </div>
+                </div>
+                <div class="stat-item text-center">
+                    <div
+                        class="stat-number heading-secondary mb-2 text-gray-900 dark:text-white"
+                    >
+                        0+
+                    </div>
+                    <div class="stat-label text-label">Años de Experiencia</div>
+                </div>
+                <div class="stat-item text-center">
+                    <div
+                        class="stat-number heading-secondary mb-2 text-gray-900 dark:text-white"
+                    >
+                        0%
+                    </div>
+                    <div class="stat-label text-label">
+                        Satisfacción Cliente
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Scroll indicator -->
+        <!-- <div
+            class="absolute bottom-6 md:bottom-8 left-1/2 transform -translate-x-1/2 scroll-indicator hidden md:flex"
+        >
+            <div class="flex flex-col items-center">
+                <span
+                    class="text-xs text-gray-500 mb-2 uppercase tracking-wider"
+                    >Scroll</span
+                >
+                <div class="w-px h-12 bg-gray-300 relative overflow-hidden">
+                    <div
+                        class="scroll-line absolute top-0 left-0 w-full h-1/3 bg-lime-500"
+                    >
+                    </div>
+                </div>
+            </div>
+        </div> -->
+    </Container>
+</section>
+
+<script>
+    import gsap from 'gsap';
+    import { ScrollTrigger } from 'gsap/ScrollTrigger';
+
+    gsap.registerPlugin(ScrollTrigger);
+
+    document.addEventListener('DOMContentLoaded', () => {
+        const heroLabel = document.querySelector('.hero-label span');
+        const heroTitle = document.querySelector('.hero-title');
+        const heroSubtitle = document.querySelector('.hero-subtitle');
+        const heroActions = document.querySelector('.hero-actions');
+        const statItems = document.querySelectorAll('.stat-item');
+        const scrollIndicator = document.querySelector('.scroll-indicator');
+        const titleLines = document.querySelectorAll('.title-line span');
+
+        // Configurar estado inicial
+        gsap.set([heroLabel, heroSubtitle, heroActions, scrollIndicator], {
+            opacity: 0,
+            y: 50
+        });
+        gsap.set(titleLines, { y: '100%' });
+        gsap.set(statItems, { opacity: 0, y: 30 });
+
+        // Función para ejecutar las animaciones del Hero
+        const executeHeroAnimations = () => {
+            // Timeline principal para la animación de entrada
+            const heroTl = gsap.timeline({ delay: 0.3 }); // Reducir delay inicial
+
+            heroTl
+                .to(heroLabel, {
+                    opacity: 1,
+                    y: 0,
+                    duration: 0.8,
+                    ease: 'power2.out'
+                })
+                .to(
+                    titleLines,
+                    {
+                        y: '0%',
+                        duration: 1.2,
+                        stagger: 0.15,
+                        ease: 'power3.out'
+                    },
+                    '-=0.6' // Superponer más con el label
+                )
+                .to(
+                    heroSubtitle,
+                    {
+                        opacity: 1,
+                        y: 0,
+                        duration: 0.8,
+                        ease: 'power2.out'
+                    },
+                    '-=0.6'
+                )
+                .to(
+                    heroActions,
+                    {
+                        opacity: 1,
+                        y: 0,
+                        duration: 0.8,
+                        ease: 'power2.out'
+                    },
+                    '-=0.4'
+                )
+                .to(
+                    statItems,
+                    {
+                        opacity: 1,
+                        y: 0,
+                        duration: 0.6,
+                        stagger: 0.1,
+                        ease: 'power2.out'
+                    },
+                    '-=0.2'
+                )
+                .to(
+                    scrollIndicator,
+                    {
+                        opacity: 1,
+                        y: 0,
+                        duration: 0.6,
+                        ease: 'power2.out'
+                    },
+                    '-=0.2'
+                );
+
+            // Animación del scroll indicator
+            gsap.to('.scroll-line', {
+                y: '200%',
+                duration: 1.5,
+                repeat: -1,
+                ease: 'power2.inOut',
+                delay: 2
+            });
+
+            // Parallax suave para elementos de fondo
+            gsap.to('.hero .absolute:first-child > div', {
+                y: -50,
+                rotation: 10,
+                scale: 1.1,
+                duration: 20,
+                repeat: -1,
+                yoyo: true,
+                ease: 'none'
+            });
+
+            // Efecto parallax en scroll - más sutil para evitar superposición
+            ScrollTrigger.create({
+                trigger: '.hero',
+                start: 'top top',
+                end: 'bottom top',
+                scrub: 1,
+                onUpdate: (self) => {
+                    const progress = self.progress;
+                    gsap.to('.hero-title', {
+                        y: progress * 30,
+                        opacity: 1 - progress * 0.2,
+                        duration: 0.3
+                    });
+                    gsap.to('.hero-subtitle, .hero-actions', {
+                        y: progress * 50,
+                        opacity: 1 - progress * 0.3,
+                        duration: 0.3
+                    });
+                    gsap.to('.hero-stats', {
+                        y: progress * 70,
+                        opacity: 1 - progress * 0.4,
+                        duration: 0.3
+                    });
+                }
+            });
+
+            // Animaciones incrementales para los números de las estadísticas
+            const animateCounter = (
+                element: Element,
+                target: number,
+                duration: number = 2
+            ) => {
+                const obj = { value: 0 };
+                gsap.to(obj, {
+                    value: target,
+                    duration: duration,
+                    ease: 'power2.out',
+                    onUpdate: () => {
+                        const currentValue = Math.floor(obj.value);
+                        if (target === 98) {
+                            element.textContent = currentValue + '%';
+                        } else if (target === 3) {
+                            element.textContent = currentValue + '+';
+                        } else {
+                            element.textContent = currentValue + '+';
+                        }
+                    }
+                });
+            };
+
+            // Flag para controlar que la animación solo se ejecute una vez
+            let countersAnimated = false;
+
+            // Triggear las animaciones de conteo cuando las estadísticas aparezcan en la animación inicial
+            heroTl.call(
+                () => {
+                    if (!countersAnimated) {
+                        const statNumbers =
+                            document.querySelectorAll('.stat-number');
+                        statNumbers.forEach((statNumber, index) => {
+                            const targets = [10, 2, 98]; // Los valores objetivo para cada estadística
+                            setTimeout(() => {
+                                animateCounter(statNumber, targets[index], 2.5);
+                            }, index * 200); // Delay escalonado para cada contador
+                        });
+                        countersAnimated = true;
+                    }
+                },
+                [],
+                '-=0.5'
+            ); // Se ejecuta 0.5 segundos antes de que termine la timeline principal
+        };
+
+        // Esperar al evento loadingComplete para ejecutar las animaciones
+        document.addEventListener('loadingComplete', () => {
+            // Pequeño delay para asegurar que todo esté listo
+            setTimeout(executeHeroAnimations, 100);
+        });
+
+        // Fallback: si no hay LoadingScreen, ejecutar las animaciones después de un delay
+        const loadingScreen = document.getElementById('loading-screen');
+        if (!loadingScreen) {
+            setTimeout(executeHeroAnimations, 500);
+        }
+    });
+</script>
+
+<style>
+    .hero {
+        min-height: 100vh;
+        position: relative;
+    }
+
+    .title-line {
+        display: block;
+        overflow: hidden;
+    }
+
+    .stat-item {
+        transition: transform 0.3s ease;
+    }
+
+    .stat-item:hover {
+        transform: translateY(-5px);
+    }
+
+    .scroll-indicator {
+        animation: float 3s ease-in-out infinite;
+    }
+
+    @keyframes float {
+        0%,
+        100% {
+            transform: translateX(-50%) translateY(0px);
+        }
+        50% {
+            transform: translateX(-50%) translateY(-10px);
+        }
+    }
+
+    /* Tipografía responsiva mejorada */
+    @media (max-width: 640px) {
+        .hero {
+            min-height: 90vh;
+            padding-bottom: 2rem;
+        }
+
+        .hero-title h1 {
+            line-height: 0.9;
+        }
+
+        .hero-actions {
+            padding: 0 1rem;
+        }
+
+        .hero-stats {
+            padding: 0 1rem;
+        }
+    }
+
+    @media (max-width: 480px) {
+        .hero-title h1 {
+            text-shadow: none;
+        }
+
+        .stat-item {
+            padding: 1rem 0;
+        }
+    }
+</style>

@@ -1,0 +1,78 @@
+---
+import type { ClassValue } from 'clsx';
+import { cn } from '../utils';
+
+export interface Props {
+    variant?: 'primary' | 'secondary' | 'outline' | 'ghost';
+    size?: 'sm' | 'md' | 'lg';
+    class?: ClassValue;
+    href?: string;
+    type?: 'button' | 'submit' | 'reset';
+    disabled?: boolean;
+}
+
+const {
+    variant = 'primary',
+    size = 'md',
+    class: className,
+    href,
+    type = 'button',
+    disabled = false,
+    ...props
+}: Props = Astro.props;
+
+const baseClasses =
+    'inline-flex items-center justify-center font-semibold rounded-full transition-all duration-300 focus:outline-none focus:ring-2 focus:ring-lime-500 focus:ring-offset-2 disabled:opacity-50 disabled:cursor-not-allowed';
+
+const variants = {
+    primary:
+        'bg-lime-500 dark:bg-lime-600 text-white hover:bg-lime-600 dark:hover:bg-lime-700 shadow-md hover:shadow-lg transform hover:scale-[1.02]',
+    secondary:
+        'bg-gray-900 dark:bg-gray-800 text-white hover:bg-gray-800 dark:hover:bg-gray-700 shadow-md hover:shadow-lg transform hover:scale-[1.02]',
+    outline:
+        'border-2 border-gray-900 dark:border-gray-300 text-gray-900 dark:text-gray-300 hover:bg-gray-900 dark:hover:bg-gray-300 hover:text-white dark:hover:text-gray-900 transform hover:scale-[1.02]',
+    ghost: 'text-gray-700 dark:text-gray-300 hover:text-lime-500 dark:hover:text-lime-400 hover:bg-lime-50 dark:hover:bg-lime-900/20'
+};
+
+const getSizeClasses = (size: string, variant: string) => {
+    const isOutline = variant === 'outline';
+
+    switch (size) {
+        case 'sm':
+            return isOutline
+                ? 'px-[14px] py-[6px] text-sm'
+                : 'px-4 py-2 text-sm';
+        case 'md':
+            return isOutline
+                ? 'px-[22px] py-[10px] text-base'
+                : 'px-6 py-3 text-base';
+        case 'lg':
+            return isOutline
+                ? 'px-[30px] py-[14px] text-lg'
+                : 'px-8 py-4 text-lg';
+        default:
+            return isOutline
+                ? 'px-[22px] py-[10px] text-base'
+                : 'px-6 py-3 text-base';
+    }
+};
+
+const buttonClasses = cn(
+    baseClasses,
+    variants[variant],
+    getSizeClasses(size, variant),
+    className
+);
+
+const Tag = href ? 'a' : 'button';
+---
+
+<Tag
+    class={buttonClasses}
+    href={href}
+    type={!href ? type : undefined}
+    disabled={!href ? disabled : undefined}
+    {...props}
+>
+    <slot />
+</Tag>

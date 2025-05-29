@@ -1,11 +1,138 @@
 ---
-import { Header, Hero } from '../components';
-import LoadingScreen from '../components/LoadingScreen.astro';
 import Layout from '../layouts/Layout.astro';
+import Header from '../components/Header.astro';
+import Hero from '../components/Hero.astro';
+import About from '../components/About.astro';
+import Services from '../components/Services.astro';
+import Pricing from '../components/Pricing.astro';
+import Portfolio from '../components/Portfolio.astro';
+import Contact from '../components/Contact.astro';
+import Footer from '../components/Footer.astro';
+import LoadingScreen from '../components/LoadingScreen.astro';
+import CursorFollower from '../components/CursorFollower.astro';
 ---
 
-<Layout>
+<Layout title="Portfolio - Desarrollador Web & Diseñador">
     <LoadingScreen duration={2} />
+    <CursorFollower />
     <Header />
-    <Hero />
+    <!-- Botón Scroll to Top -->
+    <button
+        id="scrollToTop"
+        class="fixed bottom-8 right-8 w-14 h-14 bg-lime-500 text-white rounded-full shadow-xl hover:bg-lime-600 hover:shadow-2xl transition-all duration-300 transform translate-y-16 opacity-0 z-50 flex items-center justify-center group cursor-pointer"
+        aria-label="Scroll to top"
+    >
+        <svg
+            class="w-6 h-6 transform group-hover:-translate-y-0.5 transition-transform duration-200"
+            fill="none"
+            stroke="currentColor"
+            viewBox="0 0 24 24"
+            stroke-width="2.5"
+        >
+            <path
+                stroke-linecap="round"
+                stroke-linejoin="round"
+                d="M5 10l7-7m0 0l7 7m-7-7v18"></path>
+        </svg>
+    </button>
+    <main style="opacity: 0;">
+        <Hero />
+        <About />
+        <Services />
+        <Pricing />
+        <Portfolio />
+        <Contact />
+    </main>
+    <Footer />
 </Layout>
+
+<script>
+    import gsap from 'gsap';
+    import { ScrollTrigger } from 'gsap/ScrollTrigger';
+    import { ScrollToPlugin } from 'gsap/ScrollToPlugin';
+
+    gsap.registerPlugin(ScrollTrigger, ScrollToPlugin);
+
+    document.addEventListener('DOMContentLoaded', () => {
+        const scrollToTopBtn = document.getElementById('scrollToTop');
+
+        if (scrollToTopBtn) {
+            // Configurar estado inicial
+            gsap.set(scrollToTopBtn, {
+                opacity: 0,
+                y: 20,
+                scale: 0.8
+            });
+
+            // Crear ScrollTrigger para mostrar/ocultar el botón
+            ScrollTrigger.create({
+                trigger: document.body,
+                start: '500px top',
+                end: 'bottom bottom',
+                onEnter: () => {
+                    gsap.to(scrollToTopBtn, {
+                        opacity: 1,
+                        y: 0,
+                        scale: 1,
+                        duration: 0.3,
+                        ease: 'back.out(1.7)'
+                    });
+                },
+                onLeave: () => {
+                    gsap.to(scrollToTopBtn, {
+                        opacity: 0,
+                        y: 20,
+                        scale: 0.8,
+                        duration: 0.3,
+                        ease: 'power2.in'
+                    });
+                },
+                onEnterBack: () => {
+                    gsap.to(scrollToTopBtn, {
+                        opacity: 1,
+                        y: 0,
+                        scale: 1,
+                        duration: 0.3,
+                        ease: 'back.out(1.7)'
+                    });
+                },
+                onLeaveBack: () => {
+                    gsap.to(scrollToTopBtn, {
+                        opacity: 0,
+                        y: 20,
+                        scale: 0.8,
+                        duration: 0.3,
+                        ease: 'power2.in'
+                    });
+                }
+            });
+
+            // Funcionalidad click con animación
+            scrollToTopBtn.addEventListener('click', () => {
+                // Animación del botón al hacer click
+                gsap.to(scrollToTopBtn, {
+                    scale: 0.9,
+                    duration: 0.1,
+                    yoyo: true,
+                    repeat: 1,
+                    ease: 'power2.inOut'
+                });
+
+                // Scroll suave al top usando GSAP
+                gsap.to(window, {
+                    duration: 0.8,
+                    scrollTo: { y: 0, autoKill: false },
+                    ease: 'power2.out'
+                });
+            });
+        }
+
+        // Esperar a que termine la carga para inicializar otras animaciones
+        document.addEventListener('loadingComplete', () => {
+            // Refrescar ScrollTrigger después de que aparezca el contenido
+            setTimeout(() => {
+                ScrollTrigger.refresh();
+            }, 100);
+        });
+    });
+</script>

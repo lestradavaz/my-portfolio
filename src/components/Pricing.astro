@@ -1,0 +1,899 @@
+---
+import Container from './Container.astro';
+import Button from './Button.astro';
+---
+
+<section
+    id="pricing"
+    class="pricing py-32 bg-gray-50 dark:bg-gray-800/50 relative overflow-hidden"
+>
+    <div
+        class="absolute inset-0 bg-gradient-to-br from-lime-50/30 dark:from-lime-900/20 via-transparent to-transparent"
+    >
+    </div>
+
+    <!-- Decorative elements -->
+    <div
+        class="absolute top-20 left-10 w-32 h-32 bg-lime-500/5 dark:bg-lime-400/10 rounded-full blur-3xl"
+    >
+    </div>
+    <div
+        class="absolute bottom-20 right-10 w-40 h-40 bg-lime-500/5 dark:bg-lime-400/10 rounded-full blur-3xl"
+    >
+    </div>
+
+    <Container>
+        <div class="text-center mb-20">
+            <div class="section-label mb-8 overflow-hidden">
+                <span class="inline-block text-label"> Proyectos </span>
+            </div>
+            <div class="pricing-heading mb-8">
+                <h2 class="heading-display">
+                    <span class="block heading-line overflow-hidden">
+                        <span class="inline-block">Tipos de</span>
+                    </span>
+                    <span class="block heading-line overflow-hidden">
+                        <span
+                            class="inline-block text-lime-500 dark:text-lime-400"
+                            >Proyectos</span
+                        >
+                    </span>
+                </h2>
+            </div>
+            <div class="pricing-description overflow-hidden">
+                <p class="text-subtitle max-w-3xl mx-auto">
+                    Cada proyecto es único, pero aquí tienes una idea de los
+                    tipos de trabajos que realizo y sus precios base
+                    aproximados.
+                </p>
+            </div>
+        </div>
+
+        <!-- New innovative pricing layout -->
+        <div class="pricing-container max-w-6xl mx-auto">
+            <!-- Timeline-style layout -->
+            <div class="relative">
+                <!-- Central line -->
+                <div
+                    class="absolute left-1/2 top-0 bottom-0 w-px bg-gradient-to-b from-lime-500/20 via-lime-500/40 to-lime-500/20 dark:from-lime-400/20 dark:via-lime-400/40 dark:to-lime-400/20 transform -translate-x-1/2 hidden lg:block"
+                >
+                </div>
+
+                <!-- Projects -->
+                <div class="space-y-24 lg:space-y-32">
+                    <!-- Landing Page -->
+                    <div class="project-item relative">
+                        <div
+                            class="lg:grid lg:grid-cols-2 lg:gap-16 items-center"
+                        >
+                            <!-- Content (left side) -->
+                            <div class="lg:text-right lg:pr-8">
+                                <div
+                                    class="project-badge inline-flex items-center px-4 py-2 bg-blue-500/10 dark:bg-blue-400/10 text-blue-600 dark:text-blue-400 rounded-full text-sm font-medium mb-6"
+                                >
+                                    <svg
+                                        class="w-4 h-4 mr-2"
+                                        fill="none"
+                                        stroke="currentColor"
+                                        viewBox="0 0 24 24"
+                                    >
+                                        <path
+                                            stroke-linecap="round"
+                                            stroke-linejoin="round"
+                                            stroke-width="2"
+                                            d="M12 18h.01M8 21h8a2 2 0 002-2V5a2 2 0 00-2-2H8a2 2 0 00-2 2v14a2 2 0 002 2z"
+                                        ></path>
+                                    </svg>
+                                    Landing Page
+                                </div>
+                                <h3
+                                    class="text-2xl lg:text-3xl font-bold text-gray-900 dark:text-white mb-4"
+                                >
+                                    Presencia Digital Inmediata
+                                </h3>
+                                <p
+                                    class="text-gray-600 dark:text-gray-400 leading-relaxed mb-6"
+                                >
+                                    Página web optimizada para conversión con
+                                    diseño responsivo, formularios de contacto y
+                                    optimización SEO básica. Ideal para
+                                    profesionales y pequeños negocios.
+                                </p>
+
+                                <div class="features-list space-y-3 mb-8">
+                                    <div
+                                        class="flex items-center lg:justify-end"
+                                    >
+                                        <svg
+                                            class="w-5 h-5 text-green-500 mr-3"
+                                            fill="currentColor"
+                                            viewBox="0 0 20 20"
+                                        >
+                                            <path
+                                                fill-rule="evenodd"
+                                                d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z"
+                                                clip-rule="evenodd"></path>
+                                        </svg>
+                                        <span
+                                            class="text-gray-700 dark:text-gray-300"
+                                            >Diseño responsivo</span
+                                        >
+                                    </div>
+                                    <div
+                                        class="flex items-center lg:justify-end"
+                                    >
+                                        <svg
+                                            class="w-5 h-5 text-green-500 mr-3"
+                                            fill="currentColor"
+                                            viewBox="0 0 20 20"
+                                        >
+                                            <path
+                                                fill-rule="evenodd"
+                                                d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z"
+                                                clip-rule="evenodd"></path>
+                                        </svg>
+                                        <span
+                                            class="text-gray-700 dark:text-gray-300"
+                                            >Formulario de contacto</span
+                                        >
+                                    </div>
+                                    <div
+                                        class="flex items-center lg:justify-end"
+                                    >
+                                        <svg
+                                            class="w-5 h-5 text-green-500 mr-3"
+                                            fill="currentColor"
+                                            viewBox="0 0 20 20"
+                                        >
+                                            <path
+                                                fill-rule="evenodd"
+                                                d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z"
+                                                clip-rule="evenodd"></path>
+                                        </svg>
+                                        <span
+                                            class="text-gray-700 dark:text-gray-300"
+                                            >SEO básico • Entrega en 1-2 semanas</span
+                                        >
+                                    </div>
+                                </div>
+                            </div>
+
+                            <!-- Price (right side) -->
+                            <div class="lg:pl-8 mt-8 lg:mt-0">
+                                <div
+                                    class="price-card bg-white dark:bg-gray-900 rounded-3xl p-6 lg:p-8 border border-gray-200 dark:border-gray-700 relative overflow-hidden"
+                                >
+                                    <div
+                                        class="absolute top-0 right-0 w-32 h-32 bg-blue-500/5 dark:bg-blue-400/10 rounded-full blur-2xl"
+                                    >
+                                    </div>
+                                    <div class="relative">
+                                        <div class="text-center">
+                                            <div
+                                                class="text-sm text-gray-500 dark:text-gray-400 mb-2"
+                                            >
+                                                Inversión desde
+                                            </div>
+                                            <div
+                                                class="price-display flex items-baseline justify-center mb-4"
+                                            >
+                                                <span
+                                                    class="text-3xl lg:text-4xl xl:text-5xl font-bold text-gray-900 dark:text-white"
+                                                    >$4,500</span
+                                                >
+                                                <span
+                                                    class="text-base lg:text-lg text-gray-500 dark:text-gray-400 ml-2"
+                                                    >MXN</span
+                                                >
+                                            </div>
+                                            <div
+                                                class="text-xs text-gray-400 dark:text-gray-500"
+                                            >
+                                                Precio base • Cotización
+                                                personalizada
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Central dot -->
+                        <div
+                            class="absolute left-1/2 top-1/2 w-4 h-4 bg-blue-500 dark:bg-blue-400 rounded-full transform -translate-x-1/2 -translate-y-1/2 z-10 hidden lg:block"
+                        >
+                            <div
+                                class="w-4 h-4 bg-blue-500 dark:bg-blue-400 rounded-full animate-ping absolute"
+                            >
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Sitio Web Corporativo -->
+                    <div class="project-item relative">
+                        <div
+                            class="lg:grid lg:grid-cols-2 lg:gap-16 items-center"
+                        >
+                            <!-- Content (first in mobile, right in desktop) -->
+                            <div class="lg:order-2 lg:pl-8">
+                                <div
+                                    class="project-badge inline-flex items-center px-4 py-2 bg-purple-500/10 dark:bg-purple-400/10 text-purple-600 dark:text-purple-400 rounded-full text-sm font-medium mb-6"
+                                >
+                                    <svg
+                                        class="w-4 h-4 mr-2"
+                                        fill="none"
+                                        stroke="currentColor"
+                                        viewBox="0 0 24 24"
+                                    >
+                                        <path
+                                            stroke-linecap="round"
+                                            stroke-linejoin="round"
+                                            stroke-width="2"
+                                            d="M19 21V5a2 2 0 00-2-2H7a2 2 0 00-2 2v16m14 0h2m-2 0h-5m-9 0H3m2 0h5M9 7h1m-1 4h1m4-4h1m-1 4h1m-5 10v-5a1 1 0 011-1h2a1 1 0 011 1v5m-4 0h4"
+                                        ></path>
+                                    </svg>
+                                    Sitio Web Corporativo
+                                </div>
+                                <h3
+                                    class="text-2xl lg:text-3xl font-bold text-gray-900 dark:text-white mb-4"
+                                >
+                                    Presencia Empresarial Completa
+                                </h3>
+                                <p
+                                    class="text-gray-600 dark:text-gray-400 leading-relaxed mb-6"
+                                >
+                                    Sitio web completo para empresas con
+                                    múltiples páginas, blog, área de
+                                    administración y optimización avanzada.
+                                    Perfecto para empresas establecidas.
+                                </p>
+
+                                <div class="features-list space-y-3 mb-8">
+                                    <div class="flex items-center">
+                                        <svg
+                                            class="w-5 h-5 text-green-500 mr-3 flex-shrink-0"
+                                            fill="currentColor"
+                                            viewBox="0 0 20 20"
+                                        >
+                                            <path
+                                                fill-rule="evenodd"
+                                                d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z"
+                                                clip-rule="evenodd"></path>
+                                        </svg>
+                                        <span
+                                            class="text-gray-700 dark:text-gray-300"
+                                            >Hasta 10 páginas</span
+                                        >
+                                    </div>
+                                    <div class="flex items-center">
+                                        <svg
+                                            class="w-5 h-5 text-green-500 mr-3 flex-shrink-0"
+                                            fill="currentColor"
+                                            viewBox="0 0 20 20"
+                                        >
+                                            <path
+                                                fill-rule="evenodd"
+                                                d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z"
+                                                clip-rule="evenodd"></path>
+                                        </svg>
+                                        <span
+                                            class="text-gray-700 dark:text-gray-300"
+                                            >Sistema de blog</span
+                                        >
+                                    </div>
+                                    <div class="flex items-center">
+                                        <svg
+                                            class="w-5 h-5 text-green-500 mr-3 flex-shrink-0"
+                                            fill="currentColor"
+                                            viewBox="0 0 20 20"
+                                        >
+                                            <path
+                                                fill-rule="evenodd"
+                                                d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z"
+                                                clip-rule="evenodd"></path>
+                                        </svg>
+                                        <span
+                                            class="text-gray-700 dark:text-gray-300"
+                                            >Panel de administración • Entrega
+                                            en 3-4 semanas</span
+                                        >
+                                    </div>
+                                </div>
+                            </div>
+
+                            <!-- Price (second in mobile, left in desktop) -->
+                            <div class="lg:order-1 lg:pr-8 mt-8 lg:mt-0">
+                                <div
+                                    class="price-card bg-white dark:bg-gray-900 rounded-3xl p-6 lg:p-8 border border-gray-200 dark:border-gray-700 relative overflow-hidden"
+                                >
+                                    <div
+                                        class="absolute top-0 left-0 w-32 h-32 bg-purple-500/5 dark:bg-purple-400/10 rounded-full blur-2xl"
+                                    >
+                                    </div>
+                                    <div class="relative">
+                                        <div class="text-center">
+                                            <div
+                                                class="text-sm text-gray-500 dark:text-gray-400 mb-2"
+                                            >
+                                                Inversión desde
+                                            </div>
+                                            <div
+                                                class="price-display flex items-baseline justify-center mb-4"
+                                            >
+                                                <span
+                                                    class="text-3xl lg:text-4xl xl:text-5xl font-bold text-gray-900 dark:text-white"
+                                                    >$7,000</span
+                                                >
+                                                <span
+                                                    class="text-base lg:text-lg text-gray-500 dark:text-gray-400 ml-2"
+                                                    >MXN</span
+                                                >
+                                            </div>
+                                            <div
+                                                class="text-xs text-gray-400 dark:text-gray-500"
+                                            >
+                                                Precio base • Cotización
+                                                personalizada
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Central dot -->
+                        <div
+                            class="absolute left-1/2 top-1/2 w-4 h-4 bg-purple-500 dark:bg-purple-400 rounded-full transform -translate-x-1/2 -translate-y-1/2 z-10 hidden lg:block"
+                        >
+                            <div
+                                class="w-4 h-4 bg-purple-500 dark:bg-purple-400 rounded-full animate-ping absolute"
+                            >
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- E-Commerce -->
+                    <div class="project-item relative">
+                        <div
+                            class="lg:grid lg:grid-cols-2 lg:gap-16 items-center"
+                        >
+                            <!-- Content (left side) -->
+                            <div class="lg:text-right lg:pr-8">
+                                <div
+                                    class="project-badge inline-flex items-center px-4 py-2 bg-green-500/10 dark:bg-green-400/10 text-green-600 dark:text-green-400 rounded-full text-sm font-medium mb-6"
+                                >
+                                    <svg
+                                        class="w-4 h-4 mr-2"
+                                        fill="none"
+                                        stroke="currentColor"
+                                        viewBox="0 0 24 24"
+                                    >
+                                        <path
+                                            stroke-linecap="round"
+                                            stroke-linejoin="round"
+                                            stroke-width="2"
+                                            d="M3 3h2l.4 2M7 13h10l4-8H5.4m0 0L7 13m0 0l-2.293 2.293c-.63.63-.184 1.707.707 1.707H17M17 13v4a2 2 0 01-2 2H9a2 2 0 01-2-2v-4m8 0V9a2 2 0 00-2-2H9a2 2 0 00-2 2v4.01"
+                                        ></path>
+                                    </svg>
+                                    Tienda Online
+                                </div>
+                                <h3
+                                    class="text-2xl lg:text-3xl font-bold text-gray-900 dark:text-white mb-4"
+                                >
+                                    Ventas en Línea 24/7
+                                </h3>
+                                <p
+                                    class="text-gray-600 dark:text-gray-400 leading-relaxed mb-6"
+                                >
+                                    E-commerce completo con catálogo de
+                                    productos, carrito de compras, pasarela de
+                                    pagos y gestión de inventario. Tu negocio
+                                    funcionando las 24 horas.
+                                </p>
+
+                                <div class="features-list space-y-3 mb-8">
+                                    <div
+                                        class="flex items-center lg:justify-end"
+                                    >
+                                        <svg
+                                            class="w-5 h-5 text-green-500 mr-3"
+                                            fill="currentColor"
+                                            viewBox="0 0 20 20"
+                                        >
+                                            <path
+                                                fill-rule="evenodd"
+                                                d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z"
+                                                clip-rule="evenodd"></path>
+                                        </svg>
+                                        <span
+                                            class="text-gray-700 dark:text-gray-300"
+                                            >Catálogo de productos</span
+                                        >
+                                    </div>
+                                    <div
+                                        class="flex items-center lg:justify-end"
+                                    >
+                                        <svg
+                                            class="w-5 h-5 text-green-500 mr-3"
+                                            fill="currentColor"
+                                            viewBox="0 0 20 20"
+                                        >
+                                            <path
+                                                fill-rule="evenodd"
+                                                d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z"
+                                                clip-rule="evenodd"></path>
+                                        </svg>
+                                        <span
+                                            class="text-gray-700 dark:text-gray-300"
+                                            >Carrito de compras</span
+                                        >
+                                    </div>
+                                    <div
+                                        class="flex items-center lg:justify-end"
+                                    >
+                                        <svg
+                                            class="w-5 h-5 text-green-500 mr-3"
+                                            fill="currentColor"
+                                            viewBox="0 0 20 20"
+                                        >
+                                            <path
+                                                fill-rule="evenodd"
+                                                d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z"
+                                                clip-rule="evenodd"></path>
+                                        </svg>
+                                        <span
+                                            class="text-gray-700 dark:text-gray-300"
+                                            >Pasarela de pagos • Entrega en 4-6
+                                            semanas</span
+                                        >
+                                    </div>
+                                </div>
+                            </div>
+
+                            <!-- Price (right side) -->
+                            <div class="lg:pl-8 mt-8 lg:mt-0">
+                                <div
+                                    class="price-card bg-white dark:bg-gray-900 rounded-3xl p-6 lg:p-8 border border-gray-200 dark:border-gray-700 relative overflow-hidden"
+                                >
+                                    <div
+                                        class="absolute top-0 right-0 w-32 h-32 bg-green-500/5 dark:bg-green-400/10 rounded-full blur-2xl"
+                                    >
+                                    </div>
+                                    <div class="relative">
+                                        <div class="text-center">
+                                            <div
+                                                class="text-sm text-gray-500 dark:text-gray-400 mb-2"
+                                            >
+                                                Inversión desde
+                                            </div>
+                                            <div
+                                                class="price-display flex items-baseline justify-center mb-4"
+                                            >
+                                                <span
+                                                    class="text-3xl lg:text-4xl xl:text-5xl font-bold text-gray-900 dark:text-white"
+                                                    >$10,000</span
+                                                >
+                                                <span
+                                                    class="text-base lg:text-lg text-gray-500 dark:text-gray-400 ml-2"
+                                                    >MXN</span
+                                                >
+                                            </div>
+                                            <div
+                                                class="text-xs text-gray-400 dark:text-gray-500"
+                                            >
+                                                Precio base • Cotización
+                                                personalizada
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Central dot -->
+                        <div
+                            class="absolute left-1/2 top-1/2 w-4 h-4 bg-green-500 dark:bg-green-400 rounded-full transform -translate-x-1/2 -translate-y-1/2 z-10 hidden lg:block"
+                        >
+                            <div
+                                class="w-4 h-4 bg-green-500 dark:bg-green-400 rounded-full animate-ping absolute"
+                            >
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Aplicación Web -->
+                    <div class="project-item relative">
+                        <div
+                            class="lg:grid lg:grid-cols-2 lg:gap-16 items-center"
+                        >
+                            <!-- Content (first in mobile, right in desktop) -->
+                            <div class="lg:order-2 lg:pl-8">
+                                <div
+                                    class="project-badge inline-flex items-center px-4 py-2 bg-orange-500/10 dark:bg-orange-400/10 text-orange-600 dark:text-orange-400 rounded-full text-sm font-medium mb-6"
+                                >
+                                    <svg
+                                        class="w-4 h-4 mr-2"
+                                        fill="none"
+                                        stroke="currentColor"
+                                        viewBox="0 0 24 24"
+                                    >
+                                        <path
+                                            stroke-linecap="round"
+                                            stroke-linejoin="round"
+                                            stroke-width="2"
+                                            d="M9.75 17L9 20l-1 1h8l-1-1-.75-3M3 13h18M5 17h14a2 2 0 002-2V5a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z"
+                                        ></path>
+                                    </svg>
+                                    Aplicación Web
+                                </div>
+                                <h3
+                                    class="text-2xl lg:text-3xl font-bold text-gray-900 dark:text-white mb-4"
+                                >
+                                    Solución Digital Personalizada
+                                </h3>
+                                <p
+                                    class="text-gray-600 dark:text-gray-400 leading-relaxed mb-6"
+                                >
+                                    Aplicación web personalizada con
+                                    funcionalidades específicas, base de datos,
+                                    autenticación y dashboard administrativo. La
+                                    solución perfecta para tus necesidades
+                                    únicas.
+                                </p>
+
+                                <div class="features-list space-y-3 mb-8">
+                                    <div class="flex items-center">
+                                        <svg
+                                            class="w-5 h-5 text-green-500 mr-3 flex-shrink-0"
+                                            fill="currentColor"
+                                            viewBox="0 0 20 20"
+                                        >
+                                            <path
+                                                fill-rule="evenodd"
+                                                d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z"
+                                                clip-rule="evenodd"></path>
+                                        </svg>
+                                        <span
+                                            class="text-gray-700 dark:text-gray-300"
+                                            >Funcionalidades custom</span
+                                        >
+                                    </div>
+                                    <div class="flex items-center">
+                                        <svg
+                                            class="w-5 h-5 text-green-500 mr-3 flex-shrink-0"
+                                            fill="currentColor"
+                                            viewBox="0 0 20 20"
+                                        >
+                                            <path
+                                                fill-rule="evenodd"
+                                                d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z"
+                                                clip-rule="evenodd"></path>
+                                        </svg>
+                                        <span
+                                            class="text-gray-700 dark:text-gray-300"
+                                            >Base de datos</span
+                                        >
+                                    </div>
+                                    <div class="flex items-center">
+                                        <svg
+                                            class="w-5 h-5 text-green-500 mr-3 flex-shrink-0"
+                                            fill="currentColor"
+                                            viewBox="0 0 20 20"
+                                        >
+                                            <path
+                                                fill-rule="evenodd"
+                                                d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z"
+                                                clip-rule="evenodd"></path>
+                                        </svg>
+                                        <span
+                                            class="text-gray-700 dark:text-gray-300"
+                                            >Sistema de usuarios • Entrega en
+                                            6-10 semanas</span
+                                        >
+                                    </div>
+                                </div>
+                            </div>
+
+                            <!-- Price (second in mobile, left in desktop) -->
+                            <div class="lg:order-1 lg:pr-8 mt-8 lg:mt-0">
+                                <div
+                                    class="price-card bg-white dark:bg-gray-900 rounded-3xl p-6 lg:p-8 border border-gray-200 dark:border-gray-700 relative overflow-hidden"
+                                >
+                                    <div
+                                        class="absolute top-0 left-0 w-32 h-32 bg-orange-500/5 dark:bg-orange-400/10 rounded-full blur-2xl"
+                                    >
+                                    </div>
+                                    <div class="relative">
+                                        <div class="text-center">
+                                            <div
+                                                class="text-sm text-gray-500 dark:text-gray-400 mb-2"
+                                            >
+                                                Inversión desde
+                                            </div>
+                                            <div
+                                                class="price-display flex items-baseline justify-center mb-4"
+                                            >
+                                                <span
+                                                    class="text-3xl lg:text-4xl xl:text-5xl font-bold text-gray-900 dark:text-white"
+                                                    >$15,000</span
+                                                >
+                                                <span
+                                                    class="text-base lg:text-lg text-gray-500 dark:text-gray-400 ml-2"
+                                                    >MXN</span
+                                                >
+                                            </div>
+                                            <div
+                                                class="text-xs text-gray-400 dark:text-gray-500"
+                                            >
+                                                Precio base • Cotización
+                                                personalizada
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Central dot -->
+                        <div
+                            class="absolute left-1/2 top-1/2 w-4 h-4 bg-orange-500 dark:bg-orange-400 rounded-full transform -translate-x-1/2 -translate-y-1/2 z-10 hidden lg:block"
+                        >
+                            <div
+                                class="w-4 h-4 bg-orange-500 dark:bg-orange-400 rounded-full animate-ping absolute"
+                            >
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Call to action -->
+        <div class="text-center mt-20">
+            <div
+                class="bg-gray-50 dark:bg-gray-800/50 rounded-2xl p-8 max-w-4xl mx-auto"
+            >
+                <div class="flex items-center justify-center mb-4">
+                    <svg
+                        class="w-6 h-6 text-lime-500 dark:text-lime-400 mr-2"
+                        fill="none"
+                        stroke="currentColor"
+                        viewBox="0 0 24 24"
+                    >
+                        <path
+                            stroke-linecap="round"
+                            stroke-linejoin="round"
+                            stroke-width="2"
+                            d="M13 16h-1v-4h-1m1-4h.01M21 12a9 9 0 11-18 0 9 9 0 0118 0z"
+                        ></path>
+                    </svg>
+                    <h3
+                        class="text-lg font-semibold text-gray-900 dark:text-white"
+                    >
+                        Precio personalizado
+                    </h3>
+                </div>
+                <p class="text-gray-600 dark:text-gray-400 leading-relaxed">
+                    Los precios mostrados son estimaciones base. Cada proyecto
+                    es único y el precio final se determina según los
+                    requerimientos específicos, funcionalidades adicionales y
+                    complejidad del diseño. <strong
+                        >Solicita una cotización personalizada</strong
+                    > para obtener un presupuesto exacto.
+                </p>
+            </div>
+        </div>
+    </Container>
+</section>
+
+<script>
+    import gsap from 'gsap';
+    import { ScrollTrigger } from 'gsap/ScrollTrigger';
+
+    gsap.registerPlugin(ScrollTrigger);
+
+    document.addEventListener('DOMContentLoaded', () => {
+        // Elementos de la sección Pricing con selectores correctos
+        const sectionLabel = document.querySelector(
+            '.pricing .section-label span'
+        );
+        const headingLines = document.querySelectorAll(
+            '.pricing .heading-line span'
+        );
+        const subtitle = document.querySelector('.pricing-description p');
+        const projectItems = document.querySelectorAll('.project-item');
+
+        // Configurar estado inicial
+        gsap.set([sectionLabel, subtitle], {
+            opacity: 0,
+            y: 50
+        });
+        gsap.set(headingLines, { y: '100%' });
+        gsap.set(projectItems, {
+            opacity: 0,
+            y: 60
+        });
+
+        // Timeline de entrada del header
+        const pricingTl = gsap.timeline({
+            scrollTrigger: {
+                trigger: '.pricing-heading',
+                start: 'top 70%',
+                toggleActions: 'play none none none'
+            }
+        });
+
+        pricingTl
+            .to(sectionLabel, {
+                opacity: 1,
+                y: 0,
+                duration: 0.6,
+                ease: 'power2.out'
+            })
+            .to(
+                headingLines,
+                {
+                    y: '0%',
+                    duration: 1,
+                    stagger: 0.1,
+                    ease: 'power3.out'
+                },
+                '-=0.3'
+            )
+            .to(
+                subtitle,
+                { opacity: 1, y: 0, duration: 0.6, ease: 'power2.out' },
+                '-=0.4'
+            );
+
+        // Animación de los elementos del proyecto
+        projectItems.forEach((item, index) => {
+            gsap.to(item, {
+                opacity: 1,
+                y: 0,
+                duration: 0.8,
+                ease: 'power2.out',
+                scrollTrigger: {
+                    trigger: item,
+                    start: 'top 80%',
+                    toggleActions: 'play none none none'
+                }
+            });
+        });
+    });
+</script>
+
+<style>
+    .project-item {
+        will-change: transform;
+    }
+
+    .price-card {
+        will-change: transform;
+        transition: all 0.3s ease;
+    }
+
+    .price-card:hover {
+        transform: translateY(-2px);
+    }
+
+    .project-badge {
+        will-change: transform;
+        transition: all 0.3s ease;
+    }
+
+    .project-item:hover .project-badge {
+        transform: scale(1.05);
+    }
+
+    .features-list {
+        transition: all 0.3s ease;
+    }
+
+    .price-display {
+        font-variant-numeric: tabular-nums;
+    }
+
+    @media (max-width: 1023px) {
+        .project-item {
+            margin-bottom: 2rem;
+        }
+
+        .project-item .lg\:grid {
+            background: white;
+            border-radius: 1.5rem;
+            padding: 2rem;
+            border: 1px solid rgb(229 231 235);
+        }
+
+        .dark .project-item .lg\:grid {
+            background: rgb(17 24 39);
+            border-color: rgb(55 65 81);
+        }
+
+        /* Project-specific mobile backgrounds */
+        .project-item:nth-child(1) .lg\:grid {
+            background: linear-gradient(
+                135deg,
+                rgb(59 130 246 / 0.03),
+                rgb(59 130 246 / 0.08)
+            );
+        }
+
+        .dark .project-item:nth-child(1) .lg\:grid {
+            background: linear-gradient(
+                135deg,
+                rgb(59 130 246 / 0.05),
+                rgb(59 130 246 / 0.12)
+            );
+        }
+
+        .project-item:nth-child(2) .lg\:grid {
+            background: linear-gradient(
+                135deg,
+                rgb(147 51 234 / 0.03),
+                rgb(147 51 234 / 0.08)
+            );
+        }
+
+        .dark .project-item:nth-child(2) .lg\:grid {
+            background: linear-gradient(
+                135deg,
+                rgb(147 51 234 / 0.05),
+                rgb(147 51 234 / 0.12)
+            );
+        }
+
+        .project-item:nth-child(3) .lg\:grid {
+            background: linear-gradient(
+                135deg,
+                rgb(34 197 94 / 0.03),
+                rgb(34 197 94 / 0.08)
+            );
+        }
+
+        .dark .project-item:nth-child(3) .lg\:grid {
+            background: linear-gradient(
+                135deg,
+                rgb(34 197 94 / 0.05),
+                rgb(34 197 94 / 0.12)
+            );
+        }
+
+        .project-item:nth-child(4) .lg\:grid {
+            background: linear-gradient(
+                135deg,
+                rgb(249 115 22 / 0.03),
+                rgb(249 115 22 / 0.08)
+            );
+        }
+
+        .dark .project-item:nth-child(4) .lg\:grid {
+            background: linear-gradient(
+                135deg,
+                rgb(249 115 22 / 0.05),
+                rgb(249 115 22 / 0.12)
+            );
+        }
+
+        /* Remove the separate price card styling in mobile */
+        .price-card {
+            background: transparent !important;
+            border: none !important;
+            padding: 1.5rem 0 0 0 !important;
+            margin-top: 1.5rem;
+        }
+
+        .price-card .absolute {
+            display: none;
+        }
+
+        .lg\:text-right {
+            text-align: left !important;
+        }
+
+        .lg\:justify-end {
+            justify-content: flex-start !important;
+        }
+    }
+</style>
