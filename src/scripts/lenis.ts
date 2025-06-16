@@ -3,7 +3,7 @@ import { ScrollTrigger } from 'gsap/ScrollTrigger';
 import Lenis, { type LenisOptions } from 'lenis';
 
 const options: LenisOptions = {
-    duration: 1.2, // Duración de la interpolación
+    duration: 1.5,
     easing: (t) => Math.min(1, 1.001 - Math.pow(2, -10 * t)),
     gestureOrientation: 'vertical',
     orientation: 'vertical',
@@ -23,3 +23,5 @@ gsap.ticker.add((time) => {
 });
 
 gsap.ticker.lagSmoothing(0);
+
+export default lenis;
