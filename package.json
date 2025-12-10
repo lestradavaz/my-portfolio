@@ -6,7 +6,7 @@
 		"dev": "astro dev",
 		"build": "astro build",
 		"preview": "astro preview",
-		"start": "astro preview",
+		"start": "serve dist",
 		"astro": "astro"
 	},
 	"dependencies": {
@@ -16,6 +16,7 @@
 		"gsap": "^3.13.0",
 		"lenis": "^1.3.3",
 		"motion": "^12.12.1",
+		"serve": "^14.2.4",
 		"tailwind-merge": "^3.3.0",
 		"tailwindcss": "^4.1.7"
 	},
